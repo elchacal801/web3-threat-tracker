@@ -112,11 +112,19 @@ def shard_entries(entries: list[Entry], output_dir: str) -> None:
 
 
 def main():
-    """CLI: load all entries, normalize, dedup, shard to data/entries/."""
-    entries_dir = Path(__file__).parent.parent / "data" / "entries"
+    """CLI: load entries from sources and existing entries, normalize, dedup, shard."""
+    base = Path(__file__).parent.parent / "data"
+    entries_dir = base / "entries"
+    sources_dir = base / "sources"
     all_entries = []
+
+    # Load existing normalized entries
     for yaml_file in sorted(entries_dir.glob("*.yaml")):
         all_entries.extend(load_entries_from_yaml(str(yaml_file)))
+
+    # Load ingested source entries
+    for source_file in sorted(sources_dir.glob("*/entries.yaml")):
+        all_entries.extend(load_entries_from_yaml(str(source_file)))
 
     deduped = normalize_and_dedup(all_entries)
     shard_entries(deduped, str(entries_dir))
