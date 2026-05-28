@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Web3 Threat Tracker Entry",
+  "type": "object",
+  "required": ["domain", "type", "severity", "confidence", "tags", "sources", "first_seen", "last_seen", "added_by"],
+  "properties": {
+    "domain": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9]([a-zA-Z0-9\\-]*[a-zA-Z0-9])?(\\.[a-zA-Z0-9]([a-zA-Z0-9\\-]*[a-zA-Z0-9])?)*$",
+      "description": "FQDN without protocol prefix"
+    },
+    "url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "type": {
+      "type": "string",
+      "enum": ["traditional_domain", "ens", "unstoppable", "handshake", "namecoin", "ipfs", "smart_contract"]
+    },
+    "severity": {
+      "type": "string",
+      "enum": ["LEGITIMATE", "SUSPICIOUS", "RISKY", "MALICIOUS"]
+    },
+    "confidence": {
+      "type": "string",
+      "enum": ["HIGH", "MEDIUM", "LOW"]
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "drainer", "phishing", "rug_pull", "fake_exchange", "fake_wallet",
+          "fake_airdrop", "etherhiding", "clickfix", "pig_butchering",
+          "address_poisoning", "ice_phishing", "investment_scam",
+          "impersonation", "c2_infrastructure", "credential_stealer",
+          "nft_scam", "defi_impersonation", "smishing", "typosquat"
+        ]
+      },
+      "minItems": 1
+    },
+    "registrar": { "type": "string" },
+    "registration_date": { "type": "string", "format": "date" },
+    "whois_privacy": { "type": "boolean" },
+    "nameservers": { "type": "array", "items": { "type": "string" } },
+    "hosting_provider": { "type": "string" },
+    "ip_addresses": { "type": "array", "items": { "type": "string" } },
+    "asn": { "type": "string" },
+    "ssl_issuer": { "type": "string" },
+    "ssl_validity_days": { "type": "integer" },
+    "ssl_subject_alt_names": { "type": "array", "items": { "type": "string" } },
+    "blockchain_network": {
+      "type": "string",
+      "enum": ["ethereum", "bsc", "polygon", "solana", "tron", "bitcoin", "other"]
+    },
+    "wallet_addresses": { "type": "array", "items": { "type": "string" } },
+    "smart_contract_addresses": { "type": "array", "items": { "type": "string" } },
+    "ens_name": { "type": "string" },
+    "unstoppable_domain": { "type": "string" },
+    "transaction_hashes": { "type": "array", "items": { "type": "string" } },
+    "sources": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "first_seen": { "type": "string", "format": "date-time" },
+    "last_seen": { "type": "string", "format": "date-time" },
+    "added_by": { "type": "string" },
+    "notes": { "type": "string" },
+    "references": { "type": "array", "items": { "type": "string" } },
+    "related_domains": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

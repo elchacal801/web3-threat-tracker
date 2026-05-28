@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+.venv/
+*.egg-info/
+dist/
+build/
+data/sources/metamask/
+data/sources/scamsniffer/
+data/sources/cryptoscamdb/
+data/sources/spmedia/
+data/sources/forta/
+data/sources/phishtank/
+data/sources/urlhaus/
+data/sources/chainabuse/
+data/exports/web3_tracker.db
+.env

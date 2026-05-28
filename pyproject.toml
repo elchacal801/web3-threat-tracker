@@ -1,0 +1,25 @@
+[project]
+name = "web3-threat-tracker"
+version = "0.1.0"
+description = "Comprehensive Web3/blockchain/crypto domain threat intelligence tracker"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+dependencies = [
+    "pyyaml>=6.0",
+    "requests>=2.31",
+    "jsonschema>=4.20",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-cov>=4.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["scripts*", "tests*"]
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
