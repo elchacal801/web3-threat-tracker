@@ -1,0 +1,75 @@
+name: Daily Ingestion
+
+on:
+  schedule:
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -e .
+
+      - name: Run MetaMask ingester
+        run: python -m scripts.ingest.ingest_metamask
+
+      - name: Run ScamSniffer ingester
+        run: python -m scripts.ingest.ingest_scamsniffer
+
+      - name: Run CryptoScamDB ingester
+        run: python -m scripts.ingest.ingest_cryptoscamdb
+
+      - name: Run spmedia ingester
+        run: python -m scripts.ingest.ingest_spmedia
+
+      - name: Run Chainabuse ingester
+        if: env.CHAINABUSE_API_KEY != ''
+        env:
+          CHAINABUSE_API_KEY: ${{ secrets.CHAINABUSE_API_KEY }}
+        run: python -m scripts.ingest.ingest_chainabuse
+
+      - name: Run Forta ingester
+        run: python -m scripts.ingest.ingest_forta
+
+      - name: Run PhishTank ingester
+        env:
+          PHISHTANK_APP_KEY: ${{ secrets.PHISHTANK_APP_KEY }}
+        run: python -m scripts.ingest.ingest_phishtank
+
+      - name: Run URLhaus ingester
+        run: python -m scripts.ingest.ingest_urlhaus
+
+      - name: Normalize and deduplicate
+        run: python -m scripts.normalize
+
+      - name: Validate entries
+        run: python -m scripts.validate
+
+      - name: Build SQLite database
+        run: python -m scripts.build_db
+
+      - name: Export CSVs
+        run: python -m scripts.export_csv
+
+      - name: Generate statistics
+        run: python -m scripts.stats
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/entries/ data/exports/
+          git diff --staged --quiet || git commit -m "chore: daily ingestion $(date +%Y-%m-%d)"
+          git push

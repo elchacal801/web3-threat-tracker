@@ -1,0 +1,48 @@
+name: Weekly Release
+
+on:
+  schedule:
+    - cron: '0 12 * * 0'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -e .
+
+      - name: Build exports
+        run: |
+          python -m scripts.build_db
+          python -m scripts.export_csv
+          python -m scripts.stats
+
+      - name: Create release tag
+        id: tag
+        run: echo "tag=v$(date +%Y.%m.%d)" >> $GITHUB_OUTPUT
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.tag.outputs.tag }}
+          name: "Web3 Threat Tracker ${{ steps.tag.outputs.tag }}"
+          body: |
+            Weekly release of Web3 threat intelligence data.
+            See `stats.json` for summary statistics.
+          files: |
+            data/exports/all_domains.csv
+            data/exports/malicious_only.csv
+            data/exports/high_confidence.csv
+            data/exports/web3_tracker.db
+            data/exports/stats.json
