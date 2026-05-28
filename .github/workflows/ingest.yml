@@ -4,9 +4,6 @@ on:
   schedule:
     - cron: '0 6 * * *'
   workflow_dispatch:
-  push:
-    paths:
-      - '.github/workflows/ingest.yml'
 
 permissions:
   contents: write
@@ -26,32 +23,39 @@ jobs:
         run: pip install -e .
 
       - name: Run MetaMask ingester
+        continue-on-error: true
         run: python -m scripts.ingest.ingest_metamask
 
       - name: Run ScamSniffer ingester
+        continue-on-error: true
         run: python -m scripts.ingest.ingest_scamsniffer
 
       - name: Run CryptoScamDB ingester
+        continue-on-error: true
         run: python -m scripts.ingest.ingest_cryptoscamdb
 
       - name: Run spmedia ingester
+        continue-on-error: true
         run: python -m scripts.ingest.ingest_spmedia
 
       - name: Run Chainabuse ingester
-        if: env.CHAINABUSE_API_KEY != ''
+        continue-on-error: true
         env:
           CHAINABUSE_API_KEY: ${{ secrets.CHAINABUSE_API_KEY }}
         run: python -m scripts.ingest.ingest_chainabuse
 
       - name: Run Forta ingester
+        continue-on-error: true
         run: python -m scripts.ingest.ingest_forta
 
       - name: Run PhishTank ingester
+        continue-on-error: true
         env:
           PHISHTANK_APP_KEY: ${{ secrets.PHISHTANK_APP_KEY }}
         run: python -m scripts.ingest.ingest_phishtank
 
       - name: Run URLhaus ingester
+        continue-on-error: true
         run: python -m scripts.ingest.ingest_urlhaus
 
       - name: Normalize and deduplicate

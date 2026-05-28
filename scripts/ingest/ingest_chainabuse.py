@@ -44,13 +44,17 @@ class ChainabuseIngester(BaseIngester):
         all_reports = []
         page = 1
         while True:
-            resp = requests.get(
-                f"{API_BASE}/reports",
-                auth=(self.api_key, self.api_key),
-                params={"page": page, "perPage": 50},
-                timeout=30,
-            )
-            resp.raise_for_status()
+            try:
+                resp = requests.get(
+                    f"{API_BASE}/reports",
+                    auth=(self.api_key, self.api_key),
+                    params={"page": page, "perPage": 50},
+                    timeout=30,
+                )
+                resp.raise_for_status()
+            except requests.RequestException as e:
+                logger.error(f"[chainabuse] API request failed (page {page}): {e}")
+                break
             data = resp.json()
             reports = data if isinstance(data, list) else data.get("reports", [])
             if not reports:
