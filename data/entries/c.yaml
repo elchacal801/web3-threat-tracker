@@ -1,0 +1,13 @@
+- domain: coinbase.com
+  type: traditional_domain
+  severity: LEGITIMATE
+  confidence: HIGH
+  tags:
+  - phishing
+  sources:
+  - manual
+  first_seen: '2026-05-28T00:00:00Z'
+  last_seen: '2026-05-28T00:00:00Z'
+  added_by: manual
+  notes: "Legitimate cryptocurrency exchange \xE2\u20AC\u201D included as reference\
+    \ baseline"

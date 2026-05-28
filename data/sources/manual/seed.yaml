@@ -1,0 +1,45 @@
+- domain: coinbase.com
+  type: traditional_domain
+  severity: LEGITIMATE
+  confidence: HIGH
+  tags:
+    - phishing
+  sources:
+    - manual
+  first_seen: "2026-05-28T00:00:00Z"
+  last_seen: "2026-05-28T00:00:00Z"
+  added_by: manual
+  notes: "Legitimate cryptocurrency exchange — included as reference baseline"
+
+- domain: fake-coinbase-login.com
+  type: traditional_domain
+  severity: MALICIOUS
+  confidence: HIGH
+  tags:
+    - phishing
+    - fake_exchange
+    - impersonation
+  sources:
+    - manual
+  first_seen: "2026-05-28T00:00:00Z"
+  last_seen: "2026-05-28T00:00:00Z"
+  added_by: manual
+  registrar: Namecheap
+  notes: "Example phishing domain impersonating Coinbase"
+
+- domain: totally-legit-airdrop.xyz
+  type: traditional_domain
+  severity: MALICIOUS
+  confidence: MEDIUM
+  tags:
+    - fake_airdrop
+    - drainer
+  sources:
+    - manual
+  first_seen: "2026-05-28T00:00:00Z"
+  last_seen: "2026-05-28T00:00:00Z"
+  added_by: manual
+  blockchain_network: ethereum
+  wallet_addresses:
+    - "0x0000000000000000000000000000000000000000"
+  notes: "Example drainer site using fake airdrop lure"

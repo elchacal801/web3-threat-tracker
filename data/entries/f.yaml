@@ -1,0 +1,15 @@
+- domain: fake-coinbase-login.com
+  type: traditional_domain
+  severity: MALICIOUS
+  confidence: HIGH
+  tags:
+  - phishing
+  - fake_exchange
+  - impersonation
+  sources:
+  - manual
+  first_seen: '2026-05-28T00:00:00Z'
+  last_seen: '2026-05-28T00:00:00Z'
+  added_by: manual
+  registrar: Namecheap
+  notes: Example phishing domain impersonating Coinbase
