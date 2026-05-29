@@ -14,3 +14,4 @@ data/sources/urlhaus/
 data/sources/chainabuse/
 data/exports/web3_tracker.db
 .env
+site/data/
