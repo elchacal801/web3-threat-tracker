@@ -1,33 +1,48 @@
 # Web3 Threat Tracker
 
-A comprehensive Web3/blockchain/crypto domain threat intelligence tracker that aggregates 8 upstream feeds
-with multi-dimensional classification. The pipeline ingests raw domain and URL data from leading community
-and commercial sources, normalises each record against a unified schema, applies severity and confidence
-scoring, attaches threat-category tags, and exports the result to CSV, per-tag slices, and a queryable
-SQLite database — giving analysts a single authoritative feed for Web3 phishing, scam, and malware
-infrastructure.
+A comprehensive Web3/blockchain/crypto domain threat intelligence tracker with **448,000+ entries** aggregated from 8 upstream feeds. Includes a static web frontend with domain search and 5 client-side blockchain investigation tools.
+
+**Live site:** [elchacal801.github.io/web3-threat-tracker](https://elchacal801.github.io/web3-threat-tracker/)
+
+**Releases:** [Download CSVs and SQLite DB](https://github.com/elchacal801/web3-threat-tracker/releases)
+
+---
+
+## Features
+
+- **Domain Intelligence** — Search 448K+ Web3 threat domains with severity, confidence, and category classification
+- **SIEM-Ready Exports** — Pre-filtered CSVs for direct upload to CrowdStrike NG-SIEM, Splunk, or any SIEM as lookup files
+- **On-Chain Investigation Tools** — 5 browser-based blockchain trace tools (Fund Flow, Gas Tracer, Contract Audit, Mint Tracker, CCTP Tracer) powered by Etherscan API
+- **Daily Automated Ingestion** — GitHub Actions pulls from all upstream sources daily at 06:00 UTC
+- **Weekly Releases** — Tagged releases with downloadable CSVs and SQLite database every Sunday
 
 ---
 
 ## Quick Start
 
 ```bash
-git clone https://github.com/your-org/web3-threat-tracker.git
+git clone https://github.com/elchacal801/web3-threat-tracker.git
 cd web3-threat-tracker
 pip install -e ".[dev]"
 
-# Run the full pipeline (fetch → normalise → classify → export)
-python -m web3_threat_tracker.pipeline
-```
+# Run ingestion pipeline
+python -m scripts.ingest.ingest_metamask
+python -m scripts.ingest.ingest_scamsniffer
+# ... (or trigger via GitHub Actions)
 
-Exports land in `data/exports/` by default. See `pipeline --help` for options.
+# Normalize, validate, build
+python -m scripts.normalize
+python -m scripts.validate
+python -m scripts.build_db
+python -m scripts.export_csv
+python -m scripts.stats
+```
 
 ---
 
 ## Data Schema
 
-Each record in the unified dataset carries the fields described in the
-[Data Dictionary](docs/data_dictionary.md). Key groups:
+Each entry carries the fields described in the [Data Dictionary](docs/data_dictionary.md):
 
 | Group | Fields |
 |---|---|
@@ -43,26 +58,45 @@ Each record in the unified dataset carries the fields described in the
 
 | File | Description |
 |---|---|
-| `data/exports/all_domains.csv` | Full dataset, all severity levels |
-| `data/exports/malicious_only.csv` | Rows where `severity = MALICIOUS` |
-| `data/exports/high_confidence.csv` | Rows where `confidence = HIGH` |
-| `data/exports/tag_<name>.csv` | One file per threat category tag |
-| `data/exports/web3_threats.db` | SQLite database with full schema |
+| `all_domains.csv` | Full dataset, all severity levels |
+| `malicious_only.csv` | Rows where `severity = MALICIOUS` |
+| `high_confidence.csv` | Rows where `confidence = HIGH` |
+| `by_tag/<tag>.csv` | One file per threat category tag |
+| `web3_tracker.db` | SQLite database with junction tables for tags, sources, IPs, wallets |
+| `stats.json` | Summary statistics |
+
+Download from [Releases](https://github.com/elchacal801/web3-threat-tracker/releases) or build locally.
 
 ---
 
 ## Upstream Sources
 
-| Source | Approx. Records | Notes |
+| Source | Records | Notes |
 |---|---|---|
-| MetaMask eth-phishing-detect | 205 K+ | Community-curated allowlist/blocklist |
-| ScamSniffer | Ongoing | Real-time wallet drainer & phishing feed |
-| CryptoScamDB | Large | Historic + active scam domain list |
-| Chainabuse | Community | User-reported blockchain abuse reports |
-| spmedia | Ongoing | Spam / malvertising domain feed |
-| Forta Network | Real-time | On-chain threat detection alerts |
-| PhishTank | 1 M+ | General phishing, filtered for crypto |
-| URLhaus | Active | Malware URL feed, filtered for crypto |
+| ScamSniffer | 331K+ | Real-time wallet drainer and phishing feed with wallet address mapping |
+| MetaMask eth-phishing-detect | 105K+ | Community-curated blocklist |
+| CryptoScamDB | 9.8K+ | Historic + active scam domains with category classification |
+| Forta Network | 6.3K+ | On-chain phishing addresses and malicious smart contracts |
+| spmedia | 1K+ | Daily-updated crypto phishing threat intel feed |
+| PhishTank | Active | General phishing database, filtered for crypto targets |
+| Chainabuse | API | User-reported blockchain abuse (10 req/month free tier) |
+| URLhaus | API | Malware URL feed, filtered for crypto tags |
+
+---
+
+## Investigation Tools
+
+The web frontend includes 5 client-side blockchain investigation tools that call the Etherscan API directly from your browser. **Bring Your Own Key** — you provide your free Etherscan API key, it stays in your browser's localStorage.
+
+| Tool | Purpose |
+|---|---|
+| **Fund Flow** | Map ETH and ERC-20 transfers, tag known entities (CEX, DEX, bridges, mixers), identify exit paths |
+| **Gas Tracer** | Recursively trace ETH funding chain to find who funded a wallet |
+| **Contract Audit** | Detect proxy patterns, extract roles/owners, pull upgrade and role change history |
+| **Mint Tracker** | Detect unauthorized token mints (Transfer events from null address) |
+| **CCTP Tracer** | Detect Circle Cross-Chain Transfer Protocol activity |
+
+Known address database includes 49 tagged entities: Binance, Coinbase, Kraken, Uniswap, Tornado Cash, and more.
 
 ---
 
@@ -70,12 +104,10 @@ Each record in the unified dataset carries the fields described in the
 
 | Level | Meaning |
 |---|---|
-| `LEGITIMATE` | Verified safe; used as allowlist seed |
+| `LEGITIMATE` | Verified safe; used as allowlist baseline |
 | `SUSPICIOUS` | Behavioural or registration anomalies; monitor |
 | `RISKY` | Strong indicators of abuse; block recommended |
 | `MALICIOUS` | Confirmed threat activity; block immediately |
-
----
 
 ## Confidence
 
@@ -89,24 +121,29 @@ Each record in the unified dataset carries the fields described in the
 
 ## Threat Category Tags (19)
 
-`wallet-drainer` · `ice-phishing` · `address-poisoning` · `pig-butchering` ·
-`etherhiding` · `clickfix` · `smishing` · `vishing` · `fake-exchange` ·
-`fake-wallet` · `rug-pull` · `ponzi` · `nft-scam` · `airdrop-scam` ·
-`blockchain-domain-abuse` · `malware-distribution` · `c2` · `credential-stealer` ·
-`impersonation`
+`drainer` `phishing` `rug_pull` `fake_exchange` `fake_wallet` `fake_airdrop` `etherhiding` `clickfix` `pig_butchering` `address_poisoning` `ice_phishing` `investment_scam` `impersonation` `c2_infrastructure` `credential_stealer` `nft_scam` `defi_impersonation` `smishing` `typosquat`
 
-See [Threat Landscape](docs/threat_landscape.md) for technique descriptions and key statistics.
+See [Threat Landscape](docs/threat_landscape.md) for technique descriptions, detection patterns, and key statistics.
+
+---
+
+## SIEM Integration
+
+See [SIEM Integration Guide](docs/siem_integration.md) for detailed instructions:
+
+- **CrowdStrike NG-SIEM:** Upload `malicious_only.csv` as a LogScale Lookup File
+- **Splunk:** Upload as lookup table, query with `| lookup web3_threats domain AS query`
+- **Generic:** Any SIEM supporting CSV lookup files
 
 ---
 
 ## Contributing
 
-Pull requests are welcome. Please read [CONTRIBUTING.md](docs/contributing.md) for:
+Pull requests welcome. See [CONTRIBUTING.md](docs/contributing.md) for:
 
 - How to add manual entries (YAML format)
-- PR submission process
-- Schema validation requirements
-- Severity / confidence assignment guidelines
+- PR submission process and schema validation
+- Severity/confidence assignment guidelines
 
 ---
 
