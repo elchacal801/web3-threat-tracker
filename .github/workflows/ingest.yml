@@ -56,6 +56,8 @@ jobs:
 
       - name: Run URLhaus ingester
         continue-on-error: true
+        env:
+          URLHAUS_API_KEY: ${{ secrets.URLHAUS_API_KEY }}
         run: python -m scripts.ingest.ingest_urlhaus
 
       - name: Normalize and deduplicate

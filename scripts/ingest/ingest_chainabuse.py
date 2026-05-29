@@ -41,30 +41,20 @@ class ChainabuseIngester(BaseIngester):
         if not self.api_key:
             logger.warning("CHAINABUSE_API_KEY not set, skipping API fetch")
             return []
-        all_reports = []
-        page = 1
-        while True:
-            try:
-                resp = requests.get(
-                    f"{API_BASE}/reports",
-                    auth=(self.api_key, self.api_key),
-                    params={"page": page, "perPage": 50},
-                    timeout=30,
-                )
-                resp.raise_for_status()
-            except requests.RequestException as e:
-                logger.error(f"[chainabuse] API request failed (page {page}): {e}")
-                break
-            data = resp.json()
-            reports = data if isinstance(data, list) else data.get("reports", [])
-            if not reports:
-                break
-            all_reports.extend(reports)
-            page += 1
-            time.sleep(1)
-            if page > 100:
-                break
-        return all_reports
+        # Chainabuse free tier: 10 requests/month. Fetch only 1 page per run.
+        try:
+            resp = requests.get(
+                f"{API_BASE}/reports",
+                auth=(self.api_key, self.api_key),
+                params={"page": 1, "perPage": 50},
+                timeout=30,
+            )
+            resp.raise_for_status()
+        except requests.RequestException as e:
+            logger.error(f"[chainabuse] API request failed: {e}")
+            return []
+        data = resp.json()
+        return data if isinstance(data, list) else data.get("reports", [])
 
     def parse(self, raw_data: list[dict]) -> list[Entry]:
         seen = set()

@@ -17,11 +17,24 @@ class URLhausIngester(BaseIngester):
     SOURCE_NAME = "urlhaus"
     OUTPUT_DIR = "urlhaus"
 
+    def __init__(self, base_dir=None, api_key=None):
+        super().__init__(base_dir)
+        self.api_key = api_key or os.environ.get("URLHAUS_API_KEY", "")
+
     def fetch(self) -> list[dict]:
+        headers = {}
+        if self.api_key:
+            headers["Auth-Key"] = self.api_key
+
         all_urls = []
         for tag in CRYPTO_TAGS:
             try:
-                resp = requests.post(f"{API_BASE}/tag/", data={"tag": tag}, timeout=60)
+                resp = requests.post(
+                    f"{API_BASE}/tag/",
+                    data={"tag": tag},
+                    headers=headers,
+                    timeout=60,
+                )
                 resp.raise_for_status()
             except requests.RequestException as e:
                 logger.error(f"[urlhaus] API request failed for tag '{tag}': {e}")
