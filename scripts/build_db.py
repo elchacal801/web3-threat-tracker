@@ -78,7 +78,7 @@ def build_database(entries: list[Entry], db_path: str) -> None:
 
     for entry in entries:
         cursor = conn.execute(
-            """INSERT INTO entries (domain, url, type, severity, confidence, first_seen, last_seen,
+            """INSERT OR IGNORE INTO entries (domain, url, type, severity, confidence, first_seen, last_seen,
                added_by, registrar, registration_date, whois_privacy, hosting_provider, asn,
                ssl_issuer, ssl_validity_days, blockchain_network, ens_name, unstoppable_domain, notes)
                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
@@ -89,6 +89,8 @@ def build_database(entries: list[Entry], db_path: str) -> None:
              entry.ens_name, entry.unstoppable_domain, entry.notes),
         )
         entry_id = cursor.lastrowid
+        if entry_id is None:
+            continue
 
         for tag in set(entry.tags):
             conn.execute("INSERT OR IGNORE INTO entry_tags (entry_id, tag) VALUES (?, ?)", (entry_id, tag))
