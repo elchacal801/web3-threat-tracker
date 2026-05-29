@@ -90,14 +90,14 @@ def build_database(entries: list[Entry], db_path: str) -> None:
         )
         entry_id = cursor.lastrowid
 
-        for tag in entry.tags:
-            conn.execute("INSERT INTO entry_tags (entry_id, tag) VALUES (?, ?)", (entry_id, tag))
-        for source in entry.sources:
-            conn.execute("INSERT INTO entry_sources (entry_id, source) VALUES (?, ?)", (entry_id, source))
-        for ip in (entry.ip_addresses or []):
-            conn.execute("INSERT INTO entry_ips (entry_id, ip) VALUES (?, ?)", (entry_id, ip))
-        for wallet in (entry.wallet_addresses or []):
-            conn.execute("INSERT INTO entry_wallets (entry_id, wallet) VALUES (?, ?)", (entry_id, wallet))
+        for tag in set(entry.tags):
+            conn.execute("INSERT OR IGNORE INTO entry_tags (entry_id, tag) VALUES (?, ?)", (entry_id, tag))
+        for source in set(entry.sources):
+            conn.execute("INSERT OR IGNORE INTO entry_sources (entry_id, source) VALUES (?, ?)", (entry_id, source))
+        for ip in set(entry.ip_addresses or []):
+            conn.execute("INSERT OR IGNORE INTO entry_ips (entry_id, ip) VALUES (?, ?)", (entry_id, ip))
+        for wallet in set(entry.wallet_addresses or []):
+            conn.execute("INSERT OR IGNORE INTO entry_wallets (entry_id, wallet) VALUES (?, ?)", (entry_id, wallet))
 
     conn.commit()
     conn.close()
