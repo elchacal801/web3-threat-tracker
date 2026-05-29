@@ -1,19 +1,79 @@
 /* =========================================================
    Web3 Threat Tracker — Custom Styles
+   Black + cyber-green. Small type. Sharp edges.
    ========================================================= */
 
-/* ----- Layout ----- */
-body {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
+/* ----- Override Pico dark theme ----- */
+:root[data-theme="dark"] {
+    --pico-background-color: #0a0a0a;
+    --pico-card-background-color: #111111;
+    --pico-card-border-color: #1a1a1a;
+    --pico-primary: #00ff88;
+    --pico-primary-hover: #00cc6a;
+    --pico-primary-background: #00ff8818;
+    --pico-primary-inverse: #00ff88;
+    --pico-secondary: #333;
+    --pico-secondary-background: #1a1a1a;
+    --pico-secondary-inverse: #888;
+    --pico-color: #c0c0c0;
+    --pico-h1-color: #00ff88;
+    --pico-h2-color: #e0e0e0;
+    --pico-h3-color: #c0c0c0;
+    --pico-h4-color: #999;
+    --pico-muted-color: #555;
+    --pico-border-radius: 2px;
+    --pico-font-size: 13px;
+    --pico-line-height: 1.45;
+    --pico-table-border-color: #1a1a1a;
+    --pico-code-background-color: #0d0d0d;
 }
 
+/* ----- Severity ----- */
+:root {
+    --color-legitimate: #00ff88;
+    --color-suspicious: #ccaa00;
+    --color-risky: #cc5500;
+    --color-malicious: #ff2222;
+    --color-confidence-high: #00aaff;
+    --color-confidence-medium: #555;
+    --color-confidence-low: #333;
+}
+
+/* ----- Base ----- */
+body {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    font-size: 13px;
+    background: #0a0a0a;
+    color: #c0c0c0;
+}
+
+h1 { font-size: 1.3rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 0.5rem; }
+h2 { font-size: 1.05rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.5rem; }
+h3 { font-size: 0.95rem; font-weight: 600; margin-top: 1.2rem; margin-bottom: 0.4rem; }
+h4 { font-size: 0.85rem; font-weight: 600; color: #00ff88; margin-top: 1rem; margin-bottom: 0.3rem; text-transform: uppercase; letter-spacing: 0.06em; }
+
+a { color: #00ff88; }
+a:hover { color: #00cc6a; }
+
+table { font-size: 0.82rem; }
+th { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: #666; font-weight: 600; }
+td { padding: 0.3rem 0.5rem; }
+th { padding: 0.3rem 0.5rem; }
+
+input, select, button { font-size: 0.82rem; }
+button { text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; font-size: 0.75rem; }
+
+footer { border-top: 1px solid #1a1a1a; margin-top: 2rem; padding: 0.8rem 0; font-size: 0.72rem; color: #444; }
+
 /* ----- Navigation ----- */
+nav { border-bottom: 1px solid #1a1a1a; margin-bottom: 1.5rem; padding-bottom: 0.5rem; }
+
 nav ul {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.25rem;
+    gap: 0;
     list-style: none;
     padding: 0;
     margin: 0;
@@ -21,210 +81,207 @@ nav ul {
 
 nav ul li a {
     display: inline-block;
-    padding: 0.35rem 0.75rem;
-    border-radius: var(--pico-border-radius);
+    padding: 0.3rem 0.6rem;
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #666;
+    border-bottom: 2px solid transparent;
 }
 
-nav ul li a:hover {
-    background: var(--pico-secondary-background);
-}
-
-nav ul li a.active {
-    background: var(--pico-primary-background);
-    color: var(--pico-primary-inverse);
-}
-
-/* ----- Severity color variables ----- */
-:root {
-    --color-legitimate: #2ecc71;
-    --color-suspicious: #f1c40f;
-    --color-risky: #e67e22;
-    --color-malicious: #e74c3c;
-
-    --color-confidence-high: #3498db;
-    --color-confidence-medium: #95a5a6;
-    --color-confidence-low: #bdc3c7;
-}
+nav ul li a:hover { color: #00ff88; }
+nav ul li a.active { color: #00ff88; border-bottom-color: #00ff88; }
 
 /* ----- Severity badges ----- */
 [class^="badge-"] {
     display: inline-block;
-    padding: 0.2em 0.55em;
-    border-radius: 0.3em;
-    font-size: 0.75rem;
+    padding: 0.1em 0.4em;
+    border-radius: 1px;
+    font-size: 0.65rem;
     font-weight: 700;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: #fff;
+    font-family: monospace;
 }
 
-.badge-legitimate { background: var(--color-legitimate); }
-.badge-suspicious  { background: var(--color-suspicious); color: #111; }
-.badge-risky       { background: var(--color-risky); }
-.badge-malicious   { background: var(--color-malicious); }
+.badge-legitimate { background: none; color: var(--color-legitimate); border: 1px solid var(--color-legitimate); }
+.badge-suspicious { background: none; color: var(--color-suspicious); border: 1px solid var(--color-suspicious); }
+.badge-risky      { background: none; color: var(--color-risky); border: 1px solid var(--color-risky); }
+.badge-malicious  { background: none; color: var(--color-malicious); border: 1px solid var(--color-malicious); }
 
-/* ----- Confidence badges ----- */
-.badge-high   { background: var(--color-confidence-high); color: #fff; }
-.badge-medium { background: var(--color-confidence-medium); color: #111; }
-.badge-low    { background: var(--color-confidence-low); color: #111; }
+.badge-high   { background: none; color: var(--color-confidence-high); border: 1px solid var(--color-confidence-high); }
+.badge-medium { background: none; color: #666; border: 1px solid #333; }
+.badge-low    { background: none; color: #444; border: 1px solid #222; }
 
 /* ----- Tag pills ----- */
 .tag-pill {
     display: inline-block;
-    padding: 0.15em 0.5em;
-    border-radius: 999px;
-    font-size: 0.72rem;
-    background: var(--pico-secondary-background);
-    color: var(--pico-secondary-inverse);
-    margin: 0.1em 0.15em;
+    padding: 0.08em 0.35em;
+    font-size: 0.62rem;
+    font-family: monospace;
+    letter-spacing: 0.04em;
+    background: #111;
+    color: #00ff88;
+    border: 1px solid #1a1a1a;
+    margin: 0.05em 0.1em;
     white-space: nowrap;
 }
 
 /* ----- Monospace / addresses ----- */
-.mono,
-.addr {
-    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
-    font-size: 0.85em;
+.mono, .addr {
+    font-family: "SF Mono", "Cascadia Code", Consolas, "Liberation Mono", monospace;
+    font-size: 0.78em;
     word-break: break-all;
 }
+
+.addr a { color: #00ff88; text-decoration: none; }
+.addr a:hover { text-decoration: underline; }
 
 /* ----- Stats grid ----- */
 .stats-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-    margin: 1.5rem 0;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 0.75rem;
+    margin: 1rem 0;
 }
 
 /* ----- Stat cards ----- */
 .stat-card {
-    background: var(--pico-card-background-color);
-    border: 1px solid var(--pico-card-border-color);
-    border-radius: var(--pico-border-radius);
-    padding: 1.25rem 1rem;
+    background: #111;
+    border: 1px solid #1a1a1a;
+    padding: 1rem 0.75rem;
     text-align: center;
 }
 
 .stat-card .stat-value {
     display: block;
-    font-size: 2.5rem;
+    font-size: 1.8rem;
     font-weight: 700;
+    font-family: monospace;
     line-height: 1.1;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.2rem;
+    color: #00ff88;
 }
 
 .stat-card .stat-label {
-    font-size: 0.85rem;
-    opacity: 0.7;
+    font-size: 0.65rem;
     text-transform: uppercase;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.1em;
+    color: #555;
 }
 
 /* ----- API key section ----- */
 .api-key-section {
-    background: var(--pico-card-background-color);
-    border: 1px solid var(--pico-card-border-color);
-    border-radius: var(--pico-border-radius);
-    padding: 1rem 1.25rem;
-    margin-bottom: 1.5rem;
+    background: #111;
+    border: 1px solid #1a1a1a;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
 }
 
 .api-key-section label {
-    font-size: 0.9rem;
+    font-size: 0.72rem;
     font-weight: 600;
-    margin-bottom: 0.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #666;
+    margin-bottom: 0.3rem;
     display: block;
 }
 
 .api-key-section .api-key-row {
     display: flex;
-    gap: 0.5rem;
+    gap: 0.4rem;
     align-items: flex-end;
     flex-wrap: wrap;
 }
 
 .api-key-section .api-key-row input {
     flex: 1;
-    min-width: 200px;
+    min-width: 180px;
     margin-bottom: 0;
+    font-family: monospace;
+    font-size: 0.78rem;
+    background: #0a0a0a;
+    border-color: #222;
 }
 
-.api-key-section .api-key-row button {
-    margin-bottom: 0;
-}
+.api-key-section .api-key-row button { margin-bottom: 0; }
 
 .api-key-section small {
     display: block;
-    margin-top: 0.4rem;
-    opacity: 0.7;
+    margin-top: 0.3rem;
+    font-size: 0.68rem;
+    color: #444;
 }
 
 /* ----- Results table ----- */
 .results-table-wrap {
     overflow-x: auto;
-    margin-top: 1rem;
+    margin-top: 0.75rem;
 }
 
 .results-table-wrap table {
-    min-width: 600px;
+    min-width: 500px;
     width: 100%;
 }
 
-/* ----- Loading spinner ----- */
-@keyframes spin {
-    to { transform: rotate(360deg); }
-}
+/* Clickable rows */
+tr[style*="cursor"] { transition: background 0.1s; }
+tr[style*="cursor"]:hover { background: #0d1a10; }
+
+/* ----- Loading ----- */
+@keyframes spin { to { transform: rotate(360deg); } }
 
 .spinner {
     display: inline-block;
-    width: 1.4rem;
-    height: 1.4rem;
-    border: 3px solid var(--pico-secondary-background);
-    border-top-color: var(--pico-primary);
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid #1a1a1a;
+    border-top-color: #00ff88;
     border-radius: 50%;
-    animation: spin 0.75s linear infinite;
+    animation: spin 0.6s linear infinite;
     vertical-align: middle;
-    margin-right: 0.5rem;
+    margin-right: 0.4rem;
 }
 
 .loading-msg {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 1rem 0;
-    opacity: 0.8;
+    gap: 0.4rem;
+    padding: 0.75rem 0;
+    font-size: 0.78rem;
+    color: #555;
 }
 
-/* ----- Error messages ----- */
+/* ----- Error ----- */
 .error-msg {
-    border: 2px solid var(--color-malicious);
-    border-radius: var(--pico-border-radius);
-    padding: 0.75rem 1rem;
-    color: var(--color-malicious);
-    margin-top: 1rem;
+    border: 1px solid #ff2222;
+    padding: 0.5rem 0.75rem;
+    color: #ff2222;
+    font-size: 0.8rem;
+    margin-top: 0.75rem;
+    background: #1a0808;
 }
 
 /* ----- Detail panel ----- */
 .detail-panel {
-    background: var(--pico-card-background-color);
-    border: 1px solid var(--pico-card-border-color);
-    border-radius: var(--pico-border-radius);
-    padding: 1.25rem;
-    margin-top: 1rem;
+    background: #0d0d0d;
+    border: 1px solid #1a1a1a;
+    padding: 0.75rem;
+    margin-top: 0.5rem;
 }
 
-.detail-panel h3 {
-    margin-top: 0;
-}
+.detail-panel h3 { margin-top: 0; }
+.detail-panel th { text-align: left; color: #555; padding-right: 1rem; white-space: nowrap; }
+.detail-panel td { color: #c0c0c0; }
 
-/* ----- Gas tracer tree nodes ----- */
+/* ----- Gas tracer tree ----- */
 .tree-node {
-    margin-left: 1.5rem;
-    border-left: 2px solid var(--pico-secondary-background);
-    padding-left: 0.75rem;
-    margin-top: 0.4rem;
+    margin-left: 1.2rem;
+    border-left: 1px solid #1a1a1a;
+    padding-left: 0.6rem;
+    margin-top: 0.3rem;
 }
 
 .tree-node-root {
@@ -234,6 +291,42 @@ nav ul li a.active {
 }
 
 .tree-node-label {
-    font-size: 0.88rem;
-    margin-bottom: 0.2rem;
+    font-size: 0.78rem;
+    margin-bottom: 0.15rem;
+    color: #888;
+}
+
+/* ----- Search ----- */
+#search-input {
+    font-family: monospace;
+    font-size: 0.85rem;
+    background: #0a0a0a;
+    border-color: #222;
+}
+
+#search-input:focus { border-color: #00ff88; }
+
+#result-count {
+    font-size: 0.72rem;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin: 0.4rem 0;
+}
+
+/* ----- Form inputs in tools ----- */
+#trace-form input[type="text"],
+#trace-form input[type="number"] {
+    font-family: monospace;
+    font-size: 0.82rem;
+    background: #0a0a0a;
+    border-color: #222;
+}
+
+#trace-form input:focus { border-color: #00ff88; }
+
+/* ----- Responsive ----- */
+@media (max-width: 768px) {
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    nav ul li a { font-size: 0.65rem; padding: 0.25rem 0.4rem; }
 }
