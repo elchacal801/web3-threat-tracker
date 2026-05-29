@@ -20,8 +20,12 @@ class URLhausIngester(BaseIngester):
     def fetch(self) -> list[dict]:
         all_urls = []
         for tag in CRYPTO_TAGS:
-            resp = requests.post(f"{API_BASE}/tag/", data={"tag": tag}, timeout=60)
-            resp.raise_for_status()
+            try:
+                resp = requests.post(f"{API_BASE}/tag/", data={"tag": tag}, timeout=60)
+                resp.raise_for_status()
+            except requests.RequestException as e:
+                logger.error(f"[urlhaus] API request failed for tag '{tag}': {e}")
+                continue
             data = resp.json()
             if data.get("query_status") == "ok":
                 all_urls.extend(data.get("urls", []))
