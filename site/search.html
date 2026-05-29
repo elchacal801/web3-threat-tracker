@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search — Web3 Threat Tracker</title>
+    <link rel="stylesheet" href="css/pico.min.css" />
+    <link rel="stylesheet" href="css/app.css" />
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="search.html" class="active">Search</a></li>
+                <li><a href="tools/fund-flow.html">Fund Flow</a></li>
+                <li><a href="tools/gas-tracer.html">Gas Tracer</a></li>
+                <li><a href="tools/contract-audit.html">Contract Audit</a></li>
+                <li><a href="tools/mint-tracker.html">Mint Tracker</a></li>
+                <li><a href="tools/cctp-tracer.html">CCTP Tracer</a></li>
+            </ul>
+        </nav>
+        <hgroup>
+            <h1>Search</h1>
+            <p>Search the threat intelligence database</p>
+        </hgroup>
+    </header>
+
+    <main>
+        <section>
+            <div role="group">
+                <input
+                    id="search-input"
+                    type="search"
+                    placeholder="Search domains..."
+                    aria-label="Search domains"
+                />
+                <select id="severity-filter" aria-label="Filter by severity">
+                    <option value="">All</option>
+                    <option value="MALICIOUS">MALICIOUS</option>
+                    <option value="RISKY">RISKY</option>
+                    <option value="SUSPICIOUS">SUSPICIOUS</option>
+                    <option value="LEGITIMATE">LEGITIMATE</option>
+                </select>
+            </div>
+
+            <div id="result-count" aria-live="polite"></div>
+        </section>
+
+        <section>
+            <div id="results">
+                <!-- Results injected by search.js -->
+            </div>
+        </section>
+    </main>
+
+    <script src="js/search.js"></script>
+</body>
+</html>

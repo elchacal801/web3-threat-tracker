@@ -1,0 +1,239 @@
+/* =========================================================
+   Web3 Threat Tracker — Custom Styles
+   ========================================================= */
+
+/* ----- Layout ----- */
+body {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* ----- Navigation ----- */
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li a {
+    display: inline-block;
+    padding: 0.35rem 0.75rem;
+    border-radius: var(--pico-border-radius);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+nav ul li a:hover {
+    background: var(--pico-secondary-background);
+}
+
+nav ul li a.active {
+    background: var(--pico-primary-background);
+    color: var(--pico-primary-inverse);
+}
+
+/* ----- Severity color variables ----- */
+:root {
+    --color-legitimate: #2ecc71;
+    --color-suspicious: #f1c40f;
+    --color-risky: #e67e22;
+    --color-malicious: #e74c3c;
+
+    --color-confidence-high: #3498db;
+    --color-confidence-medium: #95a5a6;
+    --color-confidence-low: #bdc3c7;
+}
+
+/* ----- Severity badges ----- */
+[class^="badge-"] {
+    display: inline-block;
+    padding: 0.2em 0.55em;
+    border-radius: 0.3em;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.badge-legitimate { background: var(--color-legitimate); }
+.badge-suspicious  { background: var(--color-suspicious); color: #111; }
+.badge-risky       { background: var(--color-risky); }
+.badge-malicious   { background: var(--color-malicious); }
+
+/* ----- Confidence badges ----- */
+.badge-high   { background: var(--color-confidence-high); color: #fff; }
+.badge-medium { background: var(--color-confidence-medium); color: #111; }
+.badge-low    { background: var(--color-confidence-low); color: #111; }
+
+/* ----- Tag pills ----- */
+.tag-pill {
+    display: inline-block;
+    padding: 0.15em 0.5em;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    background: var(--pico-secondary-background);
+    color: var(--pico-secondary-inverse);
+    margin: 0.1em 0.15em;
+    white-space: nowrap;
+}
+
+/* ----- Monospace / addresses ----- */
+.mono,
+.addr {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    font-size: 0.85em;
+    word-break: break-all;
+}
+
+/* ----- Stats grid ----- */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+/* ----- Stat cards ----- */
+.stat-card {
+    background: var(--pico-card-background-color);
+    border: 1px solid var(--pico-card-border-color);
+    border-radius: var(--pico-border-radius);
+    padding: 1.25rem 1rem;
+    text-align: center;
+}
+
+.stat-card .stat-value {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 0.25rem;
+}
+
+.stat-card .stat-label {
+    font-size: 0.85rem;
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+/* ----- API key section ----- */
+.api-key-section {
+    background: var(--pico-card-background-color);
+    border: 1px solid var(--pico-card-border-color);
+    border-radius: var(--pico-border-radius);
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.api-key-section label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    display: block;
+}
+
+.api-key-section .api-key-row {
+    display: flex;
+    gap: 0.5rem;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+
+.api-key-section .api-key-row input {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 0;
+}
+
+.api-key-section .api-key-row button {
+    margin-bottom: 0;
+}
+
+.api-key-section small {
+    display: block;
+    margin-top: 0.4rem;
+    opacity: 0.7;
+}
+
+/* ----- Results table ----- */
+.results-table-wrap {
+    overflow-x: auto;
+    margin-top: 1rem;
+}
+
+.results-table-wrap table {
+    min-width: 600px;
+    width: 100%;
+}
+
+/* ----- Loading spinner ----- */
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.spinner {
+    display: inline-block;
+    width: 1.4rem;
+    height: 1.4rem;
+    border: 3px solid var(--pico-secondary-background);
+    border-top-color: var(--pico-primary);
+    border-radius: 50%;
+    animation: spin 0.75s linear infinite;
+    vertical-align: middle;
+    margin-right: 0.5rem;
+}
+
+.loading-msg {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 0;
+    opacity: 0.8;
+}
+
+/* ----- Error messages ----- */
+.error-msg {
+    border: 2px solid var(--color-malicious);
+    border-radius: var(--pico-border-radius);
+    padding: 0.75rem 1rem;
+    color: var(--color-malicious);
+    margin-top: 1rem;
+}
+
+/* ----- Detail panel ----- */
+.detail-panel {
+    background: var(--pico-card-background-color);
+    border: 1px solid var(--pico-card-border-color);
+    border-radius: var(--pico-border-radius);
+    padding: 1.25rem;
+    margin-top: 1rem;
+}
+
+.detail-panel h3 {
+    margin-top: 0;
+}
+
+/* ----- Gas tracer tree nodes ----- */
+.tree-node {
+    margin-left: 1.5rem;
+    border-left: 2px solid var(--pico-secondary-background);
+    padding-left: 0.75rem;
+    margin-top: 0.4rem;
+}
+
+.tree-node-root {
+    margin-left: 0;
+    border-left: none;
+    padding-left: 0;
+}
+
+.tree-node-label {
+    font-size: 0.88rem;
+    margin-bottom: 0.2rem;
+}
