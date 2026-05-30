@@ -6,7 +6,8 @@
 const FundFlow = {
 
     async trace(address, chainId) {
-        address = normalize(address);
+        const isSolana = chainId === 'solana';
+        address = isSolana ? address.trim() : normalize(address);
         if (!address) { UI.showError('Invalid address.'); return; }
         UI.showLoading('results');
         const adapter = getAdapter(chainId || 1);
@@ -25,21 +26,26 @@ const FundFlow = {
         if (!Array.isArray(internalTxs)) internalTxs = [];
         if (!Array.isArray(erc20Txs))    erc20Txs    = [];
         const truncated = !!(normalTxs._truncated || internalTxs._truncated || erc20Txs._truncated);
-        const { nodes, edges } = this._buildGraph(address, normalTxs, internalTxs, erc20Txs);
-        const exitPaths        = this._findExitPaths(address, edges, nodes);
-        const fundingSources   = this._findFundingSources(address, edges, nodes);
+        const { nodes, edges } = this._buildGraph(address, normalTxs, internalTxs, erc20Txs, adapter);
+        const exitPaths        = this._findExitPaths(address, edges, nodes, isSolana);
+        const fundingSources   = this._findFundingSources(address, edges, nodes, isSolana);
         this._render(address, nodes, edges, exitPaths, fundingSources, truncated, adapter);
     },
 
-    _buildGraph(target, normalTxs, internalTxs, erc20Txs) {
+    _buildGraph(target, normalTxs, internalTxs, erc20Txs, adapter) {
         const nodes    = new Map();
         const edgesMap = new Map();
 
+        const isSolana = adapter && adapter.constructor === SolanaAdapter;
+        const normalizeAddr = isSolana ? (a => (a || '').trim()) : normalize;
+
         const ensureNode = (addr) => {
-            const a = normalize(addr);
+            const a = normalizeAddr(addr);
             if (!a) return null;
             if (!nodes.has(a)) {
-                const tag  = tagAddress(a);
+                const tag  = isSolana
+                    ? (typeof SOLANA_KNOWN !== 'undefined' && SOLANA_KNOWN[a] ? SOLANA_KNOWN[a] : tagAddress(a))
+                    : tagAddress(a);
                 const type = a === target ? 'target' : tag ? tag.type : 'external';
                 nodes.set(a, { address: a, label: tag ? tag.name : shortAddr(a), type, tag, volIn: 0, volOut: 0 });
             }
@@ -47,7 +53,7 @@ const FundFlow = {
         };
 
         const addEdge = (from, to, amount, token, txHash, timestamp) => {
-            from = normalize(from); to = normalize(to);
+            from = normalizeAddr(from); to = normalizeAddr(to);
             if (!from || !to) return;
             const key = txHash + '-' + from + '-' + to + '-' + token + '-' + amount;
             if (edgesMap.has(key)) return;
@@ -58,13 +64,16 @@ const FundFlow = {
             edgesMap.set(key, { from, to, amount, token, txHash, timestamp });
         };
 
+        const nativeSymbol = isSolana ? 'SOL' : 'ETH';
+        const toDecimal = adapter ? (v => adapter.nativeToDecimal(v)) : weiToEth;
+
         for (const tx of normalTxs) {
             if (tx.isError === '1' || !tx.value || tx.value === '0') continue;
-            addEdge(tx.from, tx.to, weiToEth(tx.value), 'ETH', tx.hash, tx.timeStamp);
+            addEdge(tx.from, tx.to, toDecimal(tx.value), nativeSymbol, tx.hash, tx.timeStamp);
         }
         for (const tx of internalTxs) {
             if (tx.isError === '1' || !tx.value || tx.value === '0') continue;
-            addEdge(tx.from || tx.contractAddress || '', tx.to, weiToEth(tx.value), 'ETH', tx.hash, tx.timeStamp);
+            addEdge(tx.from || tx.contractAddress || '', tx.to, toDecimal(tx.value), nativeSymbol, tx.hash, tx.timeStamp);
         }
         for (const tx of erc20Txs) {
             const decimals = parseInt(tx.tokenDecimal, 10) || 18;
@@ -74,18 +83,20 @@ const FundFlow = {
         return { nodes, edges: Array.from(edgesMap.values()) };
     },
 
-    _findExitPaths(target, edges, nodes) {
+    _findExitPaths(target, edges, nodes, isSolana) {
+        const norm = isSolana ? (a => (a || '').trim()) : normalize;
         return edges.filter(e => {
-            if (normalize(e.from) !== target) return false;
-            const n = nodes.get(normalize(e.to));
+            if (norm(e.from) !== target) return false;
+            const n = nodes.get(norm(e.to));
             return n && (n.type === 'cex' || n.type === 'bridge' || n.type === 'mixer');
         });
     },
 
-    _findFundingSources(target, edges, nodes) {
+    _findFundingSources(target, edges, nodes, isSolana) {
+        const norm = isSolana ? (a => (a || '').trim()) : normalize;
         return edges.filter(e => {
-            if (normalize(e.to) !== target) return false;
-            const n = nodes.get(normalize(e.from));
+            if (norm(e.to) !== target) return false;
+            const n = nodes.get(norm(e.from));
             return n && (n.type === 'cex' || n.type === 'bridge' || n.type === 'mixer' || n.type === 'dex');
         });
     },
@@ -208,7 +219,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         form.addEventListener('submit', (e) => {
             e.preventDefault();
             const addr = addrInput ? addrInput.value.trim() : '';
-            const chainId = chainSelect ? parseInt(chainSelect.value, 10) : 1;
+            const raw = chainSelect ? chainSelect.value : '1';
+            const chainId = raw === 'solana' ? 'solana' : parseInt(raw, 10);
             if (addr) FundFlow.trace(addr, chainId);
         });
     }

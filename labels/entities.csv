@@ -49,3 +49,20 @@ chain,address,entity,category,source,confidence
 1,0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48,USDC,token,manual,high
 1,0xdac17f958d2ee523a2206206994597c13d831ec7,USDT,token,manual,high
 1,0x6b175474e89094c44da98b954eedeac495271d0f,DAI,token,manual,high
+solana,JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4,Jupiter V6,dex,manual,high
+solana,JUP4Fb2cqiRUcaTHdrPC8h2gNsA2ETXiPDD33WcGuJB,Jupiter V4,dex,manual,high
+solana,675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8,Raydium AMM,dex,manual,high
+solana,CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK,Raydium CLMM,dex,manual,high
+solana,whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc,Orca Whirlpool,dex,manual,high
+solana,9W959DqEETiGZocYWCQPaJ6sBmUzgfxXfqGeTEdp3aQP,Orca Swap V2,dex,manual,high
+solana,DjVE6JNiYqPL2QXyCUUh8rNjHrbz9hXHNYt99MQ59qw1,Orca Token Swap,dex,manual,high
+solana,wormDTUJ6AWPNvk59vGQbDvGJmqbDTdgWgAqcLBCgUb,Wormhole,bridge,manual,high
+solana,worm2ZoG2kUd4vFXhvjh93UUH596ayRfgQ2MgjNMTth,Wormhole Token Bridge,bridge,manual,high
+solana,mSoLzYCxHdYgdzU16g5QSh3i5K3z3KZK7ytfqcJm7So,Marinade Finance,defi,manual,high
+solana,MarBmsSgKXdrN1egZf5sqe1TMai9K1rChYNDJgjq7aD,Marinade Native,defi,manual,high
+solana,So11111111111111111111111111111111111111112,Wrapped SOL,token,manual,high
+solana,EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v,USDC (Solana),token,manual,high
+solana,Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB,USDT (Solana),token,manual,high
+solana,11111111111111111111111111111111,System Program,system,manual,high
+solana,TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA,Token Program,system,manual,high
+solana,ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL,Associated Token Program,system,manual,high

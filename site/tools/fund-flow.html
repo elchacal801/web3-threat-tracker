@@ -27,7 +27,7 @@
     </header>
 
     <main>
-        <section class="api-key-section">
+        <section class="api-key-section" id="etherscan-key-section">
             <label for="api-key-input">Etherscan API Key</label>
             <div class="api-key-row">
                 <input
@@ -43,6 +43,22 @@
             </small>
         </section>
 
+        <section class="api-key-section" id="helius-key-section" style="display:none">
+            <label for="helius-key-input">Helius API Key</label>
+            <div class="api-key-row">
+                <input
+                    id="helius-key-input"
+                    type="password"
+                    placeholder="Enter your Helius API key"
+                    aria-label="Helius API key"
+                />
+                <button id="save-helius-key">Save</button>
+            </div>
+            <small>
+                Get a free key at <a href="https://www.helius.dev/" target="_blank" rel="noopener noreferrer">helius.dev</a>
+            </small>
+        </section>
+
         <section>
             <form id="trace-form">
                 <label for="chain-select">Chain</label>
@@ -53,6 +69,7 @@
                     <option value="42161">Arbitrum</option>
                     <option value="8453">Base</option>
                     <option value="10">Optimism</option>
+                    <option value="solana">Solana</option>
                 </select>
                 <label for="address-input">Address</label>
                 <input
@@ -76,6 +93,7 @@
 
     <script src="../js/common.js"></script>
     <script src="../js/ui.js"></script>
+    <script src="../js/solana-adapter.js"></script>
     <script src="../js/chain-adapter.js"></script>
     <script src="../js/playbooks/fund-flow.js"></script>
 </body>

@@ -176,7 +176,10 @@ function normalize(addr) {
     if (!addr.startsWith('0x')) addr = '0x' + addr;
     return addr;
 }
-function tagAddress(addr) { return KNOWN_ADDRESSES[normalize(addr)] || null; }
+function tagAddress(addr) {
+    if (typeof SOLANA_KNOWN !== 'undefined' && addr && SOLANA_KNOWN[addr.trim()]) return SOLANA_KNOWN[addr.trim()];
+    return KNOWN_ADDRESSES[normalize(addr)] || null;
+}
 function isNullAddress(addr) { return normalize(addr) === '0x0000000000000000000000000000000000000000'; }
 function weiToEth(wei) { return Number(wei) / 1e18; }
 function weiToToken(wei, decimals) { decimals = decimals || 18; return Number(wei) / Math.pow(10, decimals); }

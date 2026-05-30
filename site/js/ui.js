@@ -12,12 +12,45 @@ const UI = {
             localStorage.setItem('etherscan_api_key', input.value.trim());
         }
     },
+    getHeliusKey() {
+        const input = document.getElementById('helius-key-input');
+        const saved = localStorage.getItem('helius_api_key');
+        if (saved && input) input.value = saved;
+        return input ? input.value.trim() : (saved || '');
+    },
+    saveHeliusKey() {
+        const input = document.getElementById('helius-key-input');
+        if (input && input.value.trim()) {
+            localStorage.setItem('helius_api_key', input.value.trim());
+        }
+    },
     initApiKey() {
         const saved = localStorage.getItem('etherscan_api_key');
         const input = document.getElementById('api-key-input');
         if (saved && input) input.value = saved;
         const saveBtn = document.getElementById('save-api-key');
         if (saveBtn) saveBtn.addEventListener('click', () => this.saveApiKey());
+
+        // Helius key
+        const heliusSaved = localStorage.getItem('helius_api_key');
+        const heliusInput = document.getElementById('helius-key-input');
+        if (heliusSaved && heliusInput) heliusInput.value = heliusSaved;
+        const heliusSaveBtn = document.getElementById('save-helius-key');
+        if (heliusSaveBtn) heliusSaveBtn.addEventListener('click', () => this.saveHeliusKey());
+
+        // Toggle API key sections based on chain selection
+        const chainSelect = document.getElementById('chain-select');
+        if (chainSelect) {
+            const toggleKeySections = () => {
+                const isSolana = chainSelect.value === 'solana';
+                const ethSection = document.getElementById('etherscan-key-section');
+                const helSection = document.getElementById('helius-key-section');
+                if (ethSection) ethSection.style.display = isSolana ? 'none' : '';
+                if (helSection) helSection.style.display = isSolana ? '' : 'none';
+            };
+            chainSelect.addEventListener('change', toggleKeySections);
+            toggleKeySections();
+        }
     },
     showLoading(containerId = 'results') {
         const el = document.getElementById(containerId);

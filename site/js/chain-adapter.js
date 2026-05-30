@@ -66,6 +66,9 @@ class EvmAdapter {
         return Etherscan.getTxReceipt(txhash);
     }
 
+    // Convert native amount to human-readable decimal (1 ETH = 1e18 wei)
+    nativeToDecimal(value) { return Number(value) / 1e18; }
+
     explorerUrl(type, value) {
         if (type === 'address') return this.chain.explorer + '/address/' + value;
         if (type === 'tx')      return this.chain.explorer + '/tx/' + value;
@@ -74,5 +77,9 @@ class EvmAdapter {
 }
 
 function getAdapter(chainId) {
+    if (chainId === 'solana') {
+        const key = localStorage.getItem('helius_api_key') || '';
+        return getSolanaAdapter(key);
+    }
     return new EvmAdapter(chainId || 1);
 }

@@ -34,7 +34,11 @@ def merge_labels(sources: list[list[dict]]) -> dict:
             addr = row.get("address", "").lower().strip()
             if not addr:
                 continue
-            chain = int(row.get("chain", 1))
+            raw_chain = row.get("chain", "1").strip()
+            try:
+                chain: int | str = int(raw_chain)
+            except ValueError:
+                chain = raw_chain  # non-numeric chain IDs (e.g. "solana")
             merged[addr] = {
                 "name": row.get("entity", "Unknown"),
                 "type": row.get("category", ""),
