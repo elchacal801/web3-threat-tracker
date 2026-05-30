@@ -1,6 +1,6 @@
 import pytest
 from scripts.models import Entry
-from scripts.normalize import merge_entries, normalize_and_dedup, severity_rank
+from scripts.normalize import merge_entries, normalize_and_dedup, severity_rank, compute_confidence
 
 
 def _make_entry(domain="evil.com", severity="MALICIOUS", confidence="HIGH",
@@ -103,3 +103,27 @@ def test_normalize_and_dedup_preserves_unique():
     ]
     result = normalize_and_dedup(entries)
     assert len(result) == 3
+
+
+def test_compute_confidence_multi_source_is_high():
+    entries = [_make_entry(sources=["metamask", "scamsniffer"])]
+    result = compute_confidence(entries)
+    assert result[0].confidence == "HIGH"
+
+
+def test_compute_confidence_single_high_quality_is_medium():
+    entries = [_make_entry(sources=["metamask"])]
+    result = compute_confidence(entries)
+    assert result[0].confidence == "MEDIUM"
+
+
+def test_compute_confidence_single_medium_quality_is_low():
+    entries = [_make_entry(sources=["cryptoscamdb"])]
+    result = compute_confidence(entries)
+    assert result[0].confidence == "LOW"
+
+
+def test_compute_confidence_unknown_source_is_low():
+    entries = [_make_entry(sources=["some_unknown_feed"])]
+    result = compute_confidence(entries)
+    assert result[0].confidence == "LOW"

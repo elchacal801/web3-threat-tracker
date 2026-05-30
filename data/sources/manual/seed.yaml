@@ -2,8 +2,7 @@
   type: traditional_domain
   severity: LEGITIMATE
   confidence: HIGH
-  tags:
-    - phishing
+  tags: []
   sources:
     - manual
   first_seen: "2026-05-28T00:00:00Z"

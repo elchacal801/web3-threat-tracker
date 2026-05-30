@@ -5,6 +5,9 @@ from scripts.ingest.ingest_cryptoscamdb import CryptoScamDBIngester, _map_catego
 def test_map_category():
     assert "phishing" in _map_category("Phishing")
     assert "investment_scam" in _map_category("Scamming")
+    assert "investment_scam" in _map_category("trust-trading")
+    assert "fake_airdrop" in _map_category("Airdrop")
+    assert "investment_scam" in _map_category("Mining")
 
 
 def test_parse_entries(tmp_path):

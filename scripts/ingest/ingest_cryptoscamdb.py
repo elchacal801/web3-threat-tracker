@@ -13,14 +13,17 @@ logger = logging.getLogger(__name__)
 REPO_URL = "https://github.com/CryptoScamDB/blacklist.git"
 
 CATEGORY_MAP = {
-    "Phishing": ["phishing"],
-    "Scamming": ["investment_scam"],
-    "Fake ICO": ["rug_pull"],
+    "phishing": ["phishing"],
+    "scamming": ["investment_scam"],
+    "fake ico": ["rug_pull"],
+    "trust-trading": ["investment_scam"],
+    "airdrop": ["fake_airdrop"],
+    "mining": ["investment_scam"],
 }
 
 
 def _map_category(category: str) -> list[str]:
-    return CATEGORY_MAP.get(category, ["phishing"])
+    return CATEGORY_MAP.get(category.lower(), ["phishing"])
 
 
 class CryptoScamDBIngester(BaseIngester):

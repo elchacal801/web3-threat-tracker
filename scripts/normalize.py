@@ -9,6 +9,12 @@ from scripts.models import Entry
 SEVERITY_ORDER = {"LEGITIMATE": 0, "SUSPICIOUS": 1, "RISKY": 2, "MALICIOUS": 3}
 CONFIDENCE_ORDER = {"LOW": 0, "MEDIUM": 1, "HIGH": 2}
 
+# ---------- Corroboration-driven confidence ----------
+# Sources known for high-quality, curated feeds
+HIGH_QUALITY_SOURCES = {"metamask", "scamsniffer", "phishtank", "manual"}
+# Sources with useful but less curated data
+MEDIUM_QUALITY_SOURCES = {"cryptoscamdb", "forta", "spmedia", "chainabuse", "urlhaus"}
+
 
 def severity_rank(severity: str) -> int:
     return SEVERITY_ORDER.get(severity, -1)
@@ -79,6 +85,25 @@ def normalize_and_dedup(entries: list[Entry]) -> list[Entry]:
     return sorted(by_domain.values(), key=lambda e: e.domain)
 
 
+def compute_confidence(entries: list[Entry]) -> list[Entry]:
+    """Recompute confidence for each entry based on source corroboration.
+
+    Rules:
+    - 2+ distinct sources -> HIGH
+    - 1 source from HIGH_QUALITY_SOURCES -> MEDIUM
+    - 1 source from MEDIUM_QUALITY_SOURCES -> LOW
+    """
+    for entry in entries:
+        distinct_sources = set(entry.sources)
+        if len(distinct_sources) >= 2:
+            entry.confidence = "HIGH"
+        elif distinct_sources & HIGH_QUALITY_SOURCES:
+            entry.confidence = "MEDIUM"
+        else:
+            entry.confidence = "LOW"
+    return entries
+
+
 def load_entries_from_yaml(filepath: str) -> list[Entry]:
     """Load entries from a YAML file."""
     with open(filepath) as f:
@@ -127,6 +152,7 @@ def main():
         all_entries.extend(load_entries_from_yaml(str(source_file)))
 
     deduped = normalize_and_dedup(all_entries)
+    deduped = compute_confidence(deduped)
     shard_entries(deduped, str(entries_dir))
     print(f"Normalized: {len(all_entries)} → {len(deduped)} entries")
 

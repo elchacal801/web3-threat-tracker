@@ -43,11 +43,13 @@ def test_invalid_tag_value():
     assert len(errors) > 0
 
 
-def test_empty_tags_fails():
+def test_empty_tags_valid():
+    """Empty tags are valid (e.g. LEGITIMATE entries have no threat tags)."""
     entry = _valid_entry()
     entry["tags"] = []
+    entry["severity"] = "LEGITIMATE"
     errors = validate_entry(entry)
-    assert len(errors) > 0
+    assert errors == []
 
 
 def test_extra_field_fails():
@@ -87,3 +89,20 @@ def test_validate_entries_file_with_errors(tmp_path):
     assert results["valid"] == 1
     assert results["invalid"] == 1
     assert len(results["errors"]) == 1
+
+
+def test_hex_address_domain_valid():
+    """0x hex addresses are valid in the domain field (for smart contracts)."""
+    entry = _valid_entry()
+    entry["domain"] = "0x" + "a1b2c3d4e5" * 4
+    entry["type"] = "smart_contract"
+    errors = validate_entry(entry)
+    assert errors == []
+
+
+def test_domain_with_invalid_chars_fails():
+    """Domain with special characters should fail validation."""
+    entry = _valid_entry()
+    entry["domain"] = "evil domain.com"
+    errors = validate_entry(entry)
+    assert len(errors) > 0
