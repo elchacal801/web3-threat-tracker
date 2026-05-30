@@ -2,7 +2,7 @@ import json
 import pytest
 from pathlib import Path
 from scripts.models import Entry
-from scripts.build_site import build_search_index, build_detail_shards
+from scripts.build_site import build_search_index, build_search_index_shards, write_search_index_shards, build_detail_shards
 
 
 def _make_entries():
@@ -25,7 +25,7 @@ def _make_entries():
 def test_build_search_index():
     index = build_search_index(_make_entries())
     assert len(index) == 3
-    assert index[0]["d"] == "456scam.net"  # sorted alphabetically
+    assert index[0]["d"] == "456scam.net"
     assert index[0]["s"] == "MALICIOUS"
     assert index[0]["c"] == "MEDIUM"
     assert index[0]["t"] == ["rug_pull"]
@@ -36,6 +36,28 @@ def test_build_search_index_short_keys():
     index = build_search_index(_make_entries())
     entry = index[1]  # evil.com
     assert set(entry.keys()) == {"d", "s", "c", "t", "src"}
+
+
+def test_build_search_index_shards():
+    shards = build_search_index_shards(_make_entries())
+    assert "e" in shards  # evil.com
+    assert "l" in shards  # legit.com
+    assert "numeric" in shards  # 456scam.net
+    assert len(shards["e"]) == 1
+    assert shards["e"][0]["d"] == "evil.com"
+
+
+def test_write_search_index_shards(tmp_path):
+    shards = build_search_index_shards(_make_entries())
+    manifest = write_search_index_shards(shards, str(tmp_path))
+    assert manifest["e"] == 1
+    assert manifest["l"] == 1
+    assert manifest["numeric"] == 1
+    assert (tmp_path / "manifest.json").exists()
+    assert (tmp_path / "e.json").exists()
+    with open(tmp_path / "e.json") as f:
+        data = json.load(f)
+    assert data[0]["d"] == "evil.com"
 
 
 def test_build_detail_shards(tmp_path):
