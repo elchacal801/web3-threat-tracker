@@ -94,11 +94,9 @@ nav ul li a:hover { color: #00ff88; }
 nav ul li a.active { color: #00ff88; border-bottom-color: #00ff88; }
 
 /* ----- Fix Pico overflow on dashboard grid tables ----- */
-article { overflow: visible; }
-.stats-grid + div table,
-.stats-grid ~ * table { width: 100%; table-layout: fixed; }
-.stats-grid + div td:last-child,
-.stats-grid ~ * td:last-child { text-align: right; }
+article, figure { overflow: visible; }
+#app table { overflow: visible; }
+#app > div table { table-layout: fixed; }
 
 /* ----- Severity badges ----- */
 [class^="badge-"] {

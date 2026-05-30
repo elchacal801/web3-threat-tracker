@@ -62,8 +62,8 @@
 
         wrap.appendChild(el('h3', { text: title }));
 
-        var tableWrap = el('div', { cls: 'results-table-wrap' });
         var table = el('table');
+        table.style.cssText = 'width:100%;table-layout:fixed';
         table.setAttribute('role', 'table');
 
         // thead
@@ -85,8 +85,7 @@
         });
         table.appendChild(tbody);
 
-        tableWrap.appendChild(table);
-        wrap.appendChild(tableWrap);
+        wrap.appendChild(table);
         return wrap;
     }
 
