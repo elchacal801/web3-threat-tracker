@@ -147,6 +147,12 @@ Pull requests welcome. See [CONTRIBUTING.md](docs/contributing.md) for:
 
 ---
 
+## Data Attribution
+
+This project aggregates data from multiple upstream sources. See [NOTICE.md](NOTICE.md) for per-source attribution, licensing, and redistribution terms.
+
+---
+
 ## License
 
 MIT — see [LICENSE](LICENSE).
