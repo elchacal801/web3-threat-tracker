@@ -96,12 +96,13 @@ def main():
     write_labels_json(labels, labels_path)
     print(f"Labels: {len(labels)} entries written to {labels_path}")
 
-    # Copy stats.json
-    stats_src = base / "data" / "exports" / "stats.json"
-    if stats_src.exists():
-        site_data_dir.mkdir(parents=True, exist_ok=True)
-        shutil.copy2(stats_src, site_data_dir / "stats.json")
-        print("Copied stats.json")
+    # Generate stats.json directly (don't rely on data/exports/ existing)
+    from scripts.stats import generate_stats
+    stats = generate_stats(all_entries)
+    stats_path = site_data_dir / "stats.json"
+    with open(stats_path, "w") as f:
+        json.dump(stats, f, indent=2)
+    print(f"Stats: {stats['total']} entries")
 
 
 if __name__ == "__main__":
