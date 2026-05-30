@@ -1,6 +1,6 @@
 # Web3 Threat Tracker
 
-A comprehensive Web3/blockchain/crypto domain threat intelligence tracker with **448,000+ entries** aggregated from 8 upstream feeds. Includes a static web frontend with domain search and 5 client-side blockchain investigation tools.
+A comprehensive Web3/blockchain/crypto domain threat intelligence tracker with **448,000+ entries** aggregated from 8 upstream feeds. Includes a static web frontend with domain search and multi-chain blockchain investigation tools supporting **Ethereum, BSC, Polygon, Arbitrum, Base, Optimism, Solana, and Bitcoin**.
 
 **Live site:** [elchacal801.github.io/web3-threat-tracker](https://elchacal801.github.io/web3-threat-tracker/)
 
@@ -12,7 +12,7 @@ A comprehensive Web3/blockchain/crypto domain threat intelligence tracker with *
 
 - **Domain Intelligence** — Search 448K+ Web3 threat domains with severity, confidence, and category classification
 - **SIEM-Ready Exports** — Pre-filtered CSVs for direct upload to CrowdStrike NG-SIEM, Splunk, or any SIEM as lookup files
-- **On-Chain Investigation Tools** — 5 browser-based blockchain trace tools (Fund Flow, Gas Tracer, Contract Audit, Mint Tracker, CCTP Tracer) powered by Etherscan API
+- **Multi-Chain Investigation Tools** — 5 browser-based blockchain trace tools across 8 chains (Ethereum, BSC, Polygon, Arbitrum, Base, Optimism, Solana, Bitcoin). Fund Flow supports all 8 chains; Gas Tracer, Contract Audit, Mint Tracker, and CCTP Tracer support EVM chains
 - **Daily Automated Ingestion** — GitHub Actions pulls from all upstream sources daily at 06:00 UTC
 - **Weekly Releases** — Tagged releases with downloadable CSVs and SQLite database every Sunday
 
@@ -86,17 +86,25 @@ Download from [Releases](https://github.com/elchacal801/web3-threat-tracker/rele
 
 ## Investigation Tools
 
-The web frontend includes 5 client-side blockchain investigation tools that call the Etherscan API directly from your browser. **Bring Your Own Key** — you provide your free Etherscan API key, it stays in your browser's localStorage.
+The web frontend includes 5 browser-based investigation tools. All tracing happens client-side — API calls go directly from your browser to the chain's block explorer API. **Bring Your Own Key** for Etherscan (EVM chains) and Helius (Solana). Bitcoin uses mempool.space (free, no key needed).
 
-| Tool | Purpose |
-|---|---|
-| **Fund Flow** | Map ETH and ERC-20 transfers, tag known entities (CEX, DEX, bridges, mixers), identify exit paths |
-| **Gas Tracer** | Recursively trace ETH funding chain to find who funded a wallet |
-| **Contract Audit** | Detect proxy patterns, extract roles/owners, pull upgrade and role change history |
-| **Mint Tracker** | Detect unauthorized token mints (Transfer events from null address) |
-| **CCTP Tracer** | Detect Circle Cross-Chain Transfer Protocol activity |
+| Tool | Chains | Purpose |
+|---|---|---|
+| **Fund Flow** | ETH, BSC, Polygon, Arbitrum, Base, Optimism, Solana, Bitcoin | Map transfers, tag known entities (CEX, DEX, bridges, mixers), identify exit paths and funding sources |
+| **Gas Tracer** | EVM chains | Recursively trace native token funding chain to find who funded a wallet |
+| **Contract Audit** | EVM chains | Detect proxy patterns, extract roles/owners, pull upgrade and role change history |
+| **Mint Tracker** | EVM chains | Detect unauthorized token mints (Transfer events from null address) |
+| **CCTP Tracer** | EVM chains | Detect Circle Cross-Chain Transfer Protocol activity |
 
-Known address database includes 49 tagged entities: Binance, Coinbase, Kraken, Uniswap, Tornado Cash, and more.
+### Supported Chains
+
+| Chain | API | Key Required |
+|---|---|---|
+| Ethereum, BSC, Polygon, Arbitrum, Base, Optimism | Etherscan V2 | Yes (free tier) |
+| Solana | Helius RPC | Yes (free tier) |
+| Bitcoin | mempool.space | No |
+
+Entity labels dataset includes 75+ tagged addresses across all chains: exchanges (Binance, Coinbase, Kraken), DEXes (Uniswap, Jupiter, Raydium), bridges (Wormhole), mixers (Tornado Cash), and OFAC-sanctioned addresses.
 
 ---
 
@@ -111,11 +119,13 @@ Known address database includes 49 tagged entities: Binance, Coinbase, Kraken, U
 
 ## Confidence
 
+Confidence is **corroboration-driven**: entries seen by 2+ upstream sources are automatically `HIGH`; single high-quality source (MetaMask, ScamSniffer, PhishTank) = `MEDIUM`; single lower-quality source = `LOW`.
+
 | Value | Meaning |
 |---|---|
-| `HIGH` | Multi-source corroboration or analyst-verified |
-| `MEDIUM` | Single high-quality source or partial corroboration |
-| `LOW` | Single low-quality source or automated heuristic only |
+| `HIGH` | Multi-source corroboration (2+ feeds) |
+| `MEDIUM` | Single high-quality source |
+| `LOW` | Single heuristic or lower-quality source |
 
 ---
 
