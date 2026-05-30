@@ -13,5 +13,7 @@ data/sources/phishtank/
 data/sources/urlhaus/
 data/sources/chainabuse/
 data/exports/web3_tracker.db
+data/exports/*.csv
+data/exports/by_tag/
 .env
 site/data/
