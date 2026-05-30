@@ -7,7 +7,8 @@ const FundFlow = {
 
     async trace(address, chainId) {
         const isSolana = chainId === 'solana';
-        address = isSolana ? address.trim() : normalize(address);
+        const isBitcoin = chainId === 'bitcoin';
+        address = (isSolana || isBitcoin) ? address.trim() : normalize(address);
         if (!address) { UI.showError('Invalid address.'); return; }
         UI.showLoading('results');
         const adapter = getAdapter(chainId || 1);
@@ -27,8 +28,8 @@ const FundFlow = {
         if (!Array.isArray(erc20Txs))    erc20Txs    = [];
         const truncated = !!(normalTxs._truncated || internalTxs._truncated || erc20Txs._truncated);
         const { nodes, edges } = this._buildGraph(address, normalTxs, internalTxs, erc20Txs, adapter);
-        const exitPaths        = this._findExitPaths(address, edges, nodes, isSolana);
-        const fundingSources   = this._findFundingSources(address, edges, nodes, isSolana);
+        const exitPaths        = this._findExitPaths(address, edges, nodes, isSolana || isBitcoin);
+        const fundingSources   = this._findFundingSources(address, edges, nodes, isSolana || isBitcoin);
         this._render(address, nodes, edges, exitPaths, fundingSources, truncated, adapter);
     },
 
@@ -37,14 +38,15 @@ const FundFlow = {
         const edgesMap = new Map();
 
         const isSolana = adapter && adapter.constructor === SolanaAdapter;
-        const normalizeAddr = isSolana ? (a => (a || '').trim()) : normalize;
+        const isBitcoin = adapter && adapter.constructor === BitcoinAdapter;
+        const normalizeAddr = (isSolana || isBitcoin) ? (a => (a || '').trim()) : normalize;
 
         const ensureNode = (addr) => {
             const a = normalizeAddr(addr);
             if (!a) return null;
             if (!nodes.has(a)) {
-                const tag  = isSolana
-                    ? (typeof SOLANA_KNOWN !== 'undefined' && SOLANA_KNOWN[a] ? SOLANA_KNOWN[a] : tagAddress(a))
+                const tag  = (isSolana && typeof SOLANA_KNOWN !== 'undefined' && SOLANA_KNOWN[a])
+                    ? SOLANA_KNOWN[a]
                     : tagAddress(a);
                 const type = a === target ? 'target' : tag ? tag.type : 'external';
                 nodes.set(a, { address: a, label: tag ? tag.name : shortAddr(a), type, tag, volIn: 0, volOut: 0 });
@@ -64,7 +66,7 @@ const FundFlow = {
             edgesMap.set(key, { from, to, amount, token, txHash, timestamp });
         };
 
-        const nativeSymbol = isSolana ? 'SOL' : 'ETH';
+        const nativeSymbol = isSolana ? 'SOL' : isBitcoin ? 'BTC' : 'ETH';
         const toDecimal = adapter ? (v => adapter.nativeToDecimal(v)) : weiToEth;
 
         for (const tx of normalTxs) {
@@ -83,8 +85,8 @@ const FundFlow = {
         return { nodes, edges: Array.from(edgesMap.values()) };
     },
 
-    _findExitPaths(target, edges, nodes, isSolana) {
-        const norm = isSolana ? (a => (a || '').trim()) : normalize;
+    _findExitPaths(target, edges, nodes, isSolanaOrBtc) {
+        const norm = isSolanaOrBtc ? (a => (a || '').trim()) : normalize;
         return edges.filter(e => {
             if (norm(e.from) !== target) return false;
             const n = nodes.get(norm(e.to));
@@ -92,8 +94,8 @@ const FundFlow = {
         });
     },
 
-    _findFundingSources(target, edges, nodes, isSolana) {
-        const norm = isSolana ? (a => (a || '').trim()) : normalize;
+    _findFundingSources(target, edges, nodes, isSolanaOrBtc) {
+        const norm = isSolanaOrBtc ? (a => (a || '').trim()) : normalize;
         return edges.filter(e => {
             if (norm(e.to) !== target) return false;
             const n = nodes.get(norm(e.from));
@@ -105,6 +107,8 @@ const FundFlow = {
         const container = document.getElementById('results');
         if (!container) return;
         const explorerBase = adapter ? adapter.chain.explorer : 'https://etherscan.io';
+        const isSolOrBtc = adapter && (adapter.constructor === SolanaAdapter || adapter.constructor === BitcoinAdapter);
+        const norm = isSolOrBtc ? (a => (a || '').trim()) : normalize;
 
         const typeCounts = {};
         for (const n of nodes.values()) typeCounts[n.type] = (typeCounts[n.type] || 0) + 1;
@@ -144,7 +148,7 @@ const FundFlow = {
                 + '<th>To</th><th>Entity</th><th>Type</th><th>Amount</th><th>Token</th><th>Tx</th><th>Timestamp</th>'
                 + '</tr></thead><tbody>';
             for (const e of exitPaths) {
-                const n = nodes.get(normalize(e.to));
+                const n = nodes.get(norm(e.to));
                 html += '<tr>'
                     + '<td>' + UI.addrLink(e.to, explorerBase) + '</td>'
                     + '<td>' + UI.esc(n ? n.label : shortAddr(e.to)) + '</td>'
@@ -167,7 +171,7 @@ const FundFlow = {
                 + '<th>From</th><th>Entity</th><th>Type</th><th>Amount</th><th>Token</th><th>Tx</th><th>Timestamp</th>'
                 + '</tr></thead><tbody>';
             for (const e of fundingSources) {
-                const n = nodes.get(normalize(e.from));
+                const n = nodes.get(norm(e.from));
                 html += '<tr>'
                     + '<td>' + UI.addrLink(e.from, explorerBase) + '</td>'
                     + '<td>' + UI.esc(n ? n.label : shortAddr(e.from)) + '</td>'
@@ -220,7 +224,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             e.preventDefault();
             const addr = addrInput ? addrInput.value.trim() : '';
             const raw = chainSelect ? chainSelect.value : '1';
-            const chainId = raw === 'solana' ? 'solana' : parseInt(raw, 10);
+            const chainId = (raw === 'solana' || raw === 'bitcoin') ? raw : parseInt(raw, 10);
             if (addr) FundFlow.trace(addr, chainId);
         });
     }

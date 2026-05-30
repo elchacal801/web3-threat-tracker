@@ -31,14 +31,20 @@ def merge_labels(sources: list[list[dict]]) -> dict:
     merged = {}
     for rows in sources:
         for row in rows:
-            addr = row.get("address", "").lower().strip()
-            if not addr:
+            raw_addr = row.get("address", "").strip()
+            if not raw_addr:
                 continue
             raw_chain = row.get("chain", "1").strip()
             try:
                 chain: int | str = int(raw_chain)
             except ValueError:
-                chain = raw_chain  # non-numeric chain IDs (e.g. "solana")
+                chain = raw_chain  # non-numeric chain IDs (e.g. "solana", "bitcoin")
+            # EVM addresses are case-insensitive; lowercase for consistent lookup.
+            # Non-EVM (Solana, Bitcoin) addresses are case-sensitive; preserve case.
+            if isinstance(chain, int):
+                addr = raw_addr.lower()
+            else:
+                addr = raw_addr
             merged[addr] = {
                 "name": row.get("entity", "Unknown"),
                 "type": row.get("category", ""),

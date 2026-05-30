@@ -42,10 +42,13 @@ const UI = {
         const chainSelect = document.getElementById('chain-select');
         if (chainSelect) {
             const toggleKeySections = () => {
-                const isSolana = chainSelect.value === 'solana';
+                const val = chainSelect.value;
+                const isSolana = val === 'solana';
+                const isBitcoin = val === 'bitcoin';
                 const ethSection = document.getElementById('etherscan-key-section');
                 const helSection = document.getElementById('helius-key-section');
-                if (ethSection) ethSection.style.display = isSolana ? 'none' : '';
+                // EVM chains need Etherscan key, Solana needs Helius key, Bitcoin needs none
+                if (ethSection) ethSection.style.display = (!isSolana && !isBitcoin) ? '' : 'none';
                 if (helSection) helSection.style.display = isSolana ? '' : 'none';
             };
             chainSelect.addEventListener('change', toggleKeySections);
@@ -72,24 +75,28 @@ const UI = {
     _validHex(s) {
         return /^0x[0-9a-fA-F]+$/.test(s);
     },
+    _isLinkable(s) {
+        // EVM hex addresses/txids, Solana base58, Bitcoin bech32/base58
+        return this._validHex(s) || /^[1-9A-HJ-NP-Za-km-z]{32,}$/.test(s) || /^bc1[a-z0-9]{25,}$/.test(s);
+    },
     addrLink(addr, explorerBase) {
         if (!addr) return '';
         const base = explorerBase || 'https://etherscan.io';
         const short = addr.slice(0, 6) + '...' + addr.slice(-4);
-        if (!this._validHex(addr)) return '<span class="addr">' + this.esc(short) + '</span>';
+        if (!this._isLinkable(addr)) return '<span class="addr">' + this.esc(short) + '</span>';
         return '<span class="addr"><a href="' + this.esc(base) + '/address/' + this.esc(addr) + '" target="_blank" rel="noopener">' + this.esc(short) + '</a></span>';
     },
     addrLinkFull(addr, explorerBase) {
         if (!addr) return '';
         const base = explorerBase || 'https://etherscan.io';
-        if (!this._validHex(addr)) return '<span class="addr">' + this.esc(addr) + '</span>';
+        if (!this._isLinkable(addr)) return '<span class="addr">' + this.esc(addr) + '</span>';
         return '<span class="addr"><a href="' + this.esc(base) + '/address/' + this.esc(addr) + '" target="_blank" rel="noopener">' + this.esc(addr) + '</a></span>';
     },
     txLink(hash, explorerBase) {
         if (!hash) return '';
         const base = explorerBase || 'https://etherscan.io';
         const short = hash.slice(0, 10) + '...';
-        if (!this._validHex(hash)) return '<span class="mono">' + this.esc(short) + '</span>';
+        if (!this._isLinkable(hash)) return '<span class="mono">' + this.esc(short) + '</span>';
         return '<a href="' + this.esc(base) + '/tx/' + this.esc(hash) + '" target="_blank" rel="noopener" class="mono">' + this.esc(short) + '</a>';
     },
     severityBadge(severity) {

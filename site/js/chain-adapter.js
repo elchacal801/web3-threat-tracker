@@ -77,6 +77,7 @@ class EvmAdapter {
 }
 
 function getAdapter(chainId) {
+    if (chainId === 'bitcoin') return getBitcoinAdapter();
     if (chainId === 'solana') {
         const key = localStorage.getItem('helius_api_key') || '';
         return getSolanaAdapter(key);

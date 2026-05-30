@@ -66,3 +66,10 @@ solana,Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB,USDT (Solana),token,manual,h
 solana,11111111111111111111111111111111,System Program,system,manual,high
 solana,TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA,Token Program,system,manual,high
 solana,ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL,Associated Token Program,system,manual,high
+bitcoin,bc1qm34lsc65zpw79lxes69zkqmk6ee3ewf0j77s3,Binance Cold,cex,manual,high
+bitcoin,1NDyJtNTjmwk5xPNhjgAMu4HDHigtobu1s,Binance Hot,cex,manual,high
+bitcoin,3M219KR5vEneNb47ewrPfWyb5jQ2DjxRP6,Binance Hot 2,cex,manual,high
+bitcoin,bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh,Binance Donation,cex,manual,high
+bitcoin,3Cbq7aT1tY8kMxWLbitaG7yT6bPbKChq64,Bitfinex Cold,cex,manual,high
+bitcoin,bc1q4c8n5t00jmj8temxdgcc3t32nkg2wjwz24lywv,Kraken Hot,cex,manual,high
+bitcoin,bc1qr4dl5wa7kl8yu792dceg9z5knl2gkn220lk7a9,Tornado Cash (BTC),mixer,manual,high

@@ -177,7 +177,12 @@ function normalize(addr) {
     return addr;
 }
 function tagAddress(addr) {
-    if (typeof SOLANA_KNOWN !== 'undefined' && addr && SOLANA_KNOWN[addr.trim()]) return SOLANA_KNOWN[addr.trim()];
+    if (!addr) return null;
+    // Try exact match first (for Bitcoin/Solana case-sensitive addresses)
+    if (KNOWN_ADDRESSES[addr]) return KNOWN_ADDRESSES[addr];
+    if (KNOWN_ADDRESSES[addr.trim()]) return KNOWN_ADDRESSES[addr.trim()];
+    if (typeof SOLANA_KNOWN !== 'undefined' && SOLANA_KNOWN[addr.trim()]) return SOLANA_KNOWN[addr.trim()];
+    // Then try EVM-normalized (lowercase + 0x prefix)
     return KNOWN_ADDRESSES[normalize(addr)] || null;
 }
 function isNullAddress(addr) { return normalize(addr) === '0x0000000000000000000000000000000000000000'; }
