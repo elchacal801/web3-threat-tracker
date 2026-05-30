@@ -84,8 +84,9 @@ const GasTracer = {
         if (!container) return;
 
         let html = '<section class="result-section">'
-            + '<h2>Gas Funding Chain — ' + UI.addrLinkFull(target) + '</h2>'
-            + '<p class="muted">Max depth: ' + UI.esc(maxDepth) + ' &nbsp;|&nbsp; Hops found: ' + UI.esc(chain.length) + '</p>'
+            + '<h2>Gas Funding Chain \u2014 ' + UI.addrLinkFull(target) + '</h2>'
+            + '<p class="muted">Max depth: ' + UI.esc(maxDepth) + ' &nbsp;|&nbsp; Hops found: ' + UI.esc(chain.length)
+            + ' &nbsp;|&nbsp; <em>Single-funder heuristic: follows only the first (oldest) ETH inflow per hop.</em></p>'
             + '<table class="data-table"><thead><tr>'
             + '<th>Depth</th><th>Address</th><th>Entity</th><th>Funder</th>'
             + '<th>Amount (ETH)</th><th>Tx</th><th>Timestamp</th>'

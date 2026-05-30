@@ -40,18 +40,30 @@ const Etherscan = {
         return data.result;
     },
 
+    _MAX_RESULTS: 10000,
+
+    _markTruncation(results) {
+        if (Array.isArray(results) && results.length >= this._MAX_RESULTS) {
+            results._truncated = true;
+        }
+        return results;
+    },
+
     async getNormalTxs(address, startBlock, endBlock) {
         startBlock = startBlock || 0; endBlock = endBlock || 99999999;
-        return this.call('account', 'txlist', { address, startblock: startBlock, endblock: endBlock, sort: 'asc', page: 1, offset: 10000 });
+        const r = await this.call('account', 'txlist', { address, startblock: startBlock, endblock: endBlock, sort: 'asc', page: 1, offset: this._MAX_RESULTS });
+        return this._markTruncation(r);
     },
     async getInternalTxs(address, startBlock, endBlock) {
         startBlock = startBlock || 0; endBlock = endBlock || 99999999;
-        return this.call('account', 'txlistinternal', { address, startblock: startBlock, endblock: endBlock, sort: 'asc', page: 1, offset: 10000 });
+        const r = await this.call('account', 'txlistinternal', { address, startblock: startBlock, endblock: endBlock, sort: 'asc', page: 1, offset: this._MAX_RESULTS });
+        return this._markTruncation(r);
     },
     async getERC20Transfers(address, contractAddress) {
-        const params = { address, sort: 'asc', page: 1, offset: 10000 };
+        const params = { address, sort: 'asc', page: 1, offset: this._MAX_RESULTS };
         if (contractAddress) params.contractaddress = contractAddress;
-        return this.call('account', 'tokentx', params);
+        const r = await this.call('account', 'tokentx', params);
+        return this._markTruncation(r);
     },
     async getLogs(address, topic0, fromBlock, toBlock, extraTopics) {
         fromBlock = fromBlock || 0; toBlock = toBlock || 'latest';

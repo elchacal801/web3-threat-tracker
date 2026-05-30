@@ -23,10 +23,11 @@ const FundFlow = {
         if (!Array.isArray(normalTxs))   normalTxs   = [];
         if (!Array.isArray(internalTxs)) internalTxs = [];
         if (!Array.isArray(erc20Txs))    erc20Txs    = [];
+        const truncated = !!(normalTxs._truncated || internalTxs._truncated || erc20Txs._truncated);
         const { nodes, edges } = this._buildGraph(address, normalTxs, internalTxs, erc20Txs);
         const exitPaths        = this._findExitPaths(address, edges, nodes);
         const fundingSources   = this._findFundingSources(address, edges, nodes);
-        this._render(address, nodes, edges, exitPaths, fundingSources);
+        this._render(address, nodes, edges, exitPaths, fundingSources, truncated);
     },
 
     _buildGraph(target, normalTxs, internalTxs, erc20Txs) {
@@ -88,7 +89,7 @@ const FundFlow = {
         });
     },
 
-    _render(target, nodes, edges, exitPaths, fundingSources) {
+    _render(target, nodes, edges, exitPaths, fundingSources, truncated) {
         const container = document.getElementById('results');
         if (!container) return;
 
@@ -103,8 +104,15 @@ const FundFlow = {
         const volIn  = tNode ? tNode.volIn.toFixed(4)  : '0';
         const volOut = tNode ? tNode.volOut.toFixed(4) : '0';
 
-        let html = '<section class="result-section">'
-            + '<h2>Fund Flow — ' + UI.addrLinkFull(target) + '</h2>'
+        let html = '';
+        if (truncated) {
+            html += '<div class="error-msg" style="border-color:var(--color-suspicious);color:var(--color-suspicious)">'
+                + 'Results may be truncated. Etherscan returned the maximum 10,000 transactions for one or more query types. '
+                + 'Some transfers may be missing — exit path analysis may be incomplete for this address.'
+                + '</div>';
+        }
+        html += '<section class="result-section">'
+            + '<h2>Fund Flow \u2014 ' + UI.addrLinkFull(target) + '</h2>'
             + '<table class="data-table"><tbody>'
             + '<tr><td>Nodes</td><td>'             + UI.esc(nodes.size)            + '</td></tr>'
             + '<tr><td>Edges (transfers)</td><td>' + UI.esc(edges.length)          + '</td></tr>'
