@@ -5,16 +5,17 @@
 
 const FundFlow = {
 
-    async trace(address) {
+    async trace(address, chainId) {
         address = normalize(address);
         if (!address) { UI.showError('Invalid address.'); return; }
         UI.showLoading('results');
+        const adapter = getAdapter(chainId || 1);
         let normalTxs = [], internalTxs = [], erc20Txs = [];
         try {
             [normalTxs, internalTxs, erc20Txs] = await Promise.all([
-                Etherscan.getNormalTxs(address),
-                Etherscan.getInternalTxs(address),
-                Etherscan.getERC20Transfers(address),
+                adapter.getNormalTxs(address),
+                adapter.getInternalTxs(address),
+                adapter.getERC20Transfers(address),
             ]);
         } catch (err) {
             UI.showError('Fetch error: ' + err.message);
@@ -27,7 +28,7 @@ const FundFlow = {
         const { nodes, edges } = this._buildGraph(address, normalTxs, internalTxs, erc20Txs);
         const exitPaths        = this._findExitPaths(address, edges, nodes);
         const fundingSources   = this._findFundingSources(address, edges, nodes);
-        this._render(address, nodes, edges, exitPaths, fundingSources, truncated);
+        this._render(address, nodes, edges, exitPaths, fundingSources, truncated, adapter);
     },
 
     _buildGraph(target, normalTxs, internalTxs, erc20Txs) {
@@ -89,9 +90,10 @@ const FundFlow = {
         });
     },
 
-    _render(target, nodes, edges, exitPaths, fundingSources, truncated) {
+    _render(target, nodes, edges, exitPaths, fundingSources, truncated, adapter) {
         const container = document.getElementById('results');
         if (!container) return;
+        const explorerBase = adapter ? adapter.chain.explorer : 'https://etherscan.io';
 
         const typeCounts = {};
         for (const n of nodes.values()) typeCounts[n.type] = (typeCounts[n.type] || 0) + 1;
@@ -112,7 +114,7 @@ const FundFlow = {
                 + '</div>';
         }
         html += '<section class="result-section">'
-            + '<h2>Fund Flow \u2014 ' + UI.addrLinkFull(target) + '</h2>'
+            + '<h2>Fund Flow \u2014 ' + UI.addrLinkFull(target, explorerBase) + '</h2>'
             + '<table class="data-table"><tbody>'
             + '<tr><td>Nodes</td><td>'             + UI.esc(nodes.size)            + '</td></tr>'
             + '<tr><td>Edges (transfers)</td><td>' + UI.esc(edges.length)          + '</td></tr>'
@@ -133,12 +135,12 @@ const FundFlow = {
             for (const e of exitPaths) {
                 const n = nodes.get(normalize(e.to));
                 html += '<tr>'
-                    + '<td>' + UI.addrLink(e.to) + '</td>'
+                    + '<td>' + UI.addrLink(e.to, explorerBase) + '</td>'
                     + '<td>' + UI.esc(n ? n.label : shortAddr(e.to)) + '</td>'
                     + '<td><span class="tag-pill">' + UI.esc(n ? n.type : 'unknown') + '</span></td>'
                     + '<td>' + UI.esc(e.amount.toFixed(4)) + '</td>'
                     + '<td>' + UI.esc(e.token) + '</td>'
-                    + '<td>' + UI.txLink(e.txHash) + '</td>'
+                    + '<td>' + UI.txLink(e.txHash, explorerBase) + '</td>'
                     + '<td>' + UI.esc(tsToISO(e.timestamp)) + '</td>'
                     + '</tr>';
             }
@@ -156,12 +158,12 @@ const FundFlow = {
             for (const e of fundingSources) {
                 const n = nodes.get(normalize(e.from));
                 html += '<tr>'
-                    + '<td>' + UI.addrLink(e.from) + '</td>'
+                    + '<td>' + UI.addrLink(e.from, explorerBase) + '</td>'
                     + '<td>' + UI.esc(n ? n.label : shortAddr(e.from)) + '</td>'
                     + '<td><span class="tag-pill">' + UI.esc(n ? n.type : 'unknown') + '</span></td>'
                     + '<td>' + UI.esc(e.amount.toFixed(4)) + '</td>'
                     + '<td>' + UI.esc(e.token) + '</td>'
-                    + '<td>' + UI.txLink(e.txHash) + '</td>'
+                    + '<td>' + UI.txLink(e.txHash, explorerBase) + '</td>'
                     + '<td>' + UI.esc(tsToISO(e.timestamp)) + '</td>'
                     + '</tr>';
             }
@@ -178,9 +180,9 @@ const FundFlow = {
             + '</tr></thead><tbody>';
         for (const e of displayEdges) {
             html += '<tr>'
-                + '<td>' + UI.txLink(e.txHash) + '</td>'
-                + '<td>' + UI.addrLink(e.from) + '</td>'
-                + '<td>' + UI.addrLink(e.to) + '</td>'
+                + '<td>' + UI.txLink(e.txHash, explorerBase) + '</td>'
+                + '<td>' + UI.addrLink(e.from, explorerBase) + '</td>'
+                + '<td>' + UI.addrLink(e.to, explorerBase) + '</td>'
                 + '<td>' + UI.esc(e.amount.toFixed(6)) + '</td>'
                 + '<td>' + UI.esc(e.token) + '</td>'
                 + '<td>' + UI.esc(tsToISO(e.timestamp)) + '</td>'
@@ -195,14 +197,18 @@ document.addEventListener('DOMContentLoaded', () => {
     UI.initApiKey();
     const params    = new URLSearchParams(window.location.search);
     const addrParam = params.get('address');
+    const chainParam = params.get('chain');
     const addrInput = document.getElementById('address-input');
+    const chainSelect = document.getElementById('chain-select');
     if (addrParam && addrInput) addrInput.value = addrParam;
+    if (chainParam && chainSelect) chainSelect.value = chainParam;
     const form = document.getElementById('trace-form');
     if (form) {
         form.addEventListener('submit', (e) => {
             e.preventDefault();
             const addr = addrInput ? addrInput.value.trim() : '';
-            if (addr) FundFlow.trace(addr);
+            const chainId = chainSelect ? parseInt(chainSelect.value, 10) : 1;
+            if (addr) FundFlow.trace(addr, chainId);
         });
     }
 });

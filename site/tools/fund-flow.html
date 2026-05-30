@@ -45,13 +45,22 @@
 
         <section>
             <form id="trace-form">
-                <label for="address-input">Ethereum Address</label>
+                <label for="chain-select">Chain</label>
+                <select id="chain-select">
+                    <option value="1" selected>Ethereum</option>
+                    <option value="56">BSC</option>
+                    <option value="137">Polygon</option>
+                    <option value="42161">Arbitrum</option>
+                    <option value="8453">Base</option>
+                    <option value="10">Optimism</option>
+                </select>
+                <label for="address-input">Address</label>
                 <input
                     id="address-input"
                     type="text"
                     placeholder="0x..."
                     required
-                    aria-label="Ethereum address"
+                    aria-label="Address"
                     class="mono"
                 />
                 <button type="submit">Trace</button>
@@ -67,6 +76,7 @@
 
     <script src="../js/common.js"></script>
     <script src="../js/ui.js"></script>
+    <script src="../js/chain-adapter.js"></script>
     <script src="../js/playbooks/fund-flow.js"></script>
 </body>
 </html>

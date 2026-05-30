@@ -39,22 +39,25 @@ const UI = {
     _validHex(s) {
         return /^0x[0-9a-fA-F]+$/.test(s);
     },
-    addrLink(addr) {
+    addrLink(addr, explorerBase) {
         if (!addr) return '';
+        const base = explorerBase || 'https://etherscan.io';
         const short = addr.slice(0, 6) + '...' + addr.slice(-4);
         if (!this._validHex(addr)) return '<span class="addr">' + this.esc(short) + '</span>';
-        return '<span class="addr"><a href="https://etherscan.io/address/' + this.esc(addr) + '" target="_blank" rel="noopener">' + this.esc(short) + '</a></span>';
+        return '<span class="addr"><a href="' + this.esc(base) + '/address/' + this.esc(addr) + '" target="_blank" rel="noopener">' + this.esc(short) + '</a></span>';
     },
-    addrLinkFull(addr) {
+    addrLinkFull(addr, explorerBase) {
         if (!addr) return '';
+        const base = explorerBase || 'https://etherscan.io';
         if (!this._validHex(addr)) return '<span class="addr">' + this.esc(addr) + '</span>';
-        return '<span class="addr"><a href="https://etherscan.io/address/' + this.esc(addr) + '" target="_blank" rel="noopener">' + this.esc(addr) + '</a></span>';
+        return '<span class="addr"><a href="' + this.esc(base) + '/address/' + this.esc(addr) + '" target="_blank" rel="noopener">' + this.esc(addr) + '</a></span>';
     },
-    txLink(hash) {
+    txLink(hash, explorerBase) {
         if (!hash) return '';
+        const base = explorerBase || 'https://etherscan.io';
         const short = hash.slice(0, 10) + '...';
         if (!this._validHex(hash)) return '<span class="mono">' + this.esc(short) + '</span>';
-        return '<a href="https://etherscan.io/tx/' + this.esc(hash) + '" target="_blank" rel="noopener" class="mono">' + this.esc(short) + '</a>';
+        return '<a href="' + this.esc(base) + '/tx/' + this.esc(hash) + '" target="_blank" rel="noopener" class="mono">' + this.esc(short) + '</a>';
     },
     severityBadge(severity) {
         const cls = (severity || '').toLowerCase();
