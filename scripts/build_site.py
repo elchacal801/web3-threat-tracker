@@ -3,6 +3,7 @@ import shutil
 import sys
 from pathlib import Path
 
+from scripts.build_labels import build_labels, write_labels_json
 from scripts.models import Entry
 from scripts.normalize import load_entries_from_yaml
 
@@ -88,6 +89,12 @@ def main():
     build_detail_shards(all_entries, str(details_dir))
     shard_count = len(list(details_dir.glob("*.json")))
     print(f"Detail shards: {shard_count} files")
+
+    # Build labels.json
+    labels = build_labels(base)
+    labels_path = site_data_dir / "labels.json"
+    write_labels_json(labels, labels_path)
+    print(f"Labels: {len(labels)} entries written to {labels_path}")
 
     # Copy stats.json
     stats_src = base / "data" / "exports" / "stats.json"

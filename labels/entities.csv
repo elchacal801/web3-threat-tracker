@@ -1,0 +1,51 @@
+chain,address,entity,category,source,confidence
+1,0x28c6c06298d514db089934071355e5743bf21d60,Binance 14,cex,manual,high
+1,0x21a31ee1afc51d94c2efccaa2092ad1028285549,Binance 15,cex,manual,high
+1,0xdfd5293d8e347dfe59e90efd55b2956a1343963d,Binance 16,cex,manual,high
+1,0x56eddb7aa87536c09ccc2793473599fd21a8b17f,Binance 17,cex,manual,high
+1,0x9696f59e4d72e237be84ffd425dcad154bf96976,Binance 18,cex,manual,high
+1,0x4976a4a02f38326660d17bf34b431dc6e2eb2327,Binance 19,cex,manual,high
+1,0x71660c4005ba85c37ccec55d0c4493e66fe775d3,Coinbase 1,cex,manual,high
+1,0x503828976d22510aad0201ac7ec88293211d23da,Coinbase 2,cex,manual,high
+1,0xddfabcdc4d8ffc6d5beaf154f18b778f892a0740,Coinbase 3,cex,manual,high
+1,0x3cd751e6b0078be393132286c442345e68ff0afc,Coinbase 4,cex,manual,high
+1,0xb5d85cbf7cb3ee0d56b3bb207d5fc4b82f43f511,Coinbase 5,cex,manual,high
+1,0xeb2629a2734e272bcc07bda959863f316f4bd4cf,Coinbase 6,cex,manual,high
+1,0x02466e547bfdab679fc49e96bbfc62b9747d997c,Coinbase 7,cex,manual,high
+1,0xa9d1e08c7793af67e9d92fe308d5697fb81d3e43,Coinbase 8,cex,manual,high
+1,0x2faf487a4414fe77e2327f0bf4ae2a264a776ad2,FTX,cex,manual,high
+1,0xc098b2a3aa256d2140208c3de6543aaef5cd3a94,FTX 2,cex,manual,high
+1,0x267be1c1d684f78cb4f6a176c4911b741e4ffdc0,Kraken 4,cex,manual,high
+1,0xfa52274dd61e1643d2205169732f29114bc240b3,Kraken 5,cex,manual,high
+1,0xae2d4617c862309a3d75a0ffb358c7a5009c673f,Kraken 6,cex,manual,high
+1,0x0d0707963952f2fba59dd06f2b425ace40b492fe,Gate.io 1,cex,manual,high
+1,0x7793cd85c11a924478d358d49b05b37e91b5810f,Gate.io 2,cex,manual,high
+1,0x1ab4973a48dc892cd9971ece8e01dcc7688f8f23,Gate.io 3,cex,manual,high
+1,0xd24400ae8bfebb18ca49be86258a3c749cf46853,Gemini 4,cex,manual,high
+1,0x6fc82a5fe25a5cdb58bc74600a40a69c065263f8,KuCoin,cex,manual,high
+1,0x49048044d57e1c92a77f79988d21fa8faf74e97e,Base Bridge,bridge,manual,high
+1,0x3ee18b2214aff97000d974cf647e7c347e8fa585,Wormhole,bridge,manual,high
+1,0x40ec5b33f54e0e8a33a975908c5ba1c14e5bbbdf,Polygon Bridge,bridge,manual,high
+1,0xa0c68c638235ee32657e8f720a23cec1bfc6c9a8,Polygon ERC20 Bridge,bridge,manual,high
+1,0x8315177ab297ba92a06054ce80a67ed4dbd7ed3a,Arbitrum Bridge,bridge,manual,high
+1,0x99c9fc46f92e8a1c0dec1b1747d010903e884be1,Optimism Bridge,bridge,manual,high
+1,0x3014ca10b91cb3d0ad85fef7a3cb95bcac9c0f79,Stargate Finance,bridge,manual,high
+1,0xbd3fa81b58ba92a82136038b25adec7066af3155,CCTP TokenMessenger,bridge,manual,high
+1,0x7a250d5630b4cf539739df2c5dacb4c659f2488d,Uniswap V2 Router,dex,manual,high
+1,0xe592427a0aece92de3edee1f18e0157c05861564,Uniswap V3 Router,dex,manual,high
+1,0x68b3465833fb72a70ecdf485e0e4c7bd8665fc45,Uniswap V3 Router 2,dex,manual,high
+1,0x3fc91a3afd70395cd496c647d5a6cc9d4b2b7fad,Uniswap Universal Router,dex,manual,high
+1,0xd9e1ce17f2641f24ae83637ab66a2cca9c378b9f,SushiSwap Router,dex,manual,high
+1,0x1111111254eeb25477b68fb85ed929f73a960582,1inch V5,dex,manual,high
+1,0x1111111254fb6c44bac0bed2854e76f90643097d,1inch V4,dex,manual,high
+1,0xdef1c0ded9bec7f1a1670819833240f027b25eff,0x Exchange,dex,manual,high
+1,0xbebc44782c7db0a1a60cb6fe97d0b483032f535c,Curve 3pool,dex,manual,high
+1,0xd90e2f925da726b50c4ed8d0fb90ad053324f31b,Tornado Cash Router,mixer,manual,high
+1,0x722122df12d4e14e13ac3b6895a86e84145b6967,Tornado Cash Proxy,mixer,manual,high
+1,0x12d66f87a04a9e220743712ce6d9bb1b5616b8fc,Tornado Cash 0.1 ETH,mixer,manual,high
+1,0x47ce0c6ed5b0ce3d3a51fdb1c52dc66a7c3c2936,Tornado Cash 1 ETH,mixer,manual,high
+1,0x910cbd523d972eb0a6f4cae4618ad62622b39dbf,Tornado Cash 10 ETH,mixer,manual,high
+1,0xa160cdab225685da1d56aa342ad8841c3b53f291,Tornado Cash 100 ETH,mixer,manual,high
+1,0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48,USDC,token,manual,high
+1,0xdac17f958d2ee523a2206206994597c13d831ec7,USDT,token,manual,high
+1,0x6b175474e89094c44da98b954eedeac495271d0f,DAI,token,manual,high

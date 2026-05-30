@@ -154,6 +154,22 @@ const CCTP = {
     DOMAINS: { 0: 'Ethereum', 1: 'Avalanche', 2: 'Optimism', 3: 'Arbitrum', 4: 'Noble', 5: 'Solana', 6: 'Base', 7: 'Polygon' },
 };
 
+let _labelsLoaded = false;
+
+async function loadLabels() {
+    if (_labelsLoaded) return;
+    try {
+        const resp = await fetch('data/labels.json');
+        if (resp.ok) {
+            const data = await resp.json();
+            for (const [addr, info] of Object.entries(data)) {
+                KNOWN_ADDRESSES[addr] = info;
+            }
+        }
+    } catch (e) { /* fall back to static KNOWN_ADDRESSES */ }
+    _labelsLoaded = true;
+}
+
 function normalize(addr) {
     if (!addr) return '';
     addr = addr.toLowerCase().trim();

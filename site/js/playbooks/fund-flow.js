@@ -193,8 +193,9 @@ const FundFlow = {
     },
 };
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
     UI.initApiKey();
+    await loadLabels();
     const params    = new URLSearchParams(window.location.search);
     const addrParam = params.get('address');
     const chainParam = params.get('chain');

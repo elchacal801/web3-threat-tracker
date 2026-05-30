@@ -138,8 +138,9 @@ const CCTPTracer = {
     },
 };
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
     UI.initApiKey();
+    await loadLabels();
     const form = document.getElementById('trace-form');
     if (!form) return;
     form.addEventListener('submit', async (e) => {
