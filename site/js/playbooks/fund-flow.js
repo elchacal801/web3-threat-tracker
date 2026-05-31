@@ -128,6 +128,7 @@ const FundFlow = {
                 + 'Some transfers may be missing — exit path analysis may be incomplete for this address.'
                 + '</div>';
         }
+        html += '<div id="flow-graph" style="position:relative;width:100%;height:500px;background:#0a0a0a;border:1px solid #1a1a1a;margin-bottom:1rem;border-radius:2px;"></div>';
         html += '<section class="result-section">'
             + '<h2>Fund Flow \u2014 ' + UI.addrLinkFull(target, explorerBase) + '</h2>'
             + '<table class="data-table"><tbody>'
@@ -205,6 +206,10 @@ const FundFlow = {
         }
         html += '</tbody></table></section>';
         container.innerHTML = html;
+        var graphEl = document.getElementById('flow-graph');
+        if (graphEl && typeof FlowGraph !== 'undefined') {
+            FlowGraph.render(graphEl, nodes, edges, adapter);
+        }
     },
 };
 
