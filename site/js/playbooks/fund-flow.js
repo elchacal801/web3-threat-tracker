@@ -130,6 +130,7 @@ const FundFlow = {
         }
         html += '<div id="flow-graph" style="position:relative;width:100%;height:600px;background:#0a0a0a;border:1px solid #1a1a1a;margin-bottom:1rem;border-radius:2px;"></div>';
         html += '<div id="flow-chart" style="position:relative;width:100%;height:250px;background:#0a0a0a;border:1px solid #1a1a1a;margin-bottom:1rem;border-radius:2px;"></div>';
+        html += '<div id="flow-volume" style="position:relative;width:100%;background:#0a0a0a;border:1px solid #1a1a1a;margin-bottom:1rem;border-radius:2px;"></div>';
         html += '<section class="result-section">'
             + '<h2>Fund Flow \u2014 ' + UI.addrLinkFull(target, explorerBase) + '</h2>'
             + '<table class="data-table"><tbody>'
@@ -215,6 +216,11 @@ const FundFlow = {
         var chartEl = document.getElementById('flow-chart');
         if (chartEl && typeof FlowChart !== 'undefined' && edges.length > 0) {
             FlowChart.render(chartEl, edges, target);
+        }
+        // Add volume bar chart
+        var volEl = document.getElementById('flow-volume');
+        if (volEl && typeof FlowChart !== 'undefined') {
+            FlowChart.renderVolume(volEl, nodes, target);
         }
     },
 };
