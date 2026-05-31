@@ -15,7 +15,7 @@ var FlowGraph = {
 
     render: function (container, nodes, edges, adapter) {
         var width = container.clientWidth || 900;
-        var height = 500;
+        var height = 600;
 
         // Clear previous content
         container.innerHTML = '';
@@ -35,15 +35,15 @@ var FlowGraph = {
 
         // Arrow markers
         var defs = svg.append('defs');
-        var defaultColors = { default: '#444', exit: '#00ff88', mixer: '#ff2222' };
+        var defaultColors = { default: '#555', exit: '#00ff88', mixer: '#ff2222' };
         Object.keys(defaultColors).forEach(function (key) {
             defs.append('marker')
                 .attr('id', 'arrow-' + key)
                 .attr('viewBox', '0 -5 10 10')
                 .attr('refX', 20)
                 .attr('refY', 0)
-                .attr('markerWidth', 6)
-                .attr('markerHeight', 6)
+                .attr('markerWidth', 8)
+                .attr('markerHeight', 8)
                 .attr('orient', 'auto')
                 .append('path')
                 .attr('d', 'M0,-5L10,0L0,5')
@@ -87,7 +87,7 @@ var FlowGraph = {
         var rScale = d3.scaleSqrt().domain([0, maxVol]).range([6, 28]);
 
         var maxAmt = Math.max.apply(null, linkArray.map(function (l) { return l.amount; }).concat([0.001]));
-        var wScale = d3.scaleLinear().domain([0, maxAmt]).range([1, 4]);
+        var wScale = d3.scaleLinear().domain([0, maxAmt]).range([1.5, 4]);
 
         var typeColor = {
             target: '#00ff88',
@@ -110,7 +110,7 @@ var FlowGraph = {
             var tgtType = nodeTypeMap[typeof d.target === 'object' ? d.target.id : d.target];
             if (tgtType === 'mixer') return '#ff2222';
             if (tgtType === 'cex' || tgtType === 'bridge') return '#00ff88';
-            return '#1a1a1a';
+            return '#333';
         }
 
         function edgeMarker(d) {
@@ -122,8 +122,8 @@ var FlowGraph = {
 
         // --- Force simulation ---
         var simulation = d3.forceSimulation(nodeArray)
-            .force('link', d3.forceLink(linkArray).id(function (d) { return d.id; }).distance(80))
-            .force('charge', d3.forceManyBody().strength(-300))
+            .force('link', d3.forceLink(linkArray).id(function (d) { return d.id; }).distance(120))
+            .force('charge', d3.forceManyBody().strength(-400))
             .force('center', d3.forceCenter(width / 2, height / 2))
             .force('collide', d3.forceCollide().radius(function (d) { return rScale(d.vol) + 5; }));
 
@@ -135,7 +135,7 @@ var FlowGraph = {
             .join('line')
             .attr('stroke', edgeColor)
             .attr('stroke-width', function (d) { return wScale(d.amount); })
-            .attr('stroke-opacity', 0.6)
+            .attr('stroke-opacity', 0.7)
             .attr('marker-end', edgeMarker);
 
         // --- Render nodes ---
@@ -161,8 +161,8 @@ var FlowGraph = {
             .data(nodeArray)
             .join('text')
             .text(function (d) { return d.label; })
-            .attr('font-size', '9px')
-            .attr('fill', '#888')
+            .attr('font-size', '10px')
+            .attr('fill', function (d) { return d.tag ? '#aaa' : '#666'; })
             .attr('font-family', 'monospace')
             .attr('dx', function (d) { return rScale(d.vol) + 4; })
             .attr('dy', 3);
@@ -257,8 +257,47 @@ var FlowGraph = {
             if (event.target.tagName === 'svg' || event.target.tagName === 'rect') {
                 node.attr('opacity', 1);
                 labels.attr('opacity', 1);
-                link.attr('stroke-opacity', 0.6);
+                link.attr('stroke-opacity', 0.7);
             }
+        });
+
+        // --- Edge amount labels ---
+        var edgeLabels = g.append('g')
+            .attr('class', 'flow-edge-labels')
+            .selectAll('text')
+            .data(linkArray.filter(function (d) { return d.amount > 0; }))
+            .join('text')
+            .text(function (d) { return d.amount.toFixed(4) + ' ' + d.token; })
+            .attr('font-size', '8px')
+            .attr('fill', '#555')
+            .attr('font-family', 'monospace')
+            .attr('text-anchor', 'middle')
+            .attr('dy', -4);
+
+        // --- Legend ---
+        var legendTypes = [
+            { label: 'Target', color: '#00ff88' },
+            { label: 'CEX', color: '#00aaff' },
+            { label: 'DEX', color: '#aa00ff' },
+            { label: 'Bridge', color: '#ffaa00' },
+            { label: 'Mixer', color: '#ff2222' },
+            { label: 'External', color: '#444444' }
+        ];
+        var legend = svg.append('g').attr('class', 'flow-legend');
+        legendTypes.forEach(function (item, i) {
+            var y = 20 + i * 18;
+            legend.append('circle')
+                .attr('cx', 15)
+                .attr('cy', y)
+                .attr('r', 5)
+                .attr('fill', item.color);
+            legend.append('text')
+                .attr('x', 25)
+                .attr('y', y + 4)
+                .attr('fill', '#888')
+                .attr('font-size', '10px')
+                .attr('font-family', 'monospace')
+                .text(item.label);
         });
 
         // --- Tick ---
@@ -274,6 +313,9 @@ var FlowGraph = {
             labels
                 .attr('x', function (d) { return d.x; })
                 .attr('y', function (d) { return d.y; });
+            edgeLabels
+                .attr('x', function (d) { return (d.source.x + d.target.x) / 2; })
+                .attr('y', function (d) { return (d.source.y + d.target.y) / 2; });
         });
 
         // --- Drag handlers ---

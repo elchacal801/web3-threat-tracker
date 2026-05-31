@@ -128,7 +128,8 @@ const FundFlow = {
                 + 'Some transfers may be missing — exit path analysis may be incomplete for this address.'
                 + '</div>';
         }
-        html += '<div id="flow-graph" style="position:relative;width:100%;height:500px;background:#0a0a0a;border:1px solid #1a1a1a;margin-bottom:1rem;border-radius:2px;"></div>';
+        html += '<div id="flow-graph" style="position:relative;width:100%;height:600px;background:#0a0a0a;border:1px solid #1a1a1a;margin-bottom:1rem;border-radius:2px;"></div>';
+        html += '<div id="flow-chart" style="position:relative;width:100%;height:250px;background:#0a0a0a;border:1px solid #1a1a1a;margin-bottom:1rem;border-radius:2px;"></div>';
         html += '<section class="result-section">'
             + '<h2>Fund Flow \u2014 ' + UI.addrLinkFull(target, explorerBase) + '</h2>'
             + '<table class="data-table"><tbody>'
@@ -209,6 +210,11 @@ const FundFlow = {
         var graphEl = document.getElementById('flow-graph');
         if (graphEl && typeof FlowGraph !== 'undefined') {
             FlowGraph.render(graphEl, nodes, edges, adapter);
+        }
+        // Add timeline chart
+        var chartEl = document.getElementById('flow-chart');
+        if (chartEl && typeof FlowChart !== 'undefined' && edges.length > 0) {
+            FlowChart.render(chartEl, edges, target);
         }
     },
 };

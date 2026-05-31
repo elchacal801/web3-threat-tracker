@@ -334,6 +334,9 @@ tr[style*="cursor"]:hover { background: #0d1a10; }
 #flow-graph { position: relative; }
 #flow-graph svg { display: block; }
 
+#flow-chart { position: relative; }
+#flow-chart svg { display: block; }
+
 /* ----- Responsive ----- */
 @media (max-width: 768px) {
     .stats-grid { grid-template-columns: repeat(2, 1fr); }
