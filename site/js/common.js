@@ -12,13 +12,13 @@ const Etherscan = {
         this._lastRequest = Date.now();
     },
 
-    async call(module, action, params = {}) {
+    async call(module, action, params = {}, chainId) {
         const apiKey = UI.getApiKey();
         if (!apiKey) throw new Error('Etherscan API key required. Enter your key above.');
         this._rateLimit = 220;
         await this._wait();
         const url = new URL(this.BASE_URL);
-        url.searchParams.set('chainid', this.CHAIN_ID);
+        url.searchParams.set('chainid', chainId || this.CHAIN_ID);
         url.searchParams.set('module', module);
         url.searchParams.set('action', action);
         url.searchParams.set('apikey', apiKey);
@@ -159,7 +159,8 @@ let _labelsLoaded = false;
 async function loadLabels() {
     if (_labelsLoaded) return;
     try {
-        const resp = await fetch('data/labels.json');
+        const base = location.pathname.includes('/tools/') ? '../' : '';
+        const resp = await fetch(base + 'data/labels.json');
         if (resp.ok) {
             const data = await resp.json();
             for (const [addr, info] of Object.entries(data)) {

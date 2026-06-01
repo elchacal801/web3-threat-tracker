@@ -45,22 +45,23 @@ class SolanaAdapter {
 
     async _fetchTransactions(address, limit = 100) {
         if (!this.apiKey) throw new Error('Helius API key required for Solana tracing.');
-        await this._wait();
-        const url = 'https://mainnet.helius-rpc.com/?api-key=' + encodeURIComponent(this.apiKey);
-        const resp = await fetch(url, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                jsonrpc: '2.0',
-                id: 1,
-                method: 'getTransactionsForAddress',
-                params: [address, { limit, sortOrder: 'asc' }],
-            }),
-        });
-        if (!resp.ok) throw new Error('Helius API error: ' + resp.status);
-        const data = await resp.json();
-        if (data.error) throw new Error('Helius: ' + (data.error.message || JSON.stringify(data.error)));
-        return data.result || [];
+        const allTxs = [];
+        let before = undefined;
+        while (allTxs.length < limit) {
+            await this._wait();
+            let url = 'https://api-mainnet.helius-rpc.com/v0/addresses/'
+                + encodeURIComponent(address) + '/transactions?api-key='
+                + encodeURIComponent(this.apiKey);
+            if (before) url += '&before=' + encodeURIComponent(before);
+            const resp = await fetch(url);
+            if (!resp.ok) throw new Error('Helius API error: ' + resp.status);
+            const page = await resp.json();
+            if (!Array.isArray(page) || page.length === 0) break;
+            allTxs.push(...page);
+            before = page[page.length - 1].signature;
+            if (page.length < 100) break; // last page
+        }
+        return allTxs.slice(0, limit);
     }
 
     async _getOrFetchTxs(address) {
@@ -109,9 +110,10 @@ class SolanaAdapter {
                     results.push({
                         from: tt.fromUserAccount || '',
                         to: tt.toUserAccount || '',
+                        // Helius tokenAmount is already human-readable; set decimals=0 to prevent re-division
                         value: String(tt.tokenAmount || 0),
                         tokenSymbol: tt.tokenStandard || 'SPL',
-                        tokenDecimal: String(tt.tokenDecimals || 0),
+                        tokenDecimal: '0',
                         contractAddress: tt.mint || '',
                         hash: tx.signature,
                         timeStamp: String(tx.timestamp || 0),

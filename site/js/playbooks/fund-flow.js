@@ -27,10 +27,11 @@ const FundFlow = {
         if (!Array.isArray(internalTxs)) internalTxs = [];
         if (!Array.isArray(erc20Txs))    erc20Txs    = [];
         const truncated = !!(normalTxs._truncated || internalTxs._truncated || erc20Txs._truncated);
+        const btcChangeHeuristic = !!normalTxs._btcChangeHeuristic;
         const { nodes, edges } = this._buildGraph(address, normalTxs, internalTxs, erc20Txs, adapter);
         const exitPaths        = this._findExitPaths(address, edges, nodes, isSolana || isBitcoin);
         const fundingSources   = this._findFundingSources(address, edges, nodes, isSolana || isBitcoin);
-        this._render(address, nodes, edges, exitPaths, fundingSources, truncated, adapter);
+        this._render(address, nodes, edges, exitPaths, fundingSources, truncated, adapter, btcChangeHeuristic);
     },
 
     _buildGraph(target, normalTxs, internalTxs, erc20Txs, adapter) {
@@ -103,7 +104,7 @@ const FundFlow = {
         });
     },
 
-    _render(target, nodes, edges, exitPaths, fundingSources, truncated, adapter) {
+    _render(target, nodes, edges, exitPaths, fundingSources, truncated, adapter, btcChangeHeuristic) {
         const container = document.getElementById('results');
         if (!container) return;
         const explorerBase = adapter ? adapter.chain.explorer : 'https://etherscan.io';
@@ -123,9 +124,19 @@ const FundFlow = {
 
         let html = '';
         if (truncated) {
+            const isBtc = adapter && adapter.constructor === BitcoinAdapter;
+            const truncMsg = isBtc
+                ? 'Results may be truncated. mempool.space returned the maximum page limit of transactions. '
+                : 'Results may be truncated. Etherscan returned the maximum 10,000 transactions for one or more query types. ';
             html += '<div class="error-msg" style="border-color:var(--color-suspicious);color:var(--color-suspicious)">'
-                + 'Results may be truncated. Etherscan returned the maximum 10,000 transactions for one or more query types. '
+                + truncMsg
                 + 'Some transfers may be missing — exit path analysis may be incomplete for this address.'
+                + '</div>';
+        }
+        if (btcChangeHeuristic) {
+            html += '<div class="error-msg" style="border-color:#886;color:#aa8">'
+                + 'Bitcoin change detection uses address-reuse heuristic only. '
+                + 'Change sent to fresh addresses will appear as genuine recipients. Interpret exit paths with caution.'
                 + '</div>';
         }
         html += '<div id="flow-graph" style="position:relative;width:100%;height:600px;background:#0a0a0a;border:1px solid #1a1a1a;margin-bottom:1rem;border-radius:2px;"></div>';

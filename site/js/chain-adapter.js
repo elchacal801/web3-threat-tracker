@@ -17,53 +17,50 @@ class EvmAdapter {
         this.chain = EVM_CHAINS[chainId] || EVM_CHAINS[1];
     }
 
-    _setChain() {
-        Etherscan.CHAIN_ID = this.chainId;
-    }
-
     async getNormalTxs(address, startBlock, endBlock) {
-        this._setChain();
-        return Etherscan.getNormalTxs(address, startBlock, endBlock);
+        startBlock = startBlock || 0; endBlock = endBlock || 99999999;
+        const r = await Etherscan.call('account', 'txlist', { address, startblock: startBlock, endblock: endBlock, sort: 'asc', page: 1, offset: Etherscan._MAX_RESULTS }, this.chainId);
+        return Etherscan._markTruncation(r);
     }
 
     async getInternalTxs(address, startBlock, endBlock) {
-        this._setChain();
-        return Etherscan.getInternalTxs(address, startBlock, endBlock);
+        startBlock = startBlock || 0; endBlock = endBlock || 99999999;
+        const r = await Etherscan.call('account', 'txlistinternal', { address, startblock: startBlock, endblock: endBlock, sort: 'asc', page: 1, offset: Etherscan._MAX_RESULTS }, this.chainId);
+        return Etherscan._markTruncation(r);
     }
 
     async getERC20Transfers(address, contractAddress) {
-        this._setChain();
-        return Etherscan.getERC20Transfers(address, contractAddress);
+        const params = { address, sort: 'asc', page: 1, offset: Etherscan._MAX_RESULTS };
+        if (contractAddress) params.contractaddress = contractAddress;
+        const r = await Etherscan.call('account', 'tokentx', params, this.chainId);
+        return Etherscan._markTruncation(r);
     }
 
     async getLogs(address, topic0, fromBlock, toBlock, extraTopics) {
-        this._setChain();
-        return Etherscan.getLogs(address, topic0, fromBlock, toBlock, extraTopics);
+        fromBlock = fromBlock || 0; toBlock = toBlock || 'latest';
+        const params = { address, topic0, fromBlock, toBlock };
+        if (extraTopics) Object.assign(params, extraTopics);
+        return Etherscan.call('logs', 'getLogs', params, this.chainId);
     }
 
     async getContractABI(address) {
-        this._setChain();
-        return Etherscan.getContractABI(address);
+        return Etherscan.call('contract', 'getabi', { address }, this.chainId);
     }
 
     async getContractSource(address) {
-        this._setChain();
-        return Etherscan.getContractSource(address);
+        return Etherscan.call('contract', 'getsourcecode', { address }, this.chainId);
     }
 
     async getStorageAt(address, position) {
-        this._setChain();
-        return Etherscan.getStorageAt(address, position);
+        return Etherscan.call('proxy', 'eth_getStorageAt', { address, position, tag: 'latest' }, this.chainId);
     }
 
     async ethCall(to, data) {
-        this._setChain();
-        return Etherscan.ethCall(to, data);
+        return Etherscan.call('proxy', 'eth_call', { to, data, tag: 'latest' }, this.chainId);
     }
 
     async getTxReceipt(txhash) {
-        this._setChain();
-        return Etherscan.getTxReceipt(txhash);
+        return Etherscan.call('proxy', 'eth_getTransactionReceipt', { txhash }, this.chainId);
     }
 
     // Convert native amount to human-readable decimal (1 ETH = 1e18 wei)

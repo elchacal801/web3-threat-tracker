@@ -27,11 +27,23 @@ class BitcoinAdapter {
         return resp.json();
     }
 
-    // Fetch all confirmed transactions for an address
-    // mempool.space: GET /api/address/{address}/txs
-    // Returns array of transaction objects with vin[] and vout[]
-    async _getAddressTxs(address) {
-        return this._fetch('/address/' + address + '/txs');
+    // Fetch confirmed transactions for an address with pagination.
+    // mempool.space returns ~25 txs per page; paginate via /txs/chain/{last_txid}.
+    // Cap at maxPages to avoid hammering the API on high-volume addresses.
+    async _getAddressTxs(address, maxPages = 10) {
+        const allTxs = [];
+        let lastTxid = null;
+        for (let page = 0; page < maxPages; page++) {
+            const path = lastTxid
+                ? '/address/' + address + '/txs/chain/' + lastTxid
+                : '/address/' + address + '/txs';
+            const batch = await this._fetch(path);
+            if (!Array.isArray(batch) || batch.length === 0) break;
+            allTxs.push(...batch);
+            lastTxid = batch[batch.length - 1].txid;
+            if (batch.length < 25) break; // last page
+        }
+        return allTxs;
     }
 
     // Convert satoshis to BTC (1 BTC = 1e8 satoshis)
@@ -40,6 +52,8 @@ class BitcoinAdapter {
     }
 
     // Map UTXO transactions to the from/to/value edge model expected by fund-flow.js
+    // Note: BTC change detection uses address-reuse heuristic only — change sent to
+    // fresh addresses will appear as genuine recipients (inherent UTXO limitation).
     async getNormalTxs(address) {
         const txs = await this._getAddressTxs(address);
         const results = [];
@@ -90,6 +104,10 @@ class BitcoinAdapter {
                 }
             }
         }
+        // Surface truncation if we hit the page cap (maxPages * ~25 txs)
+        if (txs.length >= 250) results._truncated = true;
+        // Flag heuristic limitation for UI
+        results._btcChangeHeuristic = true;
         return results;
     }
 
