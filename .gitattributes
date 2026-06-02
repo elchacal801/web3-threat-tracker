@@ -1,0 +1,6 @@
+# all_domains.csv is tracked so the full dataset is browsable/downloadable
+# straight from the repo tree (not only via Release assets). It carries RFC-4180
+# CRLF record terminators written by Python's csv module; mark it -text so git
+# never rewrites line endings, keeping Windows-dev and Linux-CI commits
+# byte-identical (no spurious daily diffs).
+data/exports/all_domains.csv -text
