@@ -1,8 +1,11 @@
-name: Weekly Release
+name: Daily Release
 
 on:
   schedule:
-    - cron: '0 12 * * 0'
+    # Daily at 07:00 UTC — one hour after the 06:00 UTC Daily Ingestion, so the
+    # published exports always reflect the latest committed entries. This is the
+    # delivery mechanism for the SIEM/CrowdStrike lookup feed (release assets).
+    - cron: '0 7 * * *'
   workflow_dispatch:
   push:
     paths:
@@ -41,8 +44,15 @@ jobs:
           tag_name: ${{ steps.tag.outputs.tag }}
           name: "Web3 Threat Tracker ${{ steps.tag.outputs.tag }}"
           body: |
-            Weekly release of Web3 threat intelligence data.
-            See `stats.json` for summary statistics.
+            Daily release of Web3 threat intelligence data.
+
+            Lookup-feed assets for SIEM ingestion (CrowdStrike NG-SIEM / Splunk):
+            - `malicious_only.csv` — all MALICIOUS-severity domains (the standard block/alert feed)
+            - `high_confidence.csv` — only entries corroborated by 2+ sources (confidence = HIGH, lowest false positives)
+            - `all_domains.csv` — full dataset; filter on `severity`/`confidence` in-query
+            - `web3_tracker.db` — SQLite (indexed on `domain`) for local enrichment lookups
+
+            `domain` is the first column in every CSV. See `stats.json` for the dataset summary.
           files: |
             data/exports/all_domains.csv
             data/exports/malicious_only.csv
