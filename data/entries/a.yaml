@@ -14039,17 +14039,6 @@
   first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: absportal.xyz.
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
 - domain: absreward.uno
   type: traditional_domain
   severity: MALICIOUS
@@ -29034,17 +29023,6 @@
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
 - domain: activeclaimz.xyz
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: activeclaimz.xyz.
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -61908,17 +61886,6 @@
   first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: ai.lamz-community.club.
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
 - domain: ai.lamz-group.cc
   type: traditional_domain
   severity: MALICIOUS
@@ -83273,17 +83240,6 @@
   first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: airdrop-bitlayer.xyz.
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
 - domain: airdrop-bitunix.com
   type: traditional_domain
   severity: MALICIOUS
@@ -94866,17 +94822,6 @@
   first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: airdrop-multiplenetwork.xyz.
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
 - domain: airdrop-multiversx.com
   type: traditional_domain
   severity: MALICIOUS
@@ -96542,29 +96487,7 @@
   first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: airdrop-orditer.xyz.
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
 - domain: airdrop-orditerfinance.xyz
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: airdrop-orditerfinance.xyz.
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -128042,17 +127965,6 @@
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
 - domain: airdroporditer.xyz
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: airdroporditer.xyz.
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -186020,17 +185932,6 @@
   first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: allocation.wenwenlabs.net.
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
 - domain: allocation.worldcoinnet.cc
   type: traditional_domain
   severity: MALICIOUS
@@ -186461,17 +186362,6 @@
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
 - domain: allocationhub.xyz
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: allocationhub.xyz.
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -187697,17 +187587,6 @@
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
 - domain: allocations-grassnetwork.xyz
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: allocations-grassnetwork.xyz.
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -203219,7 +203098,7 @@
   sources:
   - scamsniffer
   first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-01T11:02:12.345290+00:00'
+  last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
 - domain: amazon.tokenpre.sale
   type: traditional_domain
@@ -214730,17 +214609,6 @@
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
 - domain: amltoken.xyz
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: amltoken.xyz.
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -253355,17 +253223,6 @@
   first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: app-balanceir.xyz.
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
 - domain: app-balancer-fi.pages.dev
   type: traditional_domain
   severity: MALICIOUS
@@ -256034,17 +255891,6 @@
   first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: app-ccetus-zane.xyz.
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
 - domain: app-ceatus.zone
   type: traditional_domain
   severity: MALICIOUS
@@ -256145,17 +255991,6 @@
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
 - domain: app-centrifuge.xyz
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: app-centrifuge.xyz.
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -261135,17 +260970,6 @@
   first_seen: '2026-05-29T03:33:59.990186+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: app-equilibria.xyz.
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
 - domain: app-equium.xyz
   type: traditional_domain
   severity: MALICIOUS
@@ -261785,17 +261609,6 @@
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
 - domain: app-ethernity.xyz
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: app-ethernity.xyz.
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -262647,17 +262460,6 @@
   last_seen: '2026-06-02T09:55:20.894721+00:00'
   added_by: automated
 - domain: app-firelight.xyz
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: app-firelight.xyz.
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -265622,17 +265424,6 @@
   first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: app-humanpassport.xyz.
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
 - domain: app-humidifi.xyz
   type: traditional_domain
   severity: MALICIOUS
@@ -265689,17 +265480,6 @@
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
 - domain: app-hybrldge.xyz
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: app-hybrldge.xyz.
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -266131,17 +265911,6 @@
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
 - domain: app-hyperland.xyz
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: app-hyperland.xyz.
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -271904,17 +271673,6 @@
   first_seen: '2026-05-29T03:33:59.990186+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: app-merkl.xyz.
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
 - domain: app-merkly.online
   type: traditional_domain
   severity: MALICIOUS
@@ -272980,17 +272738,6 @@
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
 - domain: app-monad.xyz
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: app-monad.xyz.
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -274732,17 +274479,6 @@
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
 - domain: app-odosi.xyz
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: app-odosi.xyz.
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -278119,17 +277855,6 @@
   first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: app-plazaflnance.xyz.
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
 - domain: app-plume.com
   type: traditional_domain
   severity: MALICIOUS
@@ -280503,7 +280228,7 @@
   first_seen: '2026-05-29T03:33:59.990186+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: app-resalv.xyz.
+- domain: app-resalv.xyz
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -284437,7 +284162,7 @@
   first_seen: '2026-05-29T03:33:59.990186+00:00'
   last_seen: '2026-06-02T09:55:20.894721+00:00'
   added_by: automated
-- domain: app-standx.xyz.
+- domain: app-standx.xyz
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -286310,17 +286035,6 @@
   last_seen: '2026-06-02T09:55:20.894721+00:00'
   added_by: automated
 - domain: app-tharwa.xyz
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: app-tharwa.xyz.
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -291089,17 +290803,6 @@
   first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: app-wallstreetpepe.xyz.
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
 - domain: app-waltrus.gitbook.io
   type: traditional_domain
   severity: MALICIOUS
@@ -291243,17 +290946,6 @@
   first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: app-wayfinder.xyz.
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
 - domain: app-wdymcrypto.online
   type: traditional_domain
   severity: MALICIOUS
@@ -291277,17 +290969,6 @@
   last_seen: '2026-06-02T09:55:20.894721+00:00'
   added_by: automated
 - domain: app-web3bay.xyz
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: app-web3bay.xyz.
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -326155,17 +325836,6 @@
   first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: appcredixmarket.xyz.
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
 - domain: appcrosscurve.finance
   type: traditional_domain
   severity: MALICIOUS
@@ -326629,17 +326299,6 @@
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
 - domain: appdevt.xyz
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: appdevt.xyz.
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -334565,17 +334224,6 @@
   first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: appondo.xyz.
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
 - domain: appondofinacne.sbs
   type: traditional_domain
   severity: MALICIOUS
@@ -337869,17 +337517,6 @@
   first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: apps-hemi.xyz.
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
 - domain: apps-hydroprotocol.pages.dev
   type: traditional_domain
   severity: MALICIOUS
@@ -339886,17 +339523,6 @@
   first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: apps-swapx.xyz.
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
 - domain: apps-swellnetwork.com
   type: traditional_domain
   severity: MALICIOUS
@@ -341747,17 +341373,6 @@
   first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: appsintercessor-sync.xyz.
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
 - domain: appsintercessor.blockshieldpro.live
   type: traditional_domain
   severity: MALICIOUS
@@ -342739,17 +342354,6 @@
   last_seen: '2026-06-02T09:55:20.894721+00:00'
   added_by: automated
 - domain: appsuniswap.xyz
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: appsuniswap.xyz.
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -353883,17 +353487,6 @@
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
 - domain: arb-swap.xyz
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: arb-swap.xyz.
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -375416,17 +375009,6 @@
   first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: arena-rewards.xyz.
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
 - domain: arena-social.xyz
   type: traditional_domain
   severity: MALICIOUS
@@ -375682,17 +375264,6 @@
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
 - domain: arenarewards.xyz
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: arenarewards.xyz.
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -381542,17 +381113,6 @@
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
 - domain: arpanetwork-register.xyz
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: arpanetwork-register.xyz.
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -397948,7 +397508,7 @@
   first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: aster-reward.xyz.
+- domain: aster-reward.xyz
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -398147,17 +397707,6 @@
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
 - domain: asterapp.xyz
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: asterapp.xyz.
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -398390,17 +397939,6 @@
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
 - domain: asterdex-allocations.xyz
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: asterdex-allocations.xyz.
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -398722,17 +398260,6 @@
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
 - domain: asterdex-rewards.xyz
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: asterdex-rewards.xyz.
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -399355,17 +398882,6 @@
   last_seen: '2026-06-02T09:55:20.894721+00:00'
   added_by: automated
 - domain: asterdexs-allocation.xyz
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: asterdexs-allocation.xyz.
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -400442,17 +399958,6 @@
   - metamask
   - scamsniffer
   first_seen: '2026-05-29T03:33:59.990186+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: asterscz-rewards.xyz.
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
 - domain: astersdex.com
@@ -435204,17 +434709,6 @@
   first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: avax-sushi.xyz.
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
 - domain: avax-swap.com
   type: traditional_domain
   severity: MALICIOUS
@@ -436043,17 +435537,6 @@
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
 - domain: avaxtok.site
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: avaxtok.site.
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -442083,17 +441566,6 @@
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
 - domain: axieinfinity-claim.xyz
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: axieinfinity-claim.xyz.
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM

@@ -6,7 +6,7 @@ from pathlib import Path
 import yaml
 
 from scripts.models import Entry
-from scripts.normalize import load_entries_from_yaml
+from scripts.normalize import load_and_clean_entries
 
 
 def build_database(entries: list[Entry], db_path: str) -> None:
@@ -76,6 +76,10 @@ def build_database(entries: list[Entry], db_path: str) -> None:
         CREATE INDEX idx_entry_wallets_wallet ON entry_wallets(wallet);
     """)
 
+    # Entries are expected to be pre-deduplicated (see load_and_clean_entries):
+    # the domain UNIQUE constraint + INSERT OR IGNORE is a safety net only. If
+    # un-deduplicated input were passed, a duplicate domain's lastrowid would be
+    # unreliable and its tags/sources could attach to the wrong row.
     for entry in entries:
         cursor = conn.execute(
             """INSERT OR IGNORE INTO entries (domain, url, type, severity, confidence, first_seen, last_seen,
@@ -111,9 +115,7 @@ def main():
     entries_dir = base / "data" / "entries"
     db_path = base / "data" / "exports" / "web3_tracker.db"
 
-    all_entries = []
-    for yaml_file in sorted(entries_dir.glob("*.yaml")):
-        all_entries.extend(load_entries_from_yaml(str(yaml_file)))
+    all_entries = load_and_clean_entries(str(entries_dir))
 
     build_database(all_entries, str(db_path))
     print(f"Built database with {len(all_entries)} entries at {db_path}")

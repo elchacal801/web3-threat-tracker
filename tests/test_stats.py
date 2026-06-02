@@ -1,8 +1,39 @@
 # tests/test_stats.py
+import csv
 import json
 import pytest
 from scripts.models import Entry
 from scripts.stats import generate_stats
+from scripts.normalize import load_and_clean_entries
+from scripts.export_csv import export_all
+
+
+def test_stats_total_agrees_with_export_rows(tmp_path):
+    # stats and export must load entries the same way (shared cleaned loader),
+    # so stats.total always equals the CSV row count — no silent divergence.
+    entries_dir = tmp_path / "entries"
+    entries_dir.mkdir()
+    (entries_dir / "a.yaml").write_text("\n".join([
+        "- {domain: evil.com, type: traditional_domain, severity: MALICIOUS,",
+        "   confidence: HIGH, tags: [phishing], sources: [metamask],",
+        "   first_seen: '2026-01-01T00:00:00Z', last_seen: '2026-01-01T00:00:00Z', added_by: automated}",
+        "- {domain: 'evil.com.', type: traditional_domain, severity: MALICIOUS,",
+        "   confidence: HIGH, tags: [phishing], sources: [scamsniffer],",
+        "   first_seen: '2026-01-01T00:00:00Z', last_seen: '2026-01-01T00:00:00Z', added_by: automated}",
+        "- {domain: 1.2.3.4, type: traditional_domain, severity: MALICIOUS,",
+        "   confidence: HIGH, tags: [phishing], sources: [scamsniffer],",
+        "   first_seen: '2026-01-01T00:00:00Z', last_seen: '2026-01-01T00:00:00Z', added_by: automated}",
+    ]), encoding="utf-8")
+
+    cleaned = load_and_clean_entries(str(entries_dir))
+    stats = generate_stats(cleaned)
+
+    out = tmp_path / "all.csv"
+    export_all(cleaned, str(out))
+    with open(out, encoding="utf-8") as f:
+        rows = list(csv.DictReader(f))
+
+    assert stats["total"] == len(rows) == 1  # dup merged, IP dropped
 
 
 def _make_entries():

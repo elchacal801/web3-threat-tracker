@@ -5,7 +5,7 @@ from pathlib import Path
 from typing import Optional
 
 from scripts.models import Entry
-from scripts.normalize import load_entries_from_yaml
+from scripts.normalize import load_and_clean_entries
 
 CSV_COLUMNS = [
     "domain", "severity", "confidence", "tags", "type", "first_seen", "last_seen",
@@ -35,7 +35,9 @@ def _entry_to_row(entry: Entry) -> dict:
 
 def _write_csv(entries: list[Entry], filepath: str) -> None:
     Path(filepath).parent.mkdir(parents=True, exist_ok=True)
-    with open(filepath, "w", newline="") as f:
+    # Force UTF-8 so the lookup file is valid on any OS — Windows would
+    # otherwise default to cp1252 and emit invalid UTF-8 for non-ASCII domains.
+    with open(filepath, "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=CSV_COLUMNS)
         writer.writeheader()
         for entry in entries:
@@ -66,9 +68,7 @@ def main():
     exports_dir = base / "data" / "exports"
     by_tag_dir = exports_dir / "by_tag"
 
-    all_entries = []
-    for yaml_file in sorted(entries_dir.glob("*.yaml")):
-        all_entries.extend(load_entries_from_yaml(str(yaml_file)))
+    all_entries = load_and_clean_entries(str(entries_dir))
 
     export_all(all_entries, str(exports_dir / "all_domains.csv"))
     export_filtered(all_entries, str(exports_dir / "malicious_only.csv"), severity="MALICIOUS")

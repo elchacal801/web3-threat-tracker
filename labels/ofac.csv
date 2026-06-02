@@ -1,0 +1,313 @@
+chain,address,entity,category,source,confidence
+0,12QtD5BFwRsdNsAZY76UVE1xyCGNTojH9h,"OFAC: YAN, Xiaobing",sanctioned,ofac,high
+0,1Kuf2Rd8mDyAViwBozGTNYnvWL8uYFrkVo,"OFAC: YAN, Xiaobing",sanctioned,ofac,high
+0,13f59kUM5FU8MfTG7DCEugYarDhSD7XCoC,"OFAC: YAN, Xiaobing",sanctioned,ofac,high
+0,1P3ZfGFLezzYGg9k5SVzQmnjyh7nrUmF2y,"OFAC: YAN, Xiaobing",sanctioned,ofac,high
+0,1EpMiZkQVekM5ij12nMiEwttFPcDK9XhX6,"OFAC: YAN, Xiaobing",sanctioned,ofac,high
+0,1JREJdZupiFhE7ZzQPtASuMCvvpXC7wRsC,"OFAC: YAN, Xiaobing",sanctioned,ofac,high
+0,149w62rY42aZBox8fGcmqNsXUzSStKeq8C,"OFAC: KHORASHADIZADEH, Ali",sanctioned,ofac,high
+0,1AjZPMsnmpdK2Rv9KQNfMurTXinscVro9V,"OFAC: GHORBANIYAN, Mohammad",sanctioned,ofac,high
+0,17ezuJoT3XBbdcwFZbkTnrXbup11F4uhiy,"OFAC: ZHENG, Fujing",sanctioned,ofac,high
+0,1DH2xDH7TngrDU6LXciprKCBKNcPA1xX8A,"OFAC: ZHENG, Fujing",sanctioned,ofac,high
+0,33Kja69SQVc8kozpoP7Qw6HFtGxHkiWzTz,"OFAC: ZHENG, Guanghua",sanctioned,ofac,high
+0,3MkUNScqf21EcfWq6T4x2MFgBeSTqhB5t6,"OFAC: ZHENG, Guanghua",sanctioned,ofac,high
+0,18uKfaUjgG52rVeXEi3wxnveww7zZuECtE,"OFAC: ZHENG, Guanghua",sanctioned,ofac,high
+1,0x098b716b8aaf21512996dc57eb0615e2383e2f96,OFAC: LAZARUS GROUP,sanctioned,ofac,high
+1,0xa0e1c89ef1a489c9c7de96311ed5ce5d32c20e4b,OFAC: LAZARUS GROUP,sanctioned,ofac,high
+1,0x3cffd56b47b7b41c56258d9c7731abadc360e073,OFAC: LAZARUS GROUP,sanctioned,ofac,high
+1,0x53b6936513e738f44fb50d2b9476730c0ab3bfc1,OFAC: LAZARUS GROUP,sanctioned,ofac,high
+1,0x35fb6f6db4fb05e6a4ce86f2c93691425626d4b1,OFAC: LAZARUS GROUP,sanctioned,ofac,high
+1,0xf7b31119c2682c88d88d455dbb9d5932c65cf1be,OFAC: LAZARUS GROUP,sanctioned,ofac,high
+1,0x3e37627deaa754090fbfbb8bd226c1ce66d255e9,OFAC: LAZARUS GROUP,sanctioned,ofac,high
+1,0x08723392ed15743cc38513c4925f5e6be5c17243,OFAC: LAZARUS GROUP,sanctioned,ofac,high
+0,134r8iHv69xdT6p5qVKTsHrcUEuBVZAYak,"OFAC: TIAN, Yinyin",sanctioned,ofac,high
+0,15YK647qtoZQDzNrvY6HJL6QwXduLHfT28,"OFAC: TIAN, Yinyin",sanctioned,ofac,high
+0,1PfwHNxUnkpfkK9MKjMqzR3Xq3KCtq9u17,"OFAC: TIAN, Yinyin",sanctioned,ofac,high
+0,14kqryJUxM3a7aEi117KX9hoLUw592WsMR,"OFAC: TIAN, Yinyin",sanctioned,ofac,high
+0,1F2Gdug9ib9NQMhKMGGJczzMk5SuENoqrp,"OFAC: TIAN, Yinyin",sanctioned,ofac,high
+0,3F2sZ4jbhvDKQdGbHYPC6ZxFXEau2m5Lqj,"OFAC: TIAN, Yinyin",sanctioned,ofac,high
+0,1AXUTu9y3H8w4wYx4BjyFWgRhZKDhmcMrn,"OFAC: TIAN, Yinyin",sanctioned,ofac,high
+0,1Hn9ErTCPRP6j5UDBeuXPGuq5RtRjFJxJQ,"OFAC: TIAN, Yinyin",sanctioned,ofac,high
+0,1EfMVkxQQuZfBdocpJu6RUsCJvenQWbQyE,"OFAC: LI, Jiadong",sanctioned,ofac,high
+0,17UVSMegvrzfobKC82dHXpZLtLcqzW9stF,"OFAC: LI, Jiadong",sanctioned,ofac,high
+0,39eboeqYNFe2VoLC3mUGx4dh6GNhLB3D2q,"OFAC: LI, Jiadong",sanctioned,ofac,high
+0,39fhoB2DohisGBbHvvfmkdPdShT75CNHdX,"OFAC: LI, Jiadong",sanctioned,ofac,high
+0,3E6rY4dSCDW6y2bzJNwrjvTtdmMQjB6yeh,"OFAC: LI, Jiadong",sanctioned,ofac,high
+0,3EeR8FbcPbkcGj77D6ttneJxmsr3Nu7KGV,"OFAC: LI, Jiadong",sanctioned,ofac,high
+0,3HQRveQzPifZorZLDXHernc5zjoZax8U9f,"OFAC: LI, Jiadong",sanctioned,ofac,high
+0,3JXKQ81JzBqVbB8VHdV9Jtd7auWokkdPgY,"OFAC: LI, Jiadong",sanctioned,ofac,high
+0,3KHfXU24Bt3YD5Ef4J7uNp2buCuhrxfGen,"OFAC: LI, Jiadong",sanctioned,ofac,high
+0,3LbDu1rUXHNyiz4i8eb3KwkSSBMf7C583D,"OFAC: LI, Jiadong",sanctioned,ofac,high
+0,3MN8nYo1tt5hLxMwMbxDkXWd7Xu522hb9P,"OFAC: LI, Jiadong",sanctioned,ofac,high
+0,3N6WeZ6i34taX8Ditser6LKWBcXmt2XXL4,"OFAC: LI, Jiadong",sanctioned,ofac,high
+1,0x7f367cc41522ce07553e823bf3be79a889debe1b,"OFAC: POTEKHIN, Danil",sanctioned,ofac,high
+0,1Q9UAQbcDezmyouFrzt94t4dSMxgsUfW1X,"OFAC: POTEKHIN, Danil",sanctioned,ofac,high
+0,1Kys8fqDen8NGFUJ6AFcXfFW5qquuTH4eh,"OFAC: POTEKHIN, Danil",sanctioned,ofac,high
+1,0xd882cfc20f52f2599d84b8e8d58c7fb62cfe344b,"OFAC: KARASAVIDI, Dmitrii",sanctioned,ofac,high
+0,1Q6saNmqKkyFB9mFR68Ck8F7Dp7dTopF2W,"OFAC: KARASAVIDI, Dmitrii",sanctioned,ofac,high
+0,1DDA93oZPn7wte2eR1ABwcFoxUFxkKMwCf,"OFAC: KARASAVIDI, Dmitrii",sanctioned,ofac,high
+1,0x901bb9583b24d97e995513c6778dc6888ab6870e,"OFAC: LIFSHITS, Artem Mikhaylovich",sanctioned,ofac,high
+1,0xa7e5d5a720f06526557c513402f2e6b5fa20b008,"OFAC: LIFSHITS, Artem Mikhaylovich",sanctioned,ofac,high
+0,12udabs2TkX7NXCSj6KpqXfakjE52ZPLhz,"OFAC: LIFSHITS, Artem Mikhaylovich",sanctioned,ofac,high
+0,1DT3tenf14cxz9WFNxmYrXFbB6TFiVWA9U,"OFAC: LIFSHITS, Artem Mikhaylovich",sanctioned,ofac,high
+0,1Fz29BQp82pE3vXXcsZoMNQ3KSHfMzfMe3,"OFAC: ANDREYEV, Anton Nikolaeyvich",sanctioned,ofac,high
+0,1AeSq93WDNdLoEJ92sex7T8xQZoYYm8BtS,"OFAC: ANDREYEV, Anton Nikolaeyvich",sanctioned,ofac,high
+0,1AoxtfiBQ22DvbhqAN9Ctb8sULMRhrdwTr,"OFAC: ANDREYEV, Anton Nikolaeyvich",sanctioned,ofac,high
+0,18Qj1THHuETfYhuRDZycXJbWwDMGw73Poa,"OFAC: ANDREYEV, Anton Nikolaeyvich",sanctioned,ofac,high
+0,1MnbhWe5wr7Ut45ReyQsm96PwnM9jD7KaH,"OFAC: ANDREYEV, Anton Nikolaeyvich",sanctioned,ofac,high
+0,1DYFJ6CuBvrxyoQSuBzVsNcetY9tvdsrag,"OFAC: ANDREYEV, Anton Nikolaeyvich",sanctioned,ofac,high
+0,15Pt4NwZaUmMUwS2bQbyyncc7mzgWShtv8,"OFAC: ANDREYEV, Anton Nikolaeyvich",sanctioned,ofac,high
+0,1PhqQpaGCrqSxQ6QDXcv14QCd1U98Zp34E,"OFAC: ANDREYEV, Anton Nikolaeyvich",sanctioned,ofac,high
+0,13YBQr2Cp1YY3xqq2qngaPb7ca1o4ugeq6,"OFAC: ANDREYEV, Anton Nikolaeyvich",sanctioned,ofac,high
+0,1KgudqxMfYaGzqAA7MS4DcsqejtMteqhix,"OFAC: ANDREYEV, Anton Nikolaeyvich",sanctioned,ofac,high
+0,1FRyL9gmFGbzfYDAB4iY9836DJe3KSnjP9,"OFAC: ANDREYEV, Anton Nikolaeyvich",sanctioned,ofac,high
+0,1DbShx4r8i2XesthoDBf5EkYWz5dsKEusV,"OFAC: ANDREYEV, Anton Nikolaeyvich",sanctioned,ofac,high
+0,1NE2NiGhhbkFPSEyNWwj7hKGhGDedBtSrQ,OFAC: SECONDEYE SOLUTION,sanctioned,ofac,high
+0,19D8PHBjZH29uS1uPZ4m3sVyqqfF8UFG9o,OFAC: SECONDEYE SOLUTION,sanctioned,ofac,high
+0,1EYitrwBYNWuTBcjZFbEUdqHppe2raLpaF,OFAC: SECONDEYE SOLUTION,sanctioned,ofac,high
+0,1G9CKRHA3mx22DoT1QyNYrh85VSQ19Y1em,OFAC: SECONDEYE SOLUTION,sanctioned,ofac,high
+0,182NGZbPJXwg2WDrhrPpR7tpiGQkNPF844,OFAC: SECONDEYE SOLUTION,sanctioned,ofac,high
+0,1NayLEVF3bEEbDtdF2Cwso1VdEtvVNh2qX,OFAC: SECONDEYE SOLUTION,sanctioned,ofac,high
+0,16PhXY3hNNMTo8kpuJx2emh713KbWpkqci,OFAC: SECONDEYE SOLUTION,sanctioned,ofac,high
+0,1KSAbh5trMCTZwhiNsuUQvfTtSSTT8zqRk,"OFAC: RAZA, Mujtaba Ali",sanctioned,ofac,high
+0,1BiUFjzH6wsT73U3tfy4aXHCQsYQHzjk5h,"OFAC: RAZA, Mujtaba Ali",sanctioned,ofac,high
+1,0x9f4cda013e354b8fc285bf4b9a60460cee7f7ea9,OFAC: SOUTHFRONT,sanctioned,ofac,high
+1,0x3cbded43efdaf0fc77b9c55f6fc9988fcc9b757d,OFAC: SOUTHFRONT,sanctioned,ofac,high
+0,3Gbs4rjcVUtQd8p3CiFUCxPLZwRqurezRZ,OFAC: SOUTHFRONT,sanctioned,ofac,high
+0,bc1qv7k70u2zynvem59u88ctdlaw7hc735d8xep9rq,OFAC: SOUTHFRONT,sanctioned,ofac,high
+0,bc1qw4cxpe6sxa5dg6sdwxjph959cw6yztrzl4r54s,OFAC: SOUTHFRONT,sanctioned,ofac,high
+0,17a5bpKvEp1j1Trs4qTbcNZrby53JbaS9C,"OFAC: FAYZIMATOV, Farrukh Furkatovitch",sanctioned,ofac,high
+0,1JPfVv5cWRLx1js9NWxg46dG2CGbeRz4th,"OFAC: HEBEI ATUN TRADING CO., LTD.",sanctioned,ofac,high
+0,12HQDsicffSBaYdJ6BhnE22sfjTESmmzKx,"OFAC: SUEX OTC, S.R.O.",sanctioned,ofac,high
+0,1L4ncif9hh9TnUveqWq77HfWWt6CJWtrnb,"OFAC: SUEX OTC, S.R.O.",sanctioned,ofac,high
+0,13mnk8SvDGqsQTHbiGiHBXqtaQCUKfcsnP,"OFAC: SUEX OTC, S.R.O.",sanctioned,ofac,high
+0,1Edue8XZCWNoDBNZgnQkCCivDyr9GEo4x6,"OFAC: SUEX OTC, S.R.O.",sanctioned,ofac,high
+0,1ECeZBxCVJ8Wm2JSN3Cyc6rge2gnvD3W5K,"OFAC: SUEX OTC, S.R.O.",sanctioned,ofac,high
+0,1J9oGoAiHeRfeMZeUnJ9W7RpV55CdKtgYE,"OFAC: SUEX OTC, S.R.O.",sanctioned,ofac,high
+0,1295rkVyNfFpqZpXvKGhDqwhP1jZcNNDMV,"OFAC: SUEX OTC, S.R.O.",sanctioned,ofac,high
+0,1LiNmTUPSJEd92ZgVJjAV3RT9BzUjvUCkx,"OFAC: SUEX OTC, S.R.O.",sanctioned,ofac,high
+0,1LrxsRd7zNuxPJcL5rttnoeJFy1y4AffYY,"OFAC: SUEX OTC, S.R.O.",sanctioned,ofac,high
+0,1KUUJPkyDhamZXgpsyXqNGc3x1QPXtdhgz,"OFAC: SUEX OTC, S.R.O.",sanctioned,ofac,high
+0,1CF46Rfbp97absrs7zb7dFfZS6qBXUm9EP,"OFAC: SUEX OTC, S.R.O.",sanctioned,ofac,high
+0,1Df883c96LVauVsx9FEgnsourD8DELwCUQ,"OFAC: SUEX OTC, S.R.O.",sanctioned,ofac,high
+0,bc1qdt3gml5z5n50y5hm04u2yjdphefkm0fl2zdj68,"OFAC: SUEX OTC, S.R.O.",sanctioned,ofac,high
+0,3E7YbpXuhh3CWFks1jmvWoV8y5DvsfzE6n,OFAC: CHATEX,sanctioned,ofac,high
+0,3NRJ8aXdUiZdHaiFX9ePX3DhGHzcEi14Fq,OFAC: CHATEX,sanctioned,ofac,high
+0,3K7PMJyMNVnxqsfpmK9r9nJDtzDw9wNwNV,OFAC: CHATEX,sanctioned,ofac,high
+0,3H3rh85qPaGLy2w6618yZNaH7i8asHv46B,OFAC: CHATEX,sanctioned,ofac,high
+0,3MTrJTFhYK9v1C6pjHtuweZSopfZa4b1wb,OFAC: CHATEX,sanctioned,ofac,high
+0,347QFbejDBdMZFTxpmn6evvvqyXiqZTCd7,OFAC: CHATEX,sanctioned,ofac,high
+0,33xWfziVZesgo83U5izdNCBVTnrtBpSwK7,OFAC: CHATEX,sanctioned,ofac,high
+0,32wdqwX3zCEX3DhAVEcKwXCEGdzgBnx1R9,OFAC: CHATEX,sanctioned,ofac,high
+0,3N9YcPBDky9UsMx1RTk33tL4jDkZfSnsPk,OFAC: CHATEX,sanctioned,ofac,high
+0,bc1q90zrdysy4flyacw7hsury3ajs9yzwtwp6guqpypx94w0d3p58hysvz6pde,OFAC: CHATEX,sanctioned,ofac,high
+0,bc1qw7vfgv3r5vnehafl0y95sclg3uqsj87wxs9ad628yjjcq33cwessr6ndyw,OFAC: CHATEX,sanctioned,ofac,high
+0,bc1q86tl9255vg5wldamfymaaz36uqxzm30gs7fhkljvzdlt9t38s3lqgdwdfq,OFAC: CHATEX,sanctioned,ofac,high
+1,0xfec8a60023265364d066a1212fde3930f6ae8da7,"OFAC: POLYANIN, Yevgeniy Igorevich",sanctioned,ofac,high
+0,158treVZBGMBThoaympxccPdZPtqUfYrT9,"OFAC: POLYANIN, Yevgeniy Igorevich",sanctioned,ofac,high
+0,389Sft4nJFkPGhbagk9FN4jXncA9piYTuU,"OFAC: POLYANIN, Yevgeniy Igorevich",sanctioned,ofac,high
+0,39Te8MbphSgs7npDJPj2hbNzhke61NTcnB,"OFAC: POLYANIN, Yevgeniy Igorevich",sanctioned,ofac,high
+0,31p6woV4e55HUfC2aGynFhzQnGoJFW26cD,"OFAC: POLYANIN, Yevgeniy Igorevich",sanctioned,ofac,high
+0,3DNsaQnaUz7wkQny1ZDSmtz6QfbEShxoDD,"OFAC: POLYANIN, Yevgeniy Igorevich",sanctioned,ofac,high
+0,3AjyprBY5yhijiCjUC5NUJutGbwhd3AQdE,"OFAC: POLYANIN, Yevgeniy Igorevich",sanctioned,ofac,high
+0,35QpLWYkvD3ALhjbge5bK2kd7HfHYcDMu3,"OFAC: VASINSKYI, Yaroslav",sanctioned,ofac,high
+0,3NQ1aa9ceirMJ1JvRq3eXefvXj1L639fzX,"OFAC: VASINSKYI, Yaroslav",sanctioned,ofac,high
+0,3BsyZ7qRFSi3NsaoV1Ff724qAgrEpjVUHm,"OFAC: VASINSKYI, Yaroslav",sanctioned,ofac,high
+0,372Wk9NLrMkJzKgqJdatWJy4bYRfxFjgat,"OFAC: VASINSKYI, Yaroslav",sanctioned,ofac,high
+1,0x7ff9cfad3877f21d41da833e2f775db0569ee3d9,OFAC: GARANTEX EUROPE OU,sanctioned,ofac,high
+1,0x8dce2aac0de82bdcaf6b4373b79f94331b8e4995,OFAC: GARANTEX EUROPE OU,sanctioned,ofac,high
+1,0xf4377eda661e04b6dda78969796ed31658d602d4,OFAC: GARANTEX EUROPE OU,sanctioned,ofac,high
+1,0xb338962b92cd818d6aef0a32a9ecd01212a71f33,OFAC: GARANTEX EUROPE OU,sanctioned,ofac,high
+1,0x57ec89a0c056163a0314e413320f9b3abe761259,OFAC: GARANTEX EUROPE OU,sanctioned,ofac,high
+1,0xd8500c631dc32fa18645b7436344a99e4825e10e,OFAC: GARANTEX EUROPE OU,sanctioned,ofac,high
+1,0x7ced75026204ac29c34bea98905d4c949f27361e,OFAC: GARANTEX EUROPE OU,sanctioned,ofac,high
+0,3Lpoy53K625zVeE47ZasiG5jGkAxJ27kh1,OFAC: GARANTEX EUROPE OU,sanctioned,ofac,high
+0,3E6ZCKRrsdPc35chA9Eftp1h3DLW18NFNV,OFAC: GARANTEX EUROPE OU,sanctioned,ofac,high
+0,3K4rjdh8A5yi6LWvft2rbmyZvqEbPSSSX4,OFAC: HYDRA MARKET,sanctioned,ofac,high
+0,17mhyeBX617ABZ1ffThhUTJkHUcMvCkfd5,OFAC: HYDRA MARKET,sanctioned,ofac,high
+0,35qwVtMEohWDdBWRiCSR7azoP5cbY8SG1Q,OFAC: HYDRA MARKET,sanctioned,ofac,high
+0,35KAdTa2vqnJzitF2xiUzZn1Gmcas2Y465,OFAC: HYDRA MARKET,sanctioned,ofac,high
+0,35LScRJ8hzDvvWh9t9UA8bHGnGNVz3YEfa,OFAC: HYDRA MARKET,sanctioned,ofac,high
+0,1PJp8diNa89cVHpiT1VPu7EQ8LxYM5HX6v,OFAC: HYDRA MARKET,sanctioned,ofac,high
+0,17V7THwHMiDJmDwZK4unhE5HgKFJKx7VCe,OFAC: HYDRA MARKET,sanctioned,ofac,high
+0,3PiCnZrBvGfWAKQ9hr4cCpfaDjy64yNSpE,OFAC: HYDRA MARKET,sanctioned,ofac,high
+0,14gM1HuLVDELNHaFU22qpabjtiWek4HhV1,OFAC: HYDRA MARKET,sanctioned,ofac,high
+0,1GYuu9d5HPikafbys3k5Q3DRJq6debGsoB,OFAC: HYDRA MARKET,sanctioned,ofac,high
+0,3GXdtA6kbb4M5aqzZm5qqxcFDFRMW8LqdJ,OFAC: HYDRA MARKET,sanctioned,ofac,high
+0,3K35dyL85fR9ht7UgzPfd1gLRRXQtNTqE3,OFAC: BLENDER.IO,sanctioned,ofac,high
+0,3Q5dGfLKkWqWSwYtbMUyc8xGjN5LrRviK4,OFAC: BLENDER.IO,sanctioned,ofac,high
+0,3EPqGUw2q89pwPZ1UF8FJspE2AyojSTjdu,OFAC: BLENDER.IO,sanctioned,ofac,high
+0,3LhnVMcBq4gsR7aDaRr9XmUo17CuYBV4FN,OFAC: BLENDER.IO,sanctioned,ofac,high
+0,3F6bbvS1krsc1qR8FsbTDfYQyvkMm3QvmR,OFAC: BLENDER.IO,sanctioned,ofac,high
+0,3JHMz3mTna1gVCZSPp8NgRFiY7phkv5mA8,OFAC: BLENDER.IO,sanctioned,ofac,high
+0,32DaxSzUhLBHY2WGSWQYiBSHnRsfQZrrRp,OFAC: BLENDER.IO,sanctioned,ofac,high
+0,3MTRvM5QrYZHKo8gh5qKcrPK3RLjxcDCZE,OFAC: BLENDER.IO,sanctioned,ofac,high
+0,34pFGsSYbWEritXncW9unZtQQE9dKSvKku,OFAC: BLENDER.IO,sanctioned,ofac,high
+0,38ncxqt932N9CcfNfYuHGZgCyR85hDkWBW,OFAC: BLENDER.IO,sanctioned,ofac,high
+0,3F6bbvS1krsc1qR8FsbTDfYQyvkMm,OFAC: BLENDER.IO,sanctioned,ofac,high
+0,1H939dom7i4WDLCKyGbXUp3fs9CSTNRzgL,"OFAC: KHATIBI AGHADA, Ahmad",sanctioned,ofac,high
+0,bc1q3y5v2khlyvemcz042wl98dzflywr8ghglqws6s,"OFAC: KHATIBI AGHADA, Ahmad",sanctioned,ofac,high
+0,bc1qx3e2axj3wsfn0ndtvlwmkghmmgm4583nqg8ngk,"OFAC: KHATIBI AGHADA, Ahmad",sanctioned,ofac,high
+0,bc1qsxf77cvwcd6jv6j8d8j3uhh4g0xqw4meswmwuc,"OFAC: NIKAEEN RAVARI, Amir Hossein",sanctioned,ofac,high
+0,bc1q9lvynkfpaw330uhqmunzdz6gmafsvapv7y3zty,"OFAC: NIKAEEN RAVARI, Amir Hossein",sanctioned,ofac,high
+0,bc1qpaly5nm7pfka9v92d6qvl4fc2l9xzee8a6ys3s,"OFAC: NIKAEEN RAVARI, Amir Hossein",sanctioned,ofac,high
+1,0xc2a3829f459b3edd87791c74cd45402ba0a20be3,OFAC: TASK FORCE RUSICH,sanctioned,ofac,high
+1,0x3ad9db589d201a710ed237c829c7860ba86510fc,OFAC: TASK FORCE RUSICH,sanctioned,ofac,high
+0,bc1ql7dlyh8xz6tpqk92vztrhqh88dmjvcwrmsemrm,OFAC: TASK FORCE RUSICH,sanctioned,ofac,high
+0,bc1q2lpgjntr348pfvxhfy33ehmdzy3gmx8w4052z6,OFAC: TASK FORCE RUSICH,sanctioned,ofac,high
+0,1DbvK8P6imBuLcwh2Vruis4xsUb8YAwJQF,"OFAC: PEIJNENBURG, Alex Adrianus Martinus",sanctioned,ofac,high
+0,1G6DuwDKNHiUWqks2Lgu44cesu7ffFbLK7,"OFAC: PEIJNENBURG, Alex Adrianus Martinus",sanctioned,ofac,high
+0,3AQSmMk5n3c6TKEg9B2WyzYAPm33gJJAA4,"OFAC: PEIJNENBURG, Alex Adrianus Martinus",sanctioned,ofac,high
+0,129zKFLoVad9JtxSmDKeJoLCsjhGR7b3vr,"OFAC: PEIJNENBURG, Alex Adrianus Martinus",sanctioned,ofac,high
+0,12YyR9EpvHxBjjKjTWqfKqeyoWnvcraxpW,"OFAC: PEIJNENBURG, Alex Adrianus Martinus",sanctioned,ofac,high
+0,1KctQENEX5QkQMpnMC3Zh9yRAzkMBLpPcr,"OFAC: PEIJNENBURG, Alex Adrianus Martinus",sanctioned,ofac,high
+0,3HqA7i3ttECLvgqvq69HNxxUP5BL7Z5YgA,"OFAC: PEIJNENBURG, Alex Adrianus Martinus",sanctioned,ofac,high
+0,1G9A8WRjGXdnYY4TNEVRrcaHsMtana4ncF,"OFAC: PEIJNENBURG, Alex Adrianus Martinus",sanctioned,ofac,high
+0,1Js6goCey2NaqPQptiLANLQGuk4d6mowjP,"OFAC: PEIJNENBURG, Alex Adrianus Martinus",sanctioned,ofac,high
+0,13RH4JaFhaCxDGPyYE9emjp2aDxdX18uBA,"OFAC: PEIJNENBURG, Alex Adrianus Martinus",sanctioned,ofac,high
+0,1FE2cuvkq8n5VGwj5hi8YYQxskwJpovPyV,"OFAC: PEIJNENBURG, Alex Adrianus Martinus",sanctioned,ofac,high
+0,1DJoEMvp95yJYWyxAZy8DDBzuvjnrTVrsN,"OFAC: PEIJNENBURG, Alex Adrianus Martinus",sanctioned,ofac,high
+0,1LpYKb3SXZPve9hsH2QEJZFX279wJVGowi,"OFAC: GRIMM, Matthew Simon",sanctioned,ofac,high
+0,15uqdxqNXQwVf5H7yZPz4TmEGeSccCwdor,"OFAC: GRIMM, Matthew Simon",sanctioned,ofac,high
+0,1FjubFHV4mpYjBmvjsEhZssyiiA4TNmnm2,"OFAC: GRIMM, Matthew Simon",sanctioned,ofac,high
+0,1LAh7PQwpd1uGiLHae5C5Xz9QXse3y2phq,"OFAC: GRIMM, Matthew Simon",sanctioned,ofac,high
+0,15yqWQ4sqr7jzCwDtZ3U1KaCa8WMEy7Mm2,"OFAC: GRIMM, Matthew Simon",sanctioned,ofac,high
+0,19GrL5jnUkGmHXVcraB1Etv5rXCANeLWpq,"OFAC: GRIMM, Matthew Simon",sanctioned,ofac,high
+0,39NG2LcGRHXxSr1irpEVnJMw4ydL231sEn,"OFAC: GRIMM, Matthew Simon",sanctioned,ofac,high
+0,3He6EyDaCUgmdr4GXqhxbeTQukaGLCByU2,"OFAC: GRIMM, Matthew Simon",sanctioned,ofac,high
+0,12NpCkhddSNiDkD9rRYUCHsTT9ReMNiJjG,"OFAC: GRIMM, Matthew Simon",sanctioned,ofac,high
+0,32jgFkZsTEjMFaBvxJnYvJEeTNKTmq5b32,"OFAC: GRIMM, Matthew Simon",sanctioned,ofac,high
+0,1Hpj6qm9i7nMF3VkKfBFtjhEDpEjxHWvgv,"OFAC: GRIMM, Matthew Simon",sanctioned,ofac,high
+1,0x39d908dac893cbcb53cc86e0ecc369aa4def1a29,"OFAC: ZIMENKOV, Jonatan",sanctioned,ofac,high
+0,bc1qfg4gfg0y6t6xjnpmlhuwx5k0wlw6nmfzxn2psc,"OFAC: ZIMENKOV, Jonatan",sanctioned,ofac,high
+0,3PKiHs4GY4rFg8dpppNVPXGPqMX6K2cBML,"OFAC: WANG, Hongfei",sanctioned,ofac,high
+0,1986rYHckYbJpGQJy6ornuMyD2N5MTqwDt,"OFAC: WU, Huihui",sanctioned,ofac,high
+0,125W5ek3DT6Zqy5S2iPt4FHQdNMCbZA3FU,"OFAC: WU, Huihui",sanctioned,ofac,high
+0,1Kc6egXevyLEaeTxLFA1Zyw7GuhCN8jQtt,"OFAC: WU, Huihui",sanctioned,ofac,high
+0,12w6v1qAaBc4W8h8C2Cu5SKFaKDSv3erUW,"OFAC: WU, Huihui",sanctioned,ofac,high
+0,1CPJak9ZyddbawMGJPyEhCiJLXXb4sYv8N,"OFAC: WU, Huihui",sanctioned,ofac,high
+0,1DJoVLgn1foJHHngduRPJvRbwpaFEKxvxd,"OFAC: WU, Huihui",sanctioned,ofac,high
+0,15kZobLkD6HZgEECtz4oS2Vz21XHTnNfSg,"OFAC: WU, Huihui",sanctioned,ofac,high
+0,15qyVrZvvVGvB7GWiAZ82TNcZ6QWMKu3kx,"OFAC: WU, Huihui",sanctioned,ofac,high
+0,12YCfVAEzkEZXBYhUTyJJaRkgMXiFxJgcu,"OFAC: WU, Huihui",sanctioned,ofac,high
+0,1MkCnCa9agS5t6V1B15bzusBgYECB4LfWp,"OFAC: WU, Huihui",sanctioned,ofac,high
+0,1NuBZQXJPyYQGfoBib8wWBDpZmbtkJa5Ba,"OFAC: WU, Huihui",sanctioned,ofac,high
+0,14rjAD8ZP5xaL571cMRE98qgxxbg1S8mAN,"OFAC: WU, Huihui",sanctioned,ofac,high
+0,18yWCu6agTxYqAerMxiz9sgHrK3ViezzGa,"OFAC: WU, Huihui",sanctioned,ofac,high
+1,0x4f47bc496083c727c5fbe3ce9cdf2b0f6496270c,"OFAC: SIM, Hyon Sop",sanctioned,ofac,high
+1,0xd04e33461fea8302c5e1e13895b60cee8aefda7f,"OFAC: SIM, Hyon Sop",sanctioned,ofac,high
+1,0x76ea76ca4eb727f18956ab93445a94c5280412b9,"OFAC: SIM, Hyon Sop",sanctioned,ofac,high
+1,0xfb3eff152ea55d1bfa04dbdd509a80fd7b72cdeb,"OFAC: SIM, Hyon Sop",sanctioned,ofac,high
+1,0xfda1ec4a6178d4916b001a065422d31ebe5f62ff,"OFAC: SIM, Hyon Sop",sanctioned,ofac,high
+1,0x747afb5c7a7fc34b547cd0fdebf9b91759c5a52b,"OFAC: SIM, Hyon Sop",sanctioned,ofac,high
+1,0x38735f03b30fbc022ddd06abed01f0ca823c6a94,"OFAC: HANAFIN, John Desmond",sanctioned,ofac,high
+1,0x97b1043abd9e6fc31681635166d430a458d14f9c,"OFAC: KIM, Sang Man",sanctioned,ofac,high
+1,0xb6f5ec1a0a9cd1526536d3f0426c429529471f40,"OFAC: KIM, Sang Man",sanctioned,ofac,high
+0,1D6gG9iKEhPitTcWRJiniuj1jYM2hNeAfJ,"OFAC: KIM, Sang Man",sanctioned,ofac,high
+0,1FCNgfZWpYMeYhy9t18AAkTBu8AsdoAc1Z,"OFAC: KIM, Sang Man",sanctioned,ofac,high
+0,bc1q4namcagg5wljs0u20z6h2sqgsq4q5lts8rt2rr,"OFAC: WANG, Yunhe",sanctioned,ofac,high
+0,bc1qdpazd6smrkq5hmw6lupq98za2fqtgmq3azv3av,"OFAC: WANG, Yunhe",sanctioned,ofac,high
+0,bc1qwz0l2ceddckwdy5rh6zyrm3x4ha6gn5f2da5zg,"OFAC: WANG, Yunhe",sanctioned,ofac,high
+0,bc1qw8evftpgc8wsmkemd8yl5fg2husza5z802xaym,"OFAC: WANG, Yunhe",sanctioned,ofac,high
+0,bc1qv4krhj2qmpd9qz9xj9nhvj99fq8s9xsw05d485,"OFAC: WANG, Yunhe",sanctioned,ofac,high
+0,bc1qu5vngdtcx8nc9d68pq8nv7pzcjrswsy87s66gk,"OFAC: WANG, Yunhe",sanctioned,ofac,high
+0,bc1qtsl3ufenrv3zgrgm9z8xarcx22x8mfztuartyn,"OFAC: WANG, Yunhe",sanctioned,ofac,high
+0,bc1qtrrfhr0f3ufsrjxfv8a7p3yuqj0spe4cm6vaws,"OFAC: WANG, Yunhe",sanctioned,ofac,high
+0,bc1qte9ret332gwrk6e7vqc87d807npzvdj5savg4h,"OFAC: WANG, Yunhe",sanctioned,ofac,high
+0,bc1qtdupwe722vcc5e0vh94cgwfs0ep4gzwyfsf75q,"OFAC: WANG, Yunhe",sanctioned,ofac,high
+0,bc1qnykkrlk67f9kdqvzyw2ndu3xmef5z2e52886yl,"OFAC: WANG, Yunhe",sanctioned,ofac,high
+1,0x9c2bc757b66f24d60f016b6237f8cdd414a879fa,"OFAC: JIMENEZ CASTRO, Mario Alberto",sanctioned,ofac,high
+0,bc1qq7p0es3dv5hcynjjf40f2xjjr6qp5py47d2f6n847vduuq9gvnyq7y9ecd,OFAC: SINBAD,sanctioned,ofac,high
+0,1JHdQHkBZiim1cb4hyUh2PbzEbbg6z2TrF,OFAC: SINBAD,sanctioned,ofac,high
+1,0xdcbeffbecce100cce9e4b153c4e15cb885643193,"OFAC: SEMENOV, Roman",sanctioned,ofac,high
+1,0x5f48c2a71b2cc96e3f0ccae4e39318ff0dc375b2,"OFAC: SEMENOV, Roman",sanctioned,ofac,high
+1,0x5a7a51bfb49f190e5a6060a5bc6052ac14a3b59f,"OFAC: SEMENOV, Roman",sanctioned,ofac,high
+1,0xed6e0a7e4ac94d976eebfb82ccf777a3c6bad921,"OFAC: SEMENOV, Roman",sanctioned,ofac,high
+1,0x797d7ae72ebddcdea2a346c1834e04d1f8df102b,"OFAC: SEMENOV, Roman",sanctioned,ofac,high
+1,0x931546d9e66836abf687d2bc64b30407bac8c568,"OFAC: SEMENOV, Roman",sanctioned,ofac,high
+1,0x43fa21d92141ba9db43052492e0deee5aa5f0a93,"OFAC: SEMENOV, Roman",sanctioned,ofac,high
+1,0x6be0ae71e6c41f2f9d0d1a3b8d0f75e6f6a0b46e,"OFAC: SEMENOV, Roman",sanctioned,ofac,high
+0,1Ljk8RNNabkZ9bfDYQBn98XfFozJhTjqcZ,"OFAC: ZHDANOVA, Ekaterina Valeryevna",sanctioned,ofac,high
+0,3685sEusmTwZBiKJ4cgV73EAhpVD1nbgbe,"OFAC: ZHDANOVA, Ekaterina Valeryevna",sanctioned,ofac,high
+0,39p8qWp1bkBNhi4vPpFTetKPtH7goqNDZf,"OFAC: ZHDANOVA, Ekaterina Valeryevna",sanctioned,ofac,high
+1,0x530a64c0ce595026a4a556b703644228179e2d57,"OFAC: SHEN, Xingbiao",sanctioned,ofac,high
+0,3B7S6zrgxQVQUHTU8wstM23tB9afE7ojuX,"OFAC: SHEN, Xingbiao",sanctioned,ofac,high
+1,0x983a81ca6fb1e441266d2fbcb7d8e530ac2e05a2,"OFAC: VALERIAN LABS, INC.",sanctioned,ofac,high
+0,bc1qardcxz845jw83vgfvcmewhuxa0ag9gchjwmcfd,"OFAC: VALERIAN LABS, INC.",sanctioned,ofac,high
+0,3NNcbBcMZokPB2JC2dxYuZrpgcetvyGeJn,"OFAC: WANG, Jiantong",sanctioned,ofac,high
+0,38TftW1heYPqvKbiAhT4ttNBqkUPpooXad,"OFAC: XIA, Fengbing",sanctioned,ofac,high
+0,bc1qkfqh5p2qsakseg5gnwen6zh5xf3elmku2xaup29mw3l0wnncy3es880dss,"OFAC: XIA, Fengbing",sanctioned,ofac,high
+1,0x961c5be54a2ffc17cf4cb021d863c42dacd47fc1,"OFAC: ZHANG, Wei",sanctioned,ofac,high
+0,3NU9zkD8CCVGVmYnNNSN7PbU9sSFQBm5UV,"OFAC: ZHANG, Wei",sanctioned,ofac,high
+1,0xfac583c0cf07ea434052c49115a4682172ab6b4f,"OFAC: WANG, Mingming",sanctioned,ofac,high
+0,1MLPqwaFFUBZePTjpR3nxRoK19Cv9mPCc7,"OFAC: WANG, Mingming",sanctioned,ofac,high
+0,3HePkztPU6UsdENxnyQHFrdZA6eVKeMtvz,"OFAC: WANG, Mingming",sanctioned,ofac,high
+0,19D1iGzDr7FyAdiy3ZZdxMd6ttHj1kj6WW,OFAC: BUY CASH MONEY AND MONEY TRANSFER COMPANY,sanctioned,ofac,high
+1,0xe950dc316b836e4eefb8308bf32bf7c72a1358ff,OFAC: GAZA NOW,sanctioned,ofac,high
+1,0x21b8d56bda776bbe68655a16895afd96f5534fed,OFAC: GAZA NOW,sanctioned,ofac,high
+1,0x175d44451403edf28469df03a9280c1197adb92c,OFAC: GAZA NOW,sanctioned,ofac,high
+0,3Q8H2ZWMtc4R1M3mkmhnTjCoYKTeCFigDP,OFAC: GAZA NOW,sanctioned,ofac,high
+0,18gaXypKj9M23S2zT9qZfL9iPbLFM372Q5,"OFAC: SUNGATOV, Artur Ravilevich",sanctioned,ofac,high
+1,0xf3701f445b6bdafedbca97d1e477357839e4120d,"OFAC: KONDRATIEV, Ivan Gennadievich",sanctioned,ofac,high
+0,bc1q5jqgm7nvrhaw2rh2vk0dk8e4gg5g373g0vz07r,"OFAC: KONDRATIEV, Ivan Gennadievich",sanctioned,ofac,high
+0,32pTjxTNi7snk8sodrgfmdKao3DEn1nVJM,"OFAC: KONDRATIEV, Ivan Gennadievich",sanctioned,ofac,high
+0,15cRqR3TXS1JehBGWERuxFE8NhWZzfoeeU,"OFAC: KONDRATIEV, Ivan Gennadievich",sanctioned,ofac,high
+0,1A7SKE2dQtezLktCY8peLsdAtkqxV9r1dC,"OFAC: KONDRATIEV, Ivan Gennadievich",sanctioned,ofac,high
+0,bc1q8ew45w2agdffrnwp6adt2gqrc9n4mkev9ns29c,"OFAC: KONDRATIEV, Ivan Gennadievich",sanctioned,ofac,high
+0,bc1qagp0gy58v8hqvw4p2wsphcxg067rrppp45hexr,"OFAC: KONDRATIEV, Ivan Gennadievich",sanctioned,ofac,high
+0,bc1qn6segn8km4nfdp9vueu6msfjsaxaqgun9h60n9,"OFAC: KONDRATIEV, Ivan Gennadievich",sanctioned,ofac,high
+0,bc1qx9upga7f09tsetqf78wa3qrmcjar58mkwz6ng6,"OFAC: KONDRATIEV, Ivan Gennadievich",sanctioned,ofac,high
+1,0x19f8f2b0915daa12a3f5c9cf01df9e24d53794f7,OFAC: OKO DESIGN BUREAU,sanctioned,ofac,high
+0,13fhnkmpBBWXUQucJd6efWvXdEj78DKavk,OFAC: OKO DESIGN BUREAU,sanctioned,ofac,high
+0,bc1qvhnfknw852ephxyc5hm4q520zmvf9maphetc9z,"OFAC: KHOROSHEV, Dmitry Yuryevich",sanctioned,ofac,high
+1,0x0931ca4d13bb4ba75d9b7132ab690265d749a5e7,OFAC: CRYPTEX,sanctioned,ofac,high
+0,13JtX4h7G5ZuNK5mFudKGq9DHLvvMFuNuz,OFAC: CRYPTEX,sanctioned,ofac,high
+0,3NEcQKZ8RwL2eDNhmMPpZ4td9vPsQh9JwM,"OFAC: HUANG, Xiaojun",sanctioned,ofac,high
+1,0x1999ef52700c34de7ec2b68a28aafb37db0c5ade,"OFAC: MAGOMEDOV, Khadzhi Murat Dalgatovich",sanctioned,ofac,high
+0,1M5N4sJ1NHb4fviLVZA5MZLKhLZqU4CPZz,OFAC: ZSERVERS,sanctioned,ofac,high
+0,1Gekw8ACSs37oXcc5XQHvoux3iKoVFtpF4,OFAC: ZSERVERS,sanctioned,ofac,high
+0,bc1q4yzd2rjmshm8ucrwy6dzj5rna20j0zlf8hf8vz,OFAC: ZSERVERS,sanctioned,ofac,high
+0,3FfRvC3kSo2SxiQe5e7SSuNdegwgq8iusL,"OFAC: MISHIN, Alexander Igorevich",sanctioned,ofac,high
+0,bc1q3q2lz3cmt4u2f49ugxz5q34xrs0m2z4w2gmkp5,"OFAC: PARSARAD, Behrouz",sanctioned,ofac,high
+0,bc1qj2ffj6pepc80sfqpx2k2pd3q278q72dpqv2ens,"OFAC: PARSARAD, Behrouz",sanctioned,ofac,high
+0,bc1qjwr3rgww7a8ut7a4x8jqh3vswcue3xvp6dm7qe,"OFAC: PARSARAD, Behrouz",sanctioned,ofac,high
+0,bc1qvxlwpgcw260sc97a0u6dm0cjxv027clhd67fvx,"OFAC: PARSARAD, Behrouz",sanctioned,ofac,high
+0,bc1qwtswqzvaxl6lyw3keqqzwt8z937psta3wg9sjy,"OFAC: PARSARAD, Behrouz",sanctioned,ofac,high
+0,bc1qyqvyupkpl6tm60zdecef925y220ssjuagpxsm0,"OFAC: PARSARAD, Behrouz",sanctioned,ofac,high
+0,bc1q45cxufu7x6s5v9adzm9t38k80gwawse75xffwe,"OFAC: PARSARAD, Behrouz",sanctioned,ofac,high
+0,bc1qmzmx8res2fgzd2wttyvf2ajqqqtcnxxrgkqc2t,"OFAC: PARSARAD, Behrouz",sanctioned,ofac,high
+1,0xd5ed34b52ac4ab84d8fa8a231a3218bbf01ed510,OFAC: FUNNULL TECHNOLOGY INC,sanctioned,ofac,high
+0,18dLDAWi8LmrHbEq3QzDJb9SLxCf4uimXB,"OFAC: VOLOSOVIK, Aleksandr Aleksandrovich",sanctioned,ofac,high
+1,0x12de548f79a50d2bd05481c8515c1ef5183666a9,OFAC: OLD VECTOR LLC,sanctioned,ofac,high
+0,1HmqvgSXUVES1jn4TQPzk9dxo1NE8wim2T,"OFAC: ANDREYEV, Vitaliy Sergeyevich",sanctioned,ofac,high
+1,0xdb2720ebad55399117ddb4c4a4afd9a4ccada8fe,"OFAC: DERAKHSHAN, Alireza",sanctioned,ofac,high
+1,0xe3d35f68383732649669aa990832e017340dbca5,"OFAC: ALIVAND, Arash Estaki",sanctioned,ofac,high
+1,0x532b77b33a040587e9fd1800088225f99b8b0e8a,"OFAC: ALIVAND, Arash Estaki",sanctioned,ofac,high
+0,bc1qeth6n6ryxexvkx34wnx3nuynun4474h3j0gkhw,"OFAC: CHEN, Zhi",sanctioned,ofac,high
+0,bc1q2we5eqjj8je6lz9xwjattpc3pn4jejc5h0s70f,"OFAC: CHEN, Zhi",sanctioned,ofac,high
+0,bc1qnujzvts45qka3cr2eqqw8ur3q6g6s0ze2wlk5m,"OFAC: CHEN, Zhi",sanctioned,ofac,high
+0,bc1qw4fxztd5u3sl7vrcqwk2a8v5zh5dllvckx3tlt,"OFAC: CHEN, Zhi",sanctioned,ofac,high
+0,3EynPFpoGTPxU9m5bPaEDEUxUanzh7vgQP,"OFAC: CHEN, Zhi",sanctioned,ofac,high
+0,3FoD1f6Tfnq3s8MYHgJqFPWv9cUrtUdBSv,"OFAC: CHEN, Zhi",sanctioned,ofac,high
+0,3MKXKqPXf6VxTLkVSXuDKzaTiZZaz5AmiK,"OFAC: CHEN, Zhi",sanctioned,ofac,high
+0,386sPhHBbLidzPnoxUH74jiiYkHYtobefQ,"OFAC: CHEN, Zhi",sanctioned,ofac,high
+0,35irs2AU6pVgenYbWvMRz22avDBLC9XMkd,"OFAC: CHEN, Zhi",sanctioned,ofac,high
+0,36ia8qAE1k1PKQePdXENCm1YKLXxZyVnnc,"OFAC: CHEN, Zhi",sanctioned,ofac,high
+0,374RguZDMNW5Zh5ouW3KhKDcrerKusmsuk,"OFAC: CHEN, Zhi",sanctioned,ofac,high
+1,0x5d5b5dafecbf31bdb08bfd3edad4f2694372d0ef,"OFAC: SOKOLOVSKI, Rolan",sanctioned,ofac,high
+1,0xc103b7dc095c904b92081eef0c1640081ec01c10,"OFAC: SOKOLOVSKI, Rolan",sanctioned,ofac,high
+1,0xe1e4c5e5ed8f03ae61b581e2def126025f2b9401,"OFAC: SOKOLOVSKI, Rolan",sanctioned,ofac,high
+0,37fKFZQGMqdBkjSUub1jCDWGgSHwv9VxfZ,"OFAC: SOKOLOVSKI, Rolan",sanctioned,ofac,high
+0,1JPqJ8sxLBvdHBqMqSFBmUkoh2vAuCUNvs,"OFAC: SOKOLOVSKI, Rolan",sanctioned,ofac,high
+1,0xb637f84b66876ebf609c2a4208905f9ddac9d075,"OFAC: YUN, Song Guk",sanctioned,ofac,high
+1,0x95584c303fcd48af5c6b9873015f2ad0ca84eae3,"OFAC: YUN, Song Guk",sanctioned,ofac,high
+0,bc1qyy5pt5cx3zth8xlj92lq5y87dh8xv3nwgs4ncq,"OFAC: HOANG, Minh Quang",sanctioned,ofac,high
+1,0xcb74874f1e06fcf80a306e06e5379a44b488ba2d,OFAC: AMNOKGANG TECHNOLOGY DEVELOPMENT COMPANY,sanctioned,ofac,high
+1,0x0330070fd38ec3bb94f58fa55d40368271e9e54a,OFAC: AMNOKGANG TECHNOLOGY DEVELOPMENT COMPANY,sanctioned,ofac,high
+1,0x9be599d7867f5e1a2d7ec6db9710df2b98a15573,OFAC: AMNOKGANG TECHNOLOGY DEVELOPMENT COMPANY,sanctioned,ofac,high
+1,0x038989cbb1710c72b9920dc4fa529158f463e72c,"OFAC: OJEDA AVILES, Armando de Jesus",sanctioned,ofac,high
+1,0x14779cec0b117d5194c750c55ea1f42086631964,"OFAC: OJEDA AVILES, Armando de Jesus",sanctioned,ofac,high
+1,0x32da24ca413f3e7b53145d4737e172c3bdf81e3e,"OFAC: OJEDA AVILES, Armando de Jesus",sanctioned,ofac,high
+1,0xf2235d55b2950a0b1317469d72d07ae65b2e27cb,"OFAC: OJEDA AVILES, Armando de Jesus",sanctioned,ofac,high
+1,0x4f428c11dc82388fa5136d636e613ad923eb700b,"OFAC: OJEDA AVILES, Armando de Jesus",sanctioned,ofac,high
+1,0xac4cc4b68ea24bbfaac8fd127b67ed445accce22,"OFAC: ALARCON PALOMARES, Rodrigo",sanctioned,ofac,high

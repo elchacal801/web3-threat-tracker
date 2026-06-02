@@ -58703,17 +58703,6 @@
   first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: bearableguyreward.xyz.
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
 - domain: bearachsain.com
   type: traditional_domain
   severity: MALICIOUS
@@ -59027,17 +59016,6 @@
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
 - domain: bearnet-chain.xyz
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: bearnet-chain.xyz.
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -62366,17 +62344,6 @@
   - metamask
   - scamsniffer
   first_seen: '2026-05-29T03:33:59.990186+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: beefy-rectify.xyz.
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
 - domain: beefy-rewards.co
@@ -80920,17 +80887,6 @@
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
 - domain: bevorai-claim.xyz
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: bevorai-claim.xyz.
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -122413,17 +122369,6 @@
   first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: bitlayer-claim.xyz.
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
 - domain: bitlayer.app
   type: traditional_domain
   severity: MALICIOUS
@@ -132708,7 +132653,7 @@
   first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: blackhole-app.xyz.
+- domain: blackhole-app.xyz
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -132776,17 +132721,6 @@
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
 - domain: blackholerewardspad.xyz
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: blackholerewardspad.xyz.
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -147805,17 +147739,6 @@
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
 - domain: blessnetwork-checker.xyz
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: blessnetwork-checker.xyz.
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -169364,17 +169287,6 @@
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
 - domain: bluetrust.vip
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: bluetrust.vip.
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -203433,17 +203345,6 @@
   first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: bookmaker-claims.xyz.
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
 - domain: bookmaker-drop.xyz
   type: traditional_domain
   severity: MALICIOUS
@@ -214312,17 +214213,6 @@
   first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: botto-sushi.xyz.
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
 - domain: botto.network
   type: traditional_domain
   severity: MALICIOUS
@@ -219205,17 +219095,6 @@
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
 - domain: boyco-beraichains.xyz
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: boyco-beraichains.xyz.
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -226806,17 +226685,6 @@
   first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: bridge-gravite.xyz.
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
 - domain: bridge-harmoniy.com
   type: traditional_domain
   severity: MALICIOUS
@@ -226939,17 +226807,6 @@
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
 - domain: bridge-initia.xyz
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: bridge-initia.xyz.
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -243933,7 +243790,7 @@
   first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: btcbull-tokens.xyz.
+- domain: btcbull-tokens.xyz
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -268082,17 +267939,6 @@
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
 - domain: bytenovabsc.xyz
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: bytenovabsc.xyz.
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM

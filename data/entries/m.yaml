@@ -207,17 +207,6 @@
   first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: m-ducksclubs.com.
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
 - domain: m-ducksstore.com
   type: traditional_domain
   severity: MALICIOUS
@@ -7226,7 +7215,7 @@
   first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: m87-sushi.xyz.
+- domain: m87-sushi.xyz
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -30925,21 +30914,6 @@
   first_seen: '2026-05-29T03:33:59.990186+00:00'
   last_seen: '2026-06-02T09:55:20.894721+00:00'
   added_by: automated
-- domain: mailto:nsdmilea@gmail.com
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: LOW
-  tags:
-  - investment_scam
-  sources:
-  - cryptoscamdb
-  first_seen: '2026-05-29T03:36:55.805565+00:00'
-  last_seen: '2026-06-02T09:57:58.762697+00:00'
-  added_by: automated
-  url: mailto:nsdmilea@gmail.com
-  wallet_addresses:
-  - '0x9f4562c9be26c7020909b50ccde3447f1b8c4b21'
-  notes: Trust-trading scam email
 - domain: mailz.pappuinternational.com
   type: traditional_domain
   severity: MALICIOUS
@@ -37987,17 +37961,6 @@
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
 - domain: mainnetdecentralized.xyz
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: mainnetdecentralized.xyz.
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -56101,17 +56064,6 @@
   first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: mantle-network.xyz.
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
 - domain: mantle-networks.xyz
   type: traditional_domain
   severity: MALICIOUS
@@ -69162,17 +69114,6 @@
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
 - domain: maskofficial.claims
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: maskofficial.claims.
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -118763,17 +118704,6 @@
   last_seen: '2026-06-02T09:55:20.894721+00:00'
   added_by: automated
 - domain: meshconnectpass.xyz
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: meshconnectpass.xyz.
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -187896,17 +187826,6 @@
   first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: midnight-airdrop.xyz.
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
 - domain: midnight-app.live
   type: traditional_domain
   severity: MALICIOUS
@@ -188141,17 +188060,6 @@
   last_seen: '2026-06-02T09:55:20.894721+00:00'
   added_by: automated
 - domain: midnight-network.xyz
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: midnight-network.xyz.
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -202410,17 +202318,6 @@
   first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: migration-stackai.xyz.
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
 - domain: migration-stats.xyz
   type: traditional_domain
   severity: MALICIOUS
@@ -208150,17 +208047,6 @@
   first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: min.scrllorigzk.biz.
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
 - domain: min.scrollorigzk.cc
   type: traditional_domain
   severity: MALICIOUS
@@ -208965,7 +208851,7 @@
   first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: mindnetwork-agent.xyz.
+- domain: mindnetwork-agent.xyz
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -238112,17 +237998,6 @@
   first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: miranetwork-live.xyz.
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
 - domain: miranetwork.app
   type: traditional_domain
   severity: MALICIOUS
@@ -257769,17 +257644,6 @@
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
 - domain: modeswap.xyz
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: modeswap.xyz.
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -295697,17 +295561,6 @@
   first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: ms-sharepoint-files-download.xyz.
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
 - domain: ms-team-meetings.team
   type: traditional_domain
   severity: MALICIOUS
@@ -298084,17 +297937,6 @@
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
 - domain: msytnodes.xyz
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: msytnodes.xyz.
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -304513,17 +304355,6 @@
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
 - domain: multiapptool.xyz
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: multiapptool.xyz.
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -315865,17 +315696,6 @@
   first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: multifixdapp.xyz.
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
 - domain: multifixdapps.pages.dev
   type: traditional_domain
   severity: MALICIOUS
@@ -316926,7 +316746,7 @@
   first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: multinodesfix.xyz.
+- domain: multinodesfix.xyz
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM

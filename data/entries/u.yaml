@@ -30345,18 +30345,6 @@
   added_by: automated
   notes: 'Fake Uniswap phishing for secrets with POST //vooom-6652.restdb.io/rest/unis
     (x-apikey: 5ef928e3a529a1752c476ac1)'
-- domain: "uniswapnodev1\xAD.com"
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: LOW
-  tags:
-  - phishing
-  sources:
-  - cryptoscamdb
-  first_seen: '2026-05-29T03:36:55.805565+00:00'
-  last_seen: '2026-06-02T09:57:58.762697+00:00'
-  added_by: automated
-  notes: Fake Uniswap phishing for secrets with GET /send?seed=<seed>&name=Mnemonic
 - domain: uniswapnodev2.com
   type: traditional_domain
   severity: MALICIOUS

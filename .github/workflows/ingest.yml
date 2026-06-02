@@ -8,6 +8,12 @@ on:
 permissions:
   contents: write
 
+# Serialize ingest runs (scheduled + manual dispatch) so two jobs never commit
+# and push concurrently, which could lose a commit on the rebase/push.
+concurrency:
+  group: ingest
+  cancel-in-progress: false
+
 jobs:
   ingest:
     runs-on: ubuntu-latest
@@ -60,6 +66,10 @@ jobs:
           URLHAUS_API_KEY: ${{ secrets.URLHAUS_API_KEY }}
         run: python -m scripts.ingest.ingest_urlhaus
 
+      - name: Run OFAC SDN ingester
+        continue-on-error: true
+        run: python -m scripts.ingest.ingest_ofac
+
       - name: Normalize and deduplicate
         run: python -m scripts.normalize
 
@@ -75,11 +85,14 @@ jobs:
       - name: Generate statistics
         run: python -m scripts.stats
 
+      - name: Guard against dataset collapse
+        run: python -m scripts.check_integrity
+
       - name: Commit changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/entries/ data/exports/stats.json
+          git add data/entries/ data/exports/stats.json labels/ofac.csv
           git diff --staged --quiet || git commit -m "chore: daily ingestion $(date +%Y-%m-%d)"
           git pull --rebase origin master
           git push

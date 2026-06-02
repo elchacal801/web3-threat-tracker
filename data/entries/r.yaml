@@ -29647,17 +29647,6 @@
   first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: rcadefi.xyz.
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
 - domain: rcadegaming.xyz
   type: traditional_domain
   severity: MALICIOUS
@@ -42941,17 +42930,6 @@
   first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: rectify-appsresolution.xyz.
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
 - domain: rectify-auth.netlify.app
   type: traditional_domain
   severity: MALICIOUS
@@ -44564,17 +44542,6 @@
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
 - domain: rectifywebnodechain.xyz
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: rectifywebnodechain.xyz.
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -63696,17 +63663,6 @@
   first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: register-attntoken.xyz.
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
 - domain: register-aurion.xyz
   type: traditional_domain
   severity: MALICIOUS
@@ -67290,17 +67246,6 @@
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
 - domain: register-dioneprotocol.xyz
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: register-dioneprotocol.xyz.
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -77272,17 +77217,6 @@
   first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: register-quicksync.xyz.
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
 - domain: register-quirkies.io
   type: traditional_domain
   severity: MALICIOUS
@@ -79363,17 +79297,6 @@
   last_seen: '2026-06-02T09:55:20.894721+00:00'
   added_by: automated
 - domain: register-somnianetwork.xyz
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: register-somnianetwork.xyz.
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -113196,29 +113119,7 @@
   first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: relaymainnet.xyz.
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
 - domain: relaynetwork.xyz
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: relaynetwork.xyz.
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -113295,29 +113196,7 @@
   first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: relayprotocol.xyz.
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
 - domain: relayprotocols.xyz
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: relayprotocols.xyz.
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -128336,17 +128215,6 @@
   first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: resolv-claim.xyz.
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
 - domain: resolv-claimdrop.pages.dev
   type: traditional_domain
   severity: MALICIOUS
@@ -128359,17 +128227,6 @@
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
 - domain: resolv-claims.xyz
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: resolv-claims.xyz.
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -130792,17 +130649,6 @@
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
 - domain: resolversync-io.xyz
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: resolversync-io.xyz.
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -164551,17 +164397,6 @@
   first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: rewards-bigcoin.xyz.
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
 - domain: rewards-bigcointech.xyz
   type: traditional_domain
   severity: MALICIOUS
@@ -170088,17 +169923,6 @@
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
 - domain: rewards-layeredge.xyz
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: rewards-layeredge.xyz.
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -178027,17 +177851,6 @@
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
 - domain: rewards-tea-fi.xyz
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: rewards-tea-fi.xyz.
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -196566,17 +196379,6 @@
   first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: rivalz-rewards.xyz.
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
 - domain: rivalz-web3-app.vercel.app
   type: traditional_domain
   severity: MALICIOUS
@@ -214715,17 +214517,6 @@
   first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: routerbridge.xyz.
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
 - domain: routernitro.io
   type: traditional_domain
   severity: MALICIOUS
@@ -215871,7 +215662,7 @@
   first_seen: '2026-05-29T03:33:59.990186+00:00'
   last_seen: '2026-06-02T09:55:20.894721+00:00'
   added_by: automated
-- domain: roycoprotocols.xyz.
+- domain: roycoprotocols.xyz
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -215955,17 +215746,6 @@
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
 - domain: rp-mainnet.xyz
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: rp-mainnet.xyz.
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -217497,17 +217277,6 @@
   first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: rpcaccessfixer.xyz.
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
 - domain: rpcaccessrefix.pages.dev
   type: traditional_domain
   severity: MALICIOUS
@@ -218975,17 +218744,6 @@
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
 - domain: rpcnodefix.xyz
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: rpcnodefix.xyz.
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM

@@ -1,6 +1,6 @@
 # Web3 Threat Landscape
 
-Technique reference for the 19 threat category tags used in the Web3 Threat Tracker schema.
+Technique reference for the 20 threat category tags used in the Web3 Threat Tracker schema.
 Statistics reflect publicly available reporting through mid-2025.
 
 ---
@@ -54,7 +54,7 @@ because local wallets and browser extension seed phrases are harvested alongside
 
 ---
 
-### Wallet Drainer Kits — `wallet-drainer`
+### Wallet Drainer Kits — `drainer`
 
 **Model:** Drainer-as-a-Service (DaaS)  
 **Dominant kit:** Inferno Drainer (~40-45% market share)
@@ -71,7 +71,7 @@ developer and affiliate.
 
 ---
 
-### Ice Phishing — `ice-phishing`
+### Ice Phishing — `ice_phishing`
 
 **Mechanism:** Malicious ERC-20/ERC-721 approval; EIP-7702 exploits
 
@@ -87,7 +87,7 @@ early 2025.
 
 ---
 
-### Address Poisoning — `address-poisoning`
+### Address Poisoning — `address_poisoning`
 
 **Scale:** 270 M+ attempts observed; $83.8 M+ in losses
 
@@ -102,7 +102,7 @@ victim next copies an address from history they may pick the attacker's address 
 
 ---
 
-### Pig Butchering — `pig-butchering`
+### Pig Butchering — `pig_butchering`
 
 **Origin:** Southeast Asia (Myanmar, Cambodia, Laos compound operations)  
 **Model:** Long-con relationship fraud
@@ -119,7 +119,11 @@ invents fees to block withdrawal.
 
 ---
 
-### Blockchain Domain Abuse — `blockchain-domain-abuse`
+### Blockchain Domain Abuse — `impersonation` (tracked via `type`: `ens` / `unstoppable` / `handshake` / `namecoin`)
+
+> There is no `blockchain-domain-abuse` tag. The naming system is recorded in the `type` field
+> (`ens`, `unstoppable`, `handshake`, `namecoin`); the threat itself is tagged `impersonation` (or a
+> more specific tag such as `drainer` / `phishing` where applicable).
 
 **Platforms affected:**
 - ENS (Ethereum Name Service): 2.7 M+ registered names
@@ -158,16 +162,25 @@ alert lures.
 
 ### Additional Tags (brief reference)
 
+The remaining tags in the 20-item controlled vocabulary (exact schema values, underscored):
+
 | Tag | Summary |
 |---|---|
-| `vishing` | Voice / callback phishing; often follows smishing lure or impersonates exchange support |
-| `fake-exchange` | Lookalike or entirely fabricated exchange UI; used in pig-butchering and credential theft |
-| `fake-wallet` | Trojanised wallet app or lookalike wallet-connect page |
-| `rug-pull` | Token or NFT project that abandons liquidity after fundraising |
-| `ponzi` | Yield or staking scheme structurally reliant on new deposits |
-| `nft-scam` | Fake minting page, counterfeit collection, or NFT-targeted phishing |
-| `airdrop-scam` | Fake token airdrop requiring wallet connection or upfront gas fee |
-| `malware-distribution` | Drive-by download or trojanised installer hosted on threat domain |
-| `c2` | Command-and-control infrastructure (EtherHiding, traditional HTTP C2) |
-| `credential-stealer` | Web or host-based credential harvesting; exfils to attacker server |
+| `phishing` | Credential or seed-phrase harvesting page |
+| `fake_exchange` | Lookalike or entirely fabricated exchange UI; used in pig-butchering and credential theft |
+| `fake_wallet` | Trojanised wallet app or lookalike wallet-connect page |
+| `fake_airdrop` | Fake token airdrop requiring wallet connection or upfront gas fee |
+| `rug_pull` | Token or NFT project that abandons liquidity after fundraising |
+| `investment_scam` | Fraudulent investment / yield platform or scheme (covers Ponzi-style structures) |
+| `nft_scam` | Fake minting page, counterfeit collection, or NFT-targeted phishing |
+| `defi_impersonation` | Lookalike or fraudulent DeFi protocol front-end |
+| `c2_infrastructure` | Command-and-control infrastructure (EtherHiding, traditional HTTP C2) |
+| `credential_stealer` | Web or host-based credential harvesting; exfils to attacker server |
 | `impersonation` | Brand, protocol, or public figure impersonation not covered by a more specific tag |
+| `typosquat` | Lookalike domain relying on misspelling or character substitution |
+| `cryptojacking` | Browser/host cryptomining (CoinMiner, cryptojacking); sourced from URLhaus |
+
+> Removed from earlier drafts: `vishing`, `ponzi`, `blockchain-domain-abuse`, and
+> `malware-distribution` are **not** in the schema. Voice phishing has no dedicated tag; Ponzi
+> schemes map to `investment_scam`; blockchain naming abuse is captured via `type` + `impersonation`;
+> malware delivery is tagged by its technique (e.g. `clickfix`, `etherhiding`, `c2_infrastructure`).

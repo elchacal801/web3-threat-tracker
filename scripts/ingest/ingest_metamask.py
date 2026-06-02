@@ -16,16 +16,29 @@ class MetaMaskIngester(BaseIngester):
     SOURCE_NAME = "metamask"
     OUTPUT_DIR = "metamask"
 
-    def fetch(self) -> list[str]:
+    def fetch(self) -> dict:
         repo_dir = self.output_dir / "repo"
         if (repo_dir / ".git").exists():
             subprocess.run(["git", "-C", str(repo_dir), "pull", "--quiet"], check=True)
         else:
             subprocess.run(["git", "clone", "--depth=1", REPO_URL, str(repo_dir)], check=True)
         config_file = repo_dir / CONFIG_PATH
-        with open(config_file) as f:
+        with open(config_file, encoding="utf-8") as f:
             config = json.load(f)
-        return config.get("blacklist", [])
+        return {
+            "blacklist": config.get("blacklist", []),
+            "whitelist": config.get("whitelist", []),
+        }
+
+    def run(self) -> list[Entry]:
+        """Ingest both the blacklist (MALICIOUS) and whitelist (LEGITIMATE)."""
+        logger.info(f"[{self.SOURCE_NAME}] Starting ingestion...")
+        raw = self.fetch()
+        entries = self.parse(raw.get("blacklist", []))
+        entries += self.parse_whitelist(raw.get("whitelist", []))
+        logger.info(f"[{self.SOURCE_NAME}] Parsed {len(entries)} entries")
+        self.save(entries)
+        return entries
 
     def parse(self, raw_data: list[str]) -> list[Entry]:
         seen = set()
@@ -52,7 +65,7 @@ class MetaMaskIngester(BaseIngester):
             seen.add(domain)
             entries.append(Entry(
                 domain=domain, type="traditional_domain", severity="LEGITIMATE",
-                confidence="HIGH", tags=["phishing"], sources=["metamask"],
+                confidence="HIGH", tags=[], sources=["metamask"],
                 first_seen=self.now, last_seen=self.now, added_by="automated",
             ))
         return entries

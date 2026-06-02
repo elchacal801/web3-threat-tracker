@@ -60,6 +60,25 @@ def test_parse_whitelist(mock_config, tmp_path):
     assert entries[0].confidence == "HIGH"
 
 
+def test_parse_whitelist_has_no_threat_tags(mock_config, tmp_path):
+    # Legitimate/allowlisted domains must not carry a threat tag like 'phishing'.
+    ingester = MetaMaskIngester(base_dir=str(tmp_path))
+    entries = ingester.parse_whitelist(["coinbase.com"])
+    assert entries[0].tags == []
+
+
+def test_run_ingests_both_blacklist_and_whitelist(tmp_path):
+    class FakeIngester(MetaMaskIngester):
+        def fetch(self):
+            return {"blacklist": ["evil.com"], "whitelist": ["coinbase.com"]}
+
+    ingester = FakeIngester(base_dir=str(tmp_path))
+    entries = ingester.run()
+    by_domain = {e.domain: e for e in entries}
+    assert by_domain["evil.com"].severity == "MALICIOUS"
+    assert by_domain["coinbase.com"].severity == "LEGITIMATE"
+
+
 def test_parse_deduplicates(tmp_path):
     ingester = MetaMaskIngester(base_dir=str(tmp_path))
     raw = ["evil.com", "EVIL.COM", "www.evil.com"]

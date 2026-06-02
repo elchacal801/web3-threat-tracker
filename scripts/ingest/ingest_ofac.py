@@ -99,7 +99,7 @@ def write_ofac_csv(entries: list[dict], output_path: str | Path) -> None:
     """Write parsed OFAC entries to CSV in the standard labels schema."""
     output_path = Path(output_path)
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    with open(output_path, "w", newline="") as f:
+    with open(output_path, "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=["chain", "address", "entity", "category", "source", "confidence"])
         writer.writeheader()
         for entry in entries:

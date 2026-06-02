@@ -15,7 +15,7 @@ def read_label_csv(path: Path) -> list[dict]:
     if not path.exists():
         return []
     rows = []
-    with open(path, newline="") as f:
+    with open(path, newline="", encoding="utf-8") as f:
         reader = csv.DictReader(f)
         for row in reader:
             rows.append(row)
@@ -73,8 +73,8 @@ def build_labels(base_dir: Path | None = None) -> dict:
 def write_labels_json(labels: dict, output_path: Path) -> None:
     """Write labels dict to JSON file."""
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    with open(output_path, "w") as f:
-        json.dump(labels, f, separators=(",", ":"), sort_keys=True)
+    with open(output_path, "w", encoding="utf-8") as f:
+        json.dump(labels, f, separators=(",", ":"), sort_keys=True, ensure_ascii=False)
 
 
 def main():

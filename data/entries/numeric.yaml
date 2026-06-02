@@ -5874,7 +5874,7 @@
   first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: 0x0-sushi.xyz.
+- domain: 0x0-sushi.xyz
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -12099,17 +12099,6 @@
   wallet_addresses:
   - '0x0e0ba79cb92e07555ef7a3fe9e18ba33dd0b6d29'
   notes: Fake_Phishing841
-- domain: 0x0e0hawkfi-snapshotconfirmation.pages.dev
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
 - domain: '0x0e195c81d1dfec1bc97042356b888fe0ea63e201'
   type: smart_contract
   severity: MALICIOUS
@@ -87078,17 +87067,6 @@
   wallet_addresses:
   - '0xd3d7c71e4c5b1ff2f42fbb9b4a21f3373aa8b3b0'
   notes: Fake_Phishing178
-- domain: 0xd3daeb67cff7eb0dc3e2fc9bc1690d312361.xyz
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
 - domain: '0xd3ddae456004ed85639a39a9751192e80a967ed4'
   type: smart_contract
   severity: MALICIOUS
@@ -106846,17 +106824,6 @@
   first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: 104.225.239.211
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
 - domain: 1040024-coinbase.com
   type: traditional_domain
   severity: MALICIOUS
@@ -108262,17 +108229,6 @@
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
 - domain: 1157728453.gopeerclick.com
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: 117.18.12.68
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -109857,17 +109813,6 @@
   first_seen: '2026-05-29T03:33:59.990186+00:00'
   last_seen: '2026-06-02T09:55:20.894721+00:00'
   added_by: automated
-- domain: 135.181.98.246
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - metamask
-  first_seen: '2026-05-29T03:33:59.990186+00:00'
-  last_seen: '2026-06-02T09:55:20.894721+00:00'
-  added_by: automated
 - domain: 135874coinbase.com
   type: traditional_domain
   severity: MALICIOUS
@@ -110242,17 +110187,6 @@
   first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: 144.172.97.125
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
 - domain: 144325-coinbase.com
   type: traditional_domain
   severity: MALICIOUS
@@ -110331,17 +110265,6 @@
   last_seen: '2026-06-02T09:55:20.894721+00:00'
   added_by: automated
 - domain: 146-190-41-35.cprapid.com
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: 146.70.247.81
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -110670,17 +110593,6 @@
   - metamask
   first_seen: '2026-05-29T03:33:59.990186+00:00'
   last_seen: '2026-06-02T09:55:20.894721+00:00'
-  added_by: automated
-- domain: 154.9.28.176
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
 - domain: 154934-coinbase.com
   type: traditional_domain
@@ -111312,20 +111224,6 @@
   first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: 167.71.210.238
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: LOW
-  tags:
-  - investment_scam
-  sources:
-  - cryptoscamdb
-  first_seen: '2026-05-29T03:36:55.805565+00:00'
-  last_seen: '2026-06-02T09:57:58.762697+00:00'
-  added_by: automated
-  wallet_addresses:
-  - 16FVNrp2nfsRH9cWRidV6ZVZf4mDPBnJG9
-  notes: Trust trading scam site - redirect via cryp.li/mSty0q8
 - domain: 1670026847.pages.dev
   type: traditional_domain
   severity: MALICIOUS
@@ -112119,17 +112017,6 @@
   first_seen: '2026-05-29T03:33:59.990186+00:00'
   last_seen: '2026-06-02T09:55:20.894721+00:00'
   added_by: automated
-- domain: 176.123.6.29
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
 - domain: 17625-coinbase.com
   type: traditional_domain
   severity: MALICIOUS
@@ -112459,17 +112346,6 @@
   - metamask
   first_seen: '2026-05-29T03:33:59.990186+00:00'
   last_seen: '2026-06-02T09:55:20.894721+00:00'
-  added_by: automated
-- domain: 179.43.148.98
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
 - domain: 179283coinbase.com
   type: traditional_domain
@@ -112978,39 +112854,6 @@
   last_seen: '2026-06-02T09:55:20.894721+00:00'
   added_by: automated
 - domain: 185-196-11-177.cprapid.com
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: 185.130.45.84
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: 185.16.39.213
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: 185.208.159.219
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -113736,17 +113579,6 @@
   first_seen: '2026-05-29T03:33:59.990186+00:00'
   last_seen: '2026-06-02T09:55:20.894721+00:00'
   added_by: automated
-- domain: 193.180.209.56
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
 - domain: 193482-coinbase.com
   type: traditional_domain
   severity: MALICIOUS
@@ -113835,28 +113667,6 @@
   first_seen: '2026-05-29T03:33:59.990186+00:00'
   last_seen: '2026-06-02T09:55:20.894721+00:00'
   added_by: automated
-- domain: 194.87.110.74
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: 194.87.74.167
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
 - domain: 19404183-coinbase.com
   type: traditional_domain
   severity: MALICIOUS
@@ -113933,17 +113743,6 @@
   - metamask
   first_seen: '2026-05-29T03:33:59.990186+00:00'
   last_seen: '2026-06-02T09:55:20.894721+00:00'
-  added_by: automated
-- domain: 195.16.90.55
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
 - domain: 195022-coinbase.com
   type: traditional_domain
@@ -114133,17 +113932,6 @@
   last_seen: '2026-06-02T09:55:20.894721+00:00'
   added_by: automated
 - domain: 1978544-coinbase.com
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: 198.57.251.34
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -125953,17 +125741,6 @@
   first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: 204.76.203.9
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
 - domain: 204820.000webhostapp.com
   type: traditional_domain
   severity: MALICIOUS
@@ -126240,17 +126017,6 @@
   first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: 212.11.64.207
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - metamask
-  first_seen: '2026-05-29T03:33:59.990186+00:00'
-  last_seen: '2026-06-02T09:55:20.894721+00:00'
-  added_by: automated
 - domain: 212f7340-4048-4e01-b36e-42a79b104f19.dragonswapes.me
   type: traditional_domain
   severity: MALICIOUS
@@ -126459,17 +126225,6 @@
   - metamask
   first_seen: '2026-05-29T03:33:59.990186+00:00'
   last_seen: '2026-06-02T09:55:20.894721+00:00'
-  added_by: automated
-- domain: 217.156.122.91
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
 - domain: 217263-coinbase.com
   type: traditional_domain
@@ -126934,28 +126689,6 @@
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
 - domain: 23-zksync.com
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: 23.224.28.29
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - metamask
-  first_seen: '2026-05-29T03:33:59.990186+00:00'
-  last_seen: '2026-06-02T09:55:20.894721+00:00'
-  added_by: automated
-- domain: 23.254.240.199
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -133562,28 +133295,6 @@
   first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: 3.237.49.55
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - metamask
-  first_seen: '2026-05-29T03:33:59.990186+00:00'
-  last_seen: '2026-06-02T09:55:20.894721+00:00'
-  added_by: automated
-- domain: 3.90.132.191
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
 - domain: 3.cards-ahoy.com
   type: traditional_domain
   severity: MALICIOUS
@@ -134170,17 +133881,6 @@
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
 - domain: 3113161452.xyz
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: 3113161452.xyz.
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -136952,28 +136652,6 @@
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
 - domain: 37protocolwallet.com
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: 38.180.218.210
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: 38.60.254.156
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -141774,17 +141452,6 @@
   first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: 43.199.206.153
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
 - domain: 43065-cbvault.com
   type: traditional_domain
   severity: MALICIOUS
@@ -142104,17 +141771,6 @@
   first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: 44.223.103.246
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - metamask
-  first_seen: '2026-05-29T03:33:59.990186+00:00'
-  last_seen: '2026-06-02T09:55:20.894721+00:00'
-  added_by: automated
 - domain: 44.tusd-mine.xyz
   type: traditional_domain
   severity: MALICIOUS
@@ -142373,17 +142029,6 @@
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
 - domain: 45-brett.com
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: 45.64.52.100
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -142748,28 +142393,6 @@
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
 - domain: 45ybook.ueh.edu.vn
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: 46.28.71.19
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: 46.51.178.130
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -147837,17 +147460,6 @@
   last_seen: '2026-06-02T09:55:20.894721+00:00'
   added_by: automated
 - domain: 52-brett.com
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: 52.2.239.151
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -154481,17 +154093,6 @@
   first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: 64.188.95.87
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
 - domain: 6422920689.pages.dev
   type: traditional_domain
   severity: MALICIOUS
@@ -154999,17 +154600,6 @@
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
 - domain: 65-20-102-231.cprapid.com
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: 65.38.121.73
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -156843,18 +156433,6 @@
   first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: 68.168.123.85
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: LOW
-  tags:
-  - phishing
-  sources:
-  - cryptoscamdb
-  first_seen: '2026-05-29T03:36:55.805565+00:00'
-  last_seen: '2026-06-02T09:57:58.762697+00:00'
-  added_by: automated
-  notes: Fake Idex site phishing for private key
 - domain: 680251-coinbase.com
   type: traditional_domain
   severity: MALICIOUS
@@ -163815,17 +163393,6 @@
   first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: 8.130.175.195
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
 - domain: 80.77.25.56.fqdn.vps2day.com
   type: traditional_domain
   severity: MALICIOUS
@@ -164937,17 +164504,6 @@
   - scamsniffer
   first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: 83.136.208.48
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - metamask
-  first_seen: '2026-05-29T03:33:59.990186+00:00'
-  last_seen: '2026-06-02T09:55:20.894721+00:00'
   added_by: automated
 - domain: 831057-celsius.com
   type: traditional_domain
@@ -166391,17 +165947,6 @@
   last_seen: '2026-06-02T09:55:20.894721+00:00'
   added_by: automated
 - domain: 86f3h10.com
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: 87.120.93.163
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -170245,17 +169790,6 @@
   first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: 91.222.173.30
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
 - domain: 91000f-associates.com
   type: traditional_domain
   severity: MALICIOUS
@@ -170684,17 +170218,6 @@
   - metamask
   first_seen: '2026-05-29T03:33:59.990186+00:00'
   last_seen: '2026-06-02T09:55:20.894721+00:00'
-  added_by: automated
-- domain: 92.204.215.193
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
 - domain: 920012coinbase.com
   type: traditional_domain
@@ -171675,17 +171198,6 @@
   first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: 93.185.166.206
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
 - domain: 930328333-3d1.pages.dev
   type: traditional_domain
   severity: MALICIOUS
@@ -171951,40 +171463,6 @@
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
 - domain: 94-232-249-149.cprapid.com
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: 94.100.18.96
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: LOW
-  tags:
-  - phishing
-  sources:
-  - cryptoscamdb
-  first_seen: '2026-05-29T03:36:55.805565+00:00'
-  last_seen: '2026-06-02T09:57:58.762697+00:00'
-  added_by: automated
-  notes: Fake MyEtherWallet
-- domain: 94.154.35.215
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: 94.74.164.101
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM

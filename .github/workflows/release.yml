@@ -59,3 +59,4 @@ jobs:
             data/exports/high_confidence.csv
             data/exports/web3_tracker.db
             data/exports/stats.json
+            labels/ofac.csv

@@ -21,6 +21,11 @@ cp data/exports/malicious_only.csv web3_malicious.csv
 
 The CSV must have `domain` as the first column. The pipeline output already satisfies this.
 
+> **Size note:** `malicious_only.csv` is ~450K rows (~60+ MB). Some LogScale tiers cap lookup-file
+> size or slow noticeably on very large lookups. If you hit a limit, start with
+> `high_confidence.csv` (only multi-source-corroborated entries, ~7K rows / <1 MB) and/or shard by
+> tag using `data/exports/by_tag/<tag>.csv`. Test ingestion limits in your environment first.
+
 ### 2. Upload as a Lookup File
 
 1. In the LogScale UI navigate to your repository
@@ -38,13 +43,8 @@ Match DNS requests against the lookup file:
 | table([ComputerName, UserName, DomainName, severity, confidence, tags])
 ```
 
-Match web requests (HTTP/HTTPS) against the lookup file:
-
-```logscale
-#event_simpleName=NetworkConnectIP4
-| match(file="web3_malicious.csv", field=RemoteAddressIP4, column=ip_addresses)
-| table([ComputerName, UserName, RemoteAddressIP4, severity, confidence, tags])
-```
+> **Note:** This feed contains domains only; `ip_addresses` is not populated. Use the
+> DomainName-based DNS query above. For IP coverage, resolve domains downstream or add an IP feed.
 
 Filter to high-confidence malicious only within the query:
 
@@ -52,14 +52,34 @@ Filter to high-confidence malicious only within the query:
 #event_simpleName=DnsRequest
 | match(file="web3_malicious.csv", field=DomainName)
 | confidence = "HIGH"
-| severity = "MALICIOUS"
 | table([ComputerName, UserName, DomainName, tags, first_seen])
 ```
 
+> **All entries are `severity = MALICIOUS` by design** — this is a blocklist feed (the only other
+> value present is a single `LEGITIMATE` allowlist baseline). `RISKY` and `SUSPICIOUS` exist in the
+> schema but are never produced by the pipeline, so filtering on them returns nothing. Tune
+> detections using `confidence` (HIGH = corroborated by 2+ sources) and `tags`, not `severity`.
+
 ### 4. Keeping the lookup current
 
-Re-download and re-upload the CSV on a schedule (daily recommended). The LogScale API can be
-used to automate this:
+The CSV/DB exports are **build artifacts** — they are not committed to git, so `git pull` will
+not refresh them. Get a fresh feed one of two ways:
+
+- **Recommended — GitHub Release asset.** A dated release (`vYYYY.MM.DD`) is published daily at
+  07:00 UTC with the freshest exports attached. Download the asset directly:
+
+  ```bash
+  gh release download --pattern malicious_only.csv --dir . --clobber
+  # or: curl -L -o web3_malicious.csv <release-asset-url>
+  ```
+
+- **Local regeneration.** After `git pull`, rebuild the exports yourself:
+
+  ```bash
+  python -m scripts.export_csv   # writes data/exports/*.csv
+  ```
+
+Then re-upload to LogScale (daily recommended). The LogScale API can automate the upload:
 
 ```bash
 curl -s -X PUT \
@@ -110,18 +130,21 @@ Alert on new web3 threat hits (last 24 hours):
 ```spl
 index=dns earliest=-24h
 | lookup web3_threats domain AS query OUTPUT severity, confidence, tags, first_seen
-| where isnotnull(severity) AND severity IN ("MALICIOUS", "RISKY")
+| where isnotnull(severity)
 | dedup query
 | table query, severity, confidence, tags, first_seen
-| sort severity
+| sort confidence
 ```
+
+> All feed entries are `severity = MALICIOUS`, so filtering on severity does not narrow results.
+> Differentiate on `confidence` (e.g. `confidence="HIGH"`) and `tags` instead.
 
 Tag-specific investigation (e.g., wallet drainers only):
 
 ```spl
 index=proxy
 | lookup web3_threats domain AS cs_host OUTPUT severity, confidence, tags
-| where like(tags, "%wallet-drainer%")
+| where like(tags, "%drainer%")
 | stats values(cs_host) AS domains, dc(src_ip) AS unique_users BY tags
 ```
 
@@ -148,9 +171,9 @@ For any SIEM or security tool that accepts a flat CSV threat feed:
 | Column | Description |
 |---|---|
 | `domain` | The threat domain (use as your lookup key) |
-| `severity` | `MALICIOUS`, `RISKY`, `SUSPICIOUS`, or `LEGITIMATE` |
+| `severity` | Always `MALICIOUS` in this feed (a single `LEGITIMATE` baseline aside); `RISKY`/`SUSPICIOUS` are schema-reserved and not produced |
 | `confidence` | `HIGH`, `MEDIUM`, or `LOW` |
-| `tags` | Pipe-separated tag list (e.g., `wallet-drainer\|impersonation`) |
+| `tags` | Pipe-separated tag list (e.g., `drainer\|impersonation`) |
 | `first_seen` | ISO 8601 timestamp |
 
 ### Recommended pre-filtering
@@ -175,8 +198,9 @@ for row in reader:
 Or using the pipeline's built-in export:
 
 ```bash
-python -m web3_threat_tracker.pipeline --export high_confidence
-# outputs data/exports/high_confidence.csv
+python -m scripts.export_csv
+# writes all_domains.csv, malicious_only.csv, high_confidence.csv,
+# and by_tag/<tag>.csv to data/exports/
 ```
 
 ### Update cadence recommendations
@@ -192,5 +216,5 @@ Automated daily refresh via cron:
 
 ```bash
 # crontab entry — runs at 06:00 UTC daily
-0 6 * * * cd /opt/web3-threat-tracker && git pull && python -m web3_threat_tracker.pipeline && /opt/siem-upload.sh
+0 6 * * * cd /opt/web3-threat-tracker && git pull && python -m scripts.export_csv && /opt/siem-upload.sh
 ```

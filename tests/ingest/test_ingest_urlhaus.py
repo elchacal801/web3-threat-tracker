@@ -22,6 +22,16 @@ def test_parse(tmp_path):
     assert entries[0].sources == ["urlhaus"]
 
 
+def test_parse_tags_cryptojacking(tmp_path):
+    # URLhaus is queried for CoinMiner/cryptojacking tags, so entries are
+    # cryptojacking threats — not credential stealers.
+    ingester = URLhausIngester(base_dir=str(tmp_path))
+    raw = [{"url": "https://evil-miner.com/p.js", "host": "evil-miner.com",
+            "date_added": "2026-01-15 10:00:00 UTC", "tags": ["CoinMiner"]}]
+    entries = ingester.parse(raw)
+    assert entries[0].tags == ["cryptojacking"]
+
+
 def test_parse_deduplicates(tmp_path):
     ingester = URLhausIngester(base_dir=str(tmp_path))
     raw = [

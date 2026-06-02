@@ -68,9 +68,23 @@ def test_write_ofac_csv(tmp_path):
     out = tmp_path / "ofac.csv"
     write_ofac_csv(entries, out)
     assert out.exists()
-    with open(out, newline="") as f:
+    with open(out, newline="", encoding="utf-8") as f:
         reader = csv.DictReader(f)
         rows = list(reader)
     assert len(rows) == 1
     assert rows[0]["address"] == "0xdead"
     assert rows[0]["category"] == "sanctioned"
+
+
+def test_write_ofac_csv_handles_non_ascii_entity(tmp_path):
+    # SDN entity names include Cyrillic/Arabic/CJK; the CSV must be UTF-8 so it
+    # doesn't crash or mangle on a non-UTF-8 default locale (Windows cp1252).
+    entries = [
+        {"chain": 1, "address": "0xbeef", "entity": "OFAC: Иван Петров 中文",
+         "category": "sanctioned", "source": "ofac", "confidence": "high"},
+    ]
+    out = tmp_path / "ofac.csv"
+    write_ofac_csv(entries, out)
+    with open(out, newline="", encoding="utf-8") as f:
+        rows = list(csv.DictReader(f))
+    assert rows[0]["entity"] == "OFAC: Иван Петров 中文"

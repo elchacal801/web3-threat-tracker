@@ -113,9 +113,12 @@ Entity labels dataset includes 75+ tagged addresses across all chains: exchanges
 | Level | Meaning |
 |---|---|
 | `LEGITIMATE` | Verified safe; used as allowlist baseline |
-| `SUSPICIOUS` | Behavioural or registration anomalies; monitor |
-| `RISKY` | Strong indicators of abuse; block recommended |
+| `SUSPICIOUS` | Behavioural or registration anomalies; monitor (schema-reserved, not produced) |
+| `RISKY` | Strong indicators of abuse; block recommended (schema-reserved, not produced) |
 | `MALICIOUS` | Confirmed threat activity; block immediately |
+
+> In practice every ingested entry is `MALICIOUS` (plus a single `LEGITIMATE` baseline). `SUSPICIOUS`
+> and `RISKY` exist in the schema but are not currently produced — differentiate on `confidence` and `tags`.
 
 ## Confidence
 
@@ -129,9 +132,9 @@ Confidence is **corroboration-driven**: entries seen by 2+ upstream sources are 
 
 ---
 
-## Threat Category Tags (19)
+## Threat Category Tags (20)
 
-`drainer` `phishing` `rug_pull` `fake_exchange` `fake_wallet` `fake_airdrop` `etherhiding` `clickfix` `pig_butchering` `address_poisoning` `ice_phishing` `investment_scam` `impersonation` `c2_infrastructure` `credential_stealer` `nft_scam` `defi_impersonation` `smishing` `typosquat`
+`drainer` `phishing` `rug_pull` `fake_exchange` `fake_wallet` `fake_airdrop` `etherhiding` `clickfix` `pig_butchering` `address_poisoning` `ice_phishing` `investment_scam` `impersonation` `c2_infrastructure` `credential_stealer` `nft_scam` `defi_impersonation` `smishing` `typosquat` `cryptojacking`
 
 See [Threat Landscape](docs/threat_landscape.md) for technique descriptions, detection patterns, and key statistics.
 

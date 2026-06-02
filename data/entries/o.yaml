@@ -28236,17 +28236,6 @@
   first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: onchain-claim.xyz.
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
 - domain: onchain-claiming.com
   type: traditional_domain
   severity: MALICIOUS
@@ -30221,17 +30210,6 @@
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
 - domain: onchainnode.xyz
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: onchainnode.xyz.
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -32988,17 +32966,6 @@
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
 - domain: ondorewards.xyz
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: ondorewards.xyz.
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -76729,7 +76696,7 @@
   first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
-- domain: openvpp-rewards.xyz.
+- domain: openvpp-rewards.xyz
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -82121,17 +82088,6 @@
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
 - domain: opsuperchain.xyz
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: opsuperchain.xyz.
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM
@@ -103387,23 +103343,13 @@
 - domain: origiindefi.xyz
   type: traditional_domain
   severity: MALICIOUS
-  confidence: MEDIUM
+  confidence: HIGH
   tags:
   - phishing
   sources:
   - metamask
-  first_seen: '2026-05-29T03:33:59.990186+00:00'
-  last_seen: '2026-06-02T09:55:20.894721+00:00'
-  added_by: automated
-- domain: origiindefi.xyz.
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
   - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
+  first_seen: '2026-05-29T03:33:59.990186+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
 - domain: origin-azuki.com
@@ -103881,17 +103827,6 @@
   - metamask
   - scamsniffer
   first_seen: '2026-05-29T03:33:59.990186+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: origindefi-mint.xyz.
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
 - domain: origindefi-reward.xyz
@@ -113952,17 +113887,6 @@
   last_seen: '2026-06-02T09:55:59.725801+00:00'
   added_by: automated
 - domain: overlayprotocol-claim.xyz
-  type: traditional_domain
-  severity: MALICIOUS
-  confidence: MEDIUM
-  tags:
-  - phishing
-  sources:
-  - scamsniffer
-  first_seen: '2026-05-29T03:34:42.301875+00:00'
-  last_seen: '2026-06-02T09:55:59.725801+00:00'
-  added_by: automated
-- domain: overlayprotocol-claim.xyz.
   type: traditional_domain
   severity: MALICIOUS
   confidence: MEDIUM

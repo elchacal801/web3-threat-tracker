@@ -8,6 +8,18 @@ def _write_csv(path: Path, rows: list[str]) -> None:
     path.write_text("\n".join(rows) + "\n")
 
 
+def test_read_label_csv_utf8(tmp_path):
+    # OFAC entity names are non-ASCII; reading must use UTF-8 regardless of locale.
+    csv_path = tmp_path / "ofac.csv"
+    csv_path.write_text(
+        "chain,address,entity,category,source,confidence\n"
+        "1,0xabc,OFAC: Иван 中文,sanctioned,ofac,high\n",
+        encoding="utf-8",
+    )
+    rows = read_label_csv(csv_path)
+    assert rows[0]["entity"] == "OFAC: Иван 中文"
+
+
 def test_read_label_csv(tmp_path):
     csv_path = tmp_path / "test.csv"
     _write_csv(csv_path, [

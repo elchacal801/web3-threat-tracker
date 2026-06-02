@@ -4,7 +4,7 @@ from typing import Optional
 
 import yaml
 
-from scripts.models import Entry
+from scripts.models import Entry, is_valid_domain
 
 SEVERITY_ORDER = {"LEGITIMATE": 0, "SUSPICIOUS": 1, "RISKY": 2, "MALICIOUS": 3}
 CONFIDENCE_ORDER = {"LOW": 0, "MEDIUM": 1, "HIGH": 2}
@@ -74,9 +74,14 @@ def merge_entries(a: Entry, b: Entry) -> Entry:
 
 
 def normalize_and_dedup(entries: list[Entry]) -> list[Entry]:
-    """Deduplicate entries by domain, merging duplicates."""
+    """Deduplicate entries by domain, merging duplicates.
+
+    Entries whose domain is not a valid feed domain (empty or a bare IP
+    address) are dropped — they pollute a DNS-domain lookup file."""
     by_domain: dict[str, Entry] = {}
     for entry in entries:
+        if not is_valid_domain(entry.domain):
+            continue
         key = entry.domain
         if key in by_domain:
             by_domain[key] = merge_entries(by_domain[key], entry)
@@ -106,16 +111,26 @@ def compute_confidence(entries: list[Entry]) -> list[Entry]:
 
 def load_entries_from_yaml(filepath: str) -> list[Entry]:
     """Load entries from a YAML file."""
-    with open(filepath) as f:
+    with open(filepath, encoding="utf-8") as f:
         data = yaml.safe_load(f) or []
     return [Entry.from_dict(d) for d in data]
+
+
+def load_and_clean_entries(entries_dir: str) -> list[Entry]:
+    """Load all YAML shards in entries_dir and return deduplicated, valid-domain
+    entries. Shared by the export and stats steps so they never disagree on the
+    entry set (e.g. one counting duplicates the other dropped)."""
+    all_entries = []
+    for yaml_file in sorted(Path(entries_dir).glob("*.yaml")):
+        all_entries.extend(load_entries_from_yaml(str(yaml_file)))
+    return normalize_and_dedup(all_entries)
 
 
 def save_entries_to_yaml(entries: list[Entry], filepath: str) -> None:
     """Save entries to a YAML file."""
     Path(filepath).parent.mkdir(parents=True, exist_ok=True)
     data = [e.to_dict() for e in entries]
-    with open(filepath, "w") as f:
+    with open(filepath, "w", encoding="utf-8") as f:
         yaml.dump(data, f, default_flow_style=False, sort_keys=False)
 
 
@@ -154,7 +169,7 @@ def main():
     deduped = normalize_and_dedup(all_entries)
     deduped = compute_confidence(deduped)
     shard_entries(deduped, str(entries_dir))
-    print(f"Normalized: {len(all_entries)} → {len(deduped)} entries")
+    print(f"Normalized: {len(all_entries)} -> {len(deduped)} entries")
 
 
 if __name__ == "__main__":

@@ -1,5 +1,6 @@
 import pytest
-from scripts.validate import validate_entry, validate_entries_file, ValidationError
+import yaml
+from scripts.validate import validate_entry, validate_entries_file, run, ValidationError
 
 
 def _valid_entry():
@@ -106,3 +107,54 @@ def test_domain_with_invalid_chars_fails():
     entry["domain"] = "evil domain.com"
     errors = validate_entry(entry)
     assert len(errors) > 0
+
+
+def test_ip_address_domain_fails():
+    """Bare IPv4 addresses are not domains and must fail validation."""
+    entry = _valid_entry()
+    entry["domain"] = "104.225.239.211"
+    errors = validate_entry(entry)
+    assert len(errors) > 0
+
+
+def test_underscore_domain_valid():
+    """Hostnames with underscores (real phishing hosts) are accepted."""
+    entry = _valid_entry()
+    entry["domain"] = "acces_skrakken_docs_us.typedream.app"
+    errors = validate_entry(entry)
+    assert errors == []
+
+
+def test_empty_domain_fails():
+    entry = _valid_entry()
+    entry["domain"] = ""
+    errors = validate_entry(entry)
+    assert len(errors) > 0
+
+
+@pytest.mark.parametrize("network", ["optimism", "arbitrum"])
+def test_l2_blockchain_networks_valid(network):
+    """Networks the Forta ingester emits (CHAIN_MAP) must be schema-valid."""
+    entry = _valid_entry()
+    entry["domain"] = "0x" + "a1b2c3d4e5" * 4
+    entry["type"] = "smart_contract"
+    entry["blockchain_network"] = network
+    errors = validate_entry(entry)
+    assert errors == []
+
+
+def _write_entries(dir_path, entries):
+    dir_path.mkdir(parents=True, exist_ok=True)
+    (dir_path / "a.yaml").write_text(yaml.dump(entries), encoding="utf-8")
+
+
+def test_run_returns_zero_when_all_valid(tmp_path):
+    _write_entries(tmp_path / "entries", [_valid_entry()])
+    assert run(str(tmp_path / "entries")) == 0
+
+
+def test_run_returns_one_when_invalid(tmp_path):
+    bad = _valid_entry()
+    bad["domain"] = "104.225.239.211"  # IP — invalid
+    _write_entries(tmp_path / "entries", [_valid_entry(), bad])
+    assert run(str(tmp_path / "entries")) == 1

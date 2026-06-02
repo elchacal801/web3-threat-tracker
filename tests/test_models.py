@@ -1,6 +1,6 @@
 import pytest
 from datetime import datetime, timezone
-from scripts.models import Entry
+from scripts.models import Entry, is_valid_domain
 
 
 def test_entry_creation_minimal():
@@ -137,3 +137,78 @@ def test_entry_domain_strips_trailing_slash():
         added_by="manual",
     )
     assert entry.domain == "evil.com"
+
+
+def test_entry_domain_strips_trailing_dot():
+    entry = Entry(
+        domain="evil.com.",
+        type="traditional_domain",
+        severity="MALICIOUS",
+        confidence="HIGH",
+        tags=["phishing"],
+        sources=["manual"],
+        first_seen="2026-01-01T00:00:00Z",
+        last_seen="2026-01-01T00:00:00Z",
+        added_by="manual",
+    )
+    assert entry.domain == "evil.com"
+
+
+def test_is_valid_domain_accepts_normal_domain():
+    assert is_valid_domain("evil.com") is True
+
+
+def test_is_valid_domain_accepts_underscore_subdomain():
+    # Real phishing hosts on platforms like typedream.app use underscores.
+    assert is_valid_domain("acces_skrakken_docs_us.typedream.app") is True
+
+
+def test_is_valid_domain_accepts_smart_contract_address():
+    assert is_valid_domain("0x" + "a" * 40) is True
+
+
+def test_is_valid_domain_rejects_empty():
+    assert is_valid_domain("") is False
+
+
+def test_is_valid_domain_rejects_ipv4():
+    assert is_valid_domain("104.225.239.211") is False
+
+
+def test_is_valid_domain_rejects_ipv6():
+    assert is_valid_domain("2001:db8::1") is False
+
+
+def test_is_valid_domain_rejects_url_path():
+    # Google-Sites style phishing stored with a path is not a DNS-matchable
+    # domain (the host is legitimate); it must not pollute the lookup feed.
+    assert is_valid_domain("sites.google.com/new-app-uniswap.org/uni/uniswap") is False
+
+
+def test_is_valid_domain_rejects_whitespace():
+    assert is_valid_domain("evil domain.com") is False
+
+
+def test_is_valid_domain_rejects_leading_dot():
+    assert is_valid_domain(".evil.com") is False
+
+
+def _entry(domain):
+    return Entry(
+        domain=domain, type="traditional_domain", severity="MALICIOUS",
+        confidence="HIGH", tags=["phishing"], sources=["manual"],
+        first_seen="2026-01-01T00:00:00Z", last_seen="2026-01-01T00:00:00Z",
+        added_by="manual",
+    )
+
+
+def test_entry_domain_idn_converted_to_punycode():
+    e = _entry("münchen.de")
+    assert e.domain.isascii()
+    assert e.domain.startswith("xn--")
+    assert e.domain.endswith(".de")
+
+
+def test_entry_domain_ascii_underscore_preserved_through_idn():
+    # ASCII hostnames (incl. underscores) must pass through IDN handling untouched.
+    assert _entry("_dmarc.evil.com").domain == "_dmarc.evil.com"

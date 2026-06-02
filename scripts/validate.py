@@ -13,20 +13,23 @@ class ValidationError(Exception):
 
 
 def _load_schema() -> dict:
-    with open(SCHEMA_PATH) as f:
+    with open(SCHEMA_PATH, encoding="utf-8") as f:
         return json.load(f)
+
+
+# Compile the schema once at import. Rebuilding it per entry made validating
+# the full dataset (450K+ entries) take minutes.
+_VALIDATOR = Draft202012Validator(_load_schema())
 
 
 def validate_entry(entry: dict) -> list[str]:
     """Validate a single entry dict against the JSON Schema. Returns list of error messages."""
-    schema = _load_schema()
-    validator = Draft202012Validator(schema)
-    return [e.message for e in validator.iter_errors(entry)]
+    return [e.message for e in _VALIDATOR.iter_errors(entry)]
 
 
 def validate_entries_file(filepath: str) -> dict:
     """Validate all entries in a YAML file. Returns summary dict."""
-    with open(filepath) as f:
+    with open(filepath, encoding="utf-8") as f:
         entries = yaml.safe_load(f)
 
     if not isinstance(entries, list):
@@ -46,14 +49,15 @@ def validate_entries_file(filepath: str) -> dict:
     return {"valid": valid, "invalid": invalid, "errors": errors}
 
 
-def main():
-    """CLI: validate all YAML files in data/entries/."""
-    entries_dir = Path(__file__).parent.parent / "data" / "entries"
+def run(entries_dir: str) -> int:
+    """Validate all YAML files in entries_dir. Print a summary and return an
+    exit code: 1 if any entry is invalid, else 0. Used to gate the pipeline so
+    malformed entries never reach the CSV/DB exports."""
     total_valid = 0
     total_invalid = 0
     all_errors = []
 
-    for yaml_file in sorted(entries_dir.glob("*.yaml")):
+    for yaml_file in sorted(Path(entries_dir).glob("*.yaml")):
         results = validate_entries_file(str(yaml_file))
         total_valid += results["valid"]
         total_invalid += results["invalid"]
@@ -67,9 +71,13 @@ def main():
         for err in all_errors[:10]:
             print(f"  {err['file']} [{err['index']}] {err.get('domain', '?')}: {err['messages']}")
 
-    # Exit 0 even with invalid entries — upstream feeds may have entries that
-    # don't match our strict schema. The pipeline should continue with valid data.
-    sys.exit(0)
+    return 1 if total_invalid else 0
+
+
+def main():
+    """CLI: validate all YAML files in data/entries/."""
+    entries_dir = Path(__file__).parent.parent / "data" / "entries"
+    sys.exit(run(str(entries_dir)))
 
 
 if __name__ == "__main__":

@@ -16,14 +16,14 @@ the file descriptively: `YYYY-MM-DD-<short-slug>.yaml`.
 # data/manual/2025-06-01-fake-uniswap-drainer.yaml
 
 domain: fake-uniswap-v4.io
-type: drainer
+type: traditional_domain
 severity: MALICIOUS
 confidence: HIGH
 sources:
   - manual
 first_seen: "2025-06-01T00:00:00Z"
 tags:
-  - wallet-drainer
+  - drainer
   - impersonation
 ```
 
@@ -32,11 +32,11 @@ tags:
 ```yaml
 domain: fake-uniswap-v4.io
 url: https://fake-uniswap-v4.io/connect
-type: drainer
+type: traditional_domain
 severity: MALICIOUS
 confidence: HIGH
 tags:
-  - wallet-drainer
+  - drainer
   - impersonation
 registrar: Namecheap, Inc.
 registration_date: "2025-05-28"
@@ -74,11 +74,13 @@ related_domains:
 
 - `domain`: apex domain only, lowercase, no scheme, no trailing slash
 - `url`: include only if the threat is path-specific (e.g., distinct phishing page at a sub-path)
-- `type`: must be one of the controlled values in the [Data Dictionary](data_dictionary.md)
+- `type`: the record/infrastructure type (e.g. `traditional_domain`, `ens`), **not** a threat
+  classification — must be one of the controlled values in the [Data Dictionary](data_dictionary.md).
+  Threat semantics belong in `tags`.
 - `sources`: use the canonical source keys: `metamask`, `scamsniffer`, `cryptoscamdb`,
   `chainabuse`, `spmedia`, `forta`, `phishtank`, `urlhaus`, `manual`
 - `first_seen` / `last_seen`: ISO 8601 with timezone (`Z` or offset)
-- `tags`: use only tags from the 19-item controlled vocabulary
+- `tags`: use only tags from the 20-item controlled vocabulary
 
 ---
 
@@ -118,15 +120,16 @@ Validation runs automatically on every PR via GitHub Actions. To run it locally 
 # Install dev dependencies if not already done
 pip install -e ".[dev]"
 
-# Validate all manual YAML files
-python -m web3_threat_tracker.validate data/manual/
+# Validate all entry YAML files against the schema
+python -m scripts.validate
 ```
 
 The validator checks:
 
-- All required fields present (`domain`, `type`, `severity`, `confidence`, `sources`, `first_seen`)
+- All required fields present (`domain`, `type`, `severity`, `confidence`, `tags`, `sources`,
+  `first_seen`, `last_seen`, `added_by`)
 - `type`, `severity`, `confidence` values are in the controlled vocabulary
-- All `tags` values are in the 19-item controlled vocabulary
+- All `tags` values are in the 20-item controlled vocabulary
 - `first_seen` / `last_seen` are valid ISO 8601 datetimes
 - `domain` is a syntactically valid hostname (no scheme, no path)
 - `ip_addresses` are valid IPv4 or IPv6 literals
@@ -146,6 +149,10 @@ PRs with validation failures will not be merged until the issues are resolved.
 | `SUSPICIOUS` | One or more anomalies (young domain, privacy WHOIS, lookalike name, shared infra with known threats) but no confirmed malicious activity |
 | `RISKY` | Appears in one lower-quality source, or multiple suspicious signals without direct evidence of active abuse |
 | `MALICIOUS` | Confirmed active phishing, draining, malware delivery, or C2; supported by at least one high-quality source or direct technical analysis |
+
+> **Note:** `SUSPICIOUS` and `RISKY` are valid in the schema but are not currently produced by the
+> ingestion pipeline — in practice every ingested entry is `MALICIOUS` (plus a single `LEGITIMATE`
+> baseline). They remain available for manual entries and future use.
 
 ### Confidence
 

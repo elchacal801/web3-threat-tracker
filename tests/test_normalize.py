@@ -95,6 +95,28 @@ def test_normalize_and_dedup():
     assert sorted(evil.sources) == ["metamask", "scamsniffer"]
 
 
+def test_normalize_and_dedup_drops_ip_domains():
+    entries = [
+        _make_entry(domain="evil.com"),
+        _make_entry(domain="104.225.239.211"),
+    ]
+    result = normalize_and_dedup(entries)
+    domains = [e.domain for e in result]
+    assert "evil.com" in domains
+    assert "104.225.239.211" not in domains
+    assert len(result) == 1
+
+
+def test_normalize_and_dedup_merges_trailing_dot():
+    entries = [
+        _make_entry(domain="evil.com", sources=["metamask"]),
+        _make_entry(domain="evil.com.", sources=["scamsniffer"]),
+    ]
+    result = normalize_and_dedup(entries)
+    assert len(result) == 1
+    assert sorted(result[0].sources) == ["metamask", "scamsniffer"]
+
+
 def test_normalize_and_dedup_preserves_unique():
     entries = [
         _make_entry(domain="a.com"),

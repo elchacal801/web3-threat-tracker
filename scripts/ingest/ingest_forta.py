@@ -15,6 +15,25 @@ CHAIN_MAP = {
     "137": "polygon", "42161": "arbitrum",
 }
 
+# Map Forta's free-form contract_tag to our controlled tag vocabulary.
+# Order matters (first substring match wins). Unmapped malicious contracts
+# default to "drainer"; the raw tag is always preserved in the entry notes.
+_CONTRACT_TAG_RULES = [
+    ("drain", "drainer"),
+    ("rug", "rug_pull"),
+    ("phish", "phishing"),
+    ("airdrop", "fake_airdrop"),
+    ("nft", "nft_scam"),
+]
+
+
+def map_contract_tag(contract_tag: str) -> str:
+    t = (contract_tag or "").lower()
+    for needle, tag in _CONTRACT_TAG_RULES:
+        if needle in t:
+            return tag
+    return "drainer"
+
 
 class FortaIngester(BaseIngester):
     SOURCE_NAME = "forta"
@@ -68,12 +87,17 @@ class FortaIngester(BaseIngester):
             if not addr or addr in seen:
                 continue
             seen.add(addr)
+            contract_tag = row.get("contract_tag", "")
+            note_parts = [p for p in (
+                row.get("notes"),
+                f"forta_tag={contract_tag}" if contract_tag else None,
+            ) if p]
             entries.append(Entry(
                 domain=addr, type="smart_contract", severity="MALICIOUS",
-                confidence="MEDIUM", tags=["drainer"], sources=["forta"],
+                confidence="MEDIUM", tags=[map_contract_tag(contract_tag)], sources=["forta"],
                 first_seen=self.now, last_seen=self.now, added_by="automated",
                 blockchain_network=row.get("_blockchain", "ethereum"),
-                smart_contract_addresses=[addr], notes=row.get("notes"),
+                smart_contract_addresses=[addr], notes="; ".join(note_parts) or None,
             ))
         return entries
 

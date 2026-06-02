@@ -56,7 +56,7 @@ class URLhausIngester(BaseIngester):
             date_added = item.get("date_added", self.now)
             entries.append(Entry(
                 domain=domain, url=item.get("url"), type="traditional_domain",
-                severity="MALICIOUS", confidence="MEDIUM", tags=["credential_stealer"],
+                severity="MALICIOUS", confidence="MEDIUM", tags=["cryptojacking"],
                 sources=["urlhaus"], first_seen=date_added, last_seen=self.now,
                 added_by="automated",
             ))

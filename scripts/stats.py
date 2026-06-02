@@ -6,7 +6,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from scripts.models import Entry
-from scripts.normalize import load_entries_from_yaml
+from scripts.normalize import load_and_clean_entries
 
 
 def generate_stats(entries: list[Entry]) -> dict:
@@ -38,13 +38,11 @@ def main():
     entries_dir = base / "data" / "entries"
     stats_path = base / "data" / "exports" / "stats.json"
 
-    all_entries = []
-    for yaml_file in sorted(entries_dir.glob("*.yaml")):
-        all_entries.extend(load_entries_from_yaml(str(yaml_file)))
+    all_entries = load_and_clean_entries(str(entries_dir))
 
     stats = generate_stats(all_entries)
     stats_path.parent.mkdir(parents=True, exist_ok=True)
-    with open(stats_path, "w") as f:
+    with open(stats_path, "w", encoding="utf-8") as f:
         json.dump(stats, f, indent=2)
 
     print(f"Stats: {stats['total']} entries")
