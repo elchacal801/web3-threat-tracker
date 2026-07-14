@@ -311,3 +311,10 @@ chain,address,entity,category,source,confidence
 1,0xf2235d55b2950a0b1317469d72d07ae65b2e27cb,"OFAC: OJEDA AVILES, Armando de Jesus",sanctioned,ofac,high
 1,0x4f428c11dc82388fa5136d636e613ad923eb700b,"OFAC: OJEDA AVILES, Armando de Jesus",sanctioned,ofac,high
 1,0xac4cc4b68ea24bbfaac8fd127b67ed445accce22,"OFAC: ALARCON PALOMARES, Rodrigo",sanctioned,ofac,high
+1,0x2711d73d559f62f4f855ee21f38378f528e07985,OFAC: FIRST VPN SERVICE,sanctioned,ofac,high
+0,bc1qdnr88f4d2yqunnc4mjsguezm6g3mlwe44z5dw8,OFAC: FIRST VPN SERVICE,sanctioned,ofac,high
+0,bc1qr4ankqmvmrhce3ydvzse86dfx5s3zhehfr9tg9,OFAC: FIRST VPN SERVICE,sanctioned,ofac,high
+1,0x1d19b52b54e7ef5ea1a4b40b616165e798eac9f8,"OFAC: RASHEVSKYI, Dmytro",sanctioned,ofac,high
+1,0x2c7dcd774b33e10367f7d6385479e04f97d179dc,"OFAC: RASHEVSKYI, Dmytro",sanctioned,ofac,high
+0,1MTndG4K51RRMvkzyvguaHnQpiMLnxFGzM,"OFAC: RASHEVSKYI, Dmytro",sanctioned,ofac,high
+0,1DfyWkiXVVqWfcSduj23qTDis9kb2qvRDa,"OFAC: RASHEVSKYI, Dmytro",sanctioned,ofac,high
