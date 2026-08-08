@@ -318,3 +318,12 @@ chain,address,entity,category,source,confidence
 1,0x2c7dcd774b33e10367f7d6385479e04f97d179dc,"OFAC: RASHEVSKYI, Dmytro",sanctioned,ofac,high
 0,1MTndG4K51RRMvkzyvguaHnQpiMLnxFGzM,"OFAC: RASHEVSKYI, Dmytro",sanctioned,ofac,high
 0,1DfyWkiXVVqWfcSduj23qTDis9kb2qvRDa,"OFAC: RASHEVSKYI, Dmytro",sanctioned,ofac,high
+1,0xbb69e01921b17cd22080968bcc96ba6115da6062,OFAC: CRYPTO HOME DMCC,sanctioned,ofac,high
+0,1G1V1b9s9uPsFCNL15ibZk44xsVygKsP2u,OFAC: CRYPTO HOME DMCC,sanctioned,ofac,high
+1,0x8d79c73daae8630c88de372ba8f57592fa987607,"OFAC: KAYVANPOUR, Siavash",sanctioned,ofac,high
+0,15Zt2mKuQ5Qy6DEXfDcbtsEVneoGQQXrS4,"OFAC: KAYVANPOUR, Siavash",sanctioned,ofac,high
+0,1BUXxhcwzFukm9CUxnhag85sSXDkMRbXse,"OFAC: KAYVANPOUR, Siavash",sanctioned,ofac,high
+1,0xe05f529f5284d75624eba386cb716928c3b54a2a,OFAC: SHPS SHELBIT,sanctioned,ofac,high
+1,0x6b69e2a7545c166417a80c61a77562052bffa9c5,OFAC: SHPS SHELBIT,sanctioned,ofac,high
+0,bc1qjzk63wwatq2f638psymq3qapn00aqgksyx56l3t8eg7zuuccwasq498khf,OFAC: SHPS SHELBIT,sanctioned,ofac,high
+0,bc1qz654h5qcqzalv6ltpxsk4ksdcc3e20wkedqntgnarv3a0t2e2p7scr48pl,OFAC: SHPS SHELBIT,sanctioned,ofac,high
