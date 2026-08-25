@@ -1,17 +1,17 @@
 {
-  "total": 498386,
-  "generated_at": "2026-08-24T07:01:58.178746+00:00",
+  "total": 499421,
+  "generated_at": "2026-08-25T06:57:20.983160+00:00",
   "by_severity": {
-    "MALICIOUS": 498330,
+    "MALICIOUS": 499365,
     "LEGITIMATE": 56
   },
   "by_confidence": {
-    "MEDIUM": 471821,
+    "MEDIUM": 472797,
     "LOW": 16654,
-    "HIGH": 9911
+    "HIGH": 9970
   },
   "by_tag": {
-    "phishing": 494534,
+    "phishing": 495569,
     "investment_scam": 3833,
     "drainer": 152,
     "fake_exchange": 1,
@@ -19,16 +19,16 @@
     "fake_airdrop": 1
   },
   "by_source": {
-    "scamsniffer": 336528,
-    "metamask": 154506,
+    "scamsniffer": 336609,
+    "metamask": 155516,
     "cryptoscamdb": 9801,
     "forta": 6356,
     "spmedia": 1078,
-    "phishtank": 41,
+    "phishtank": 44,
     "manual": 3
   },
   "by_type": {
-    "traditional_domain": 492030,
+    "traditional_domain": 493065,
     "smart_contract": 6356
   }
 }

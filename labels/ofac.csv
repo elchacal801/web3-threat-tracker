@@ -1,4 +1,11 @@
 chain,address,entity,category,source,confidence
+1,0x252a8bd2319d8a555b872990601221b3a2053bce,"OFAC: MESRI, Behzad",sanctioned,ofac,high
+1,0x1cab8177ace78b1b6b1c393371f4f2dcae40cbeb,"OFAC: MESRI, Behzad",sanctioned,ofac,high
+1,0x6fac4d18c912343bf86fa7049364dd4e424ab9c0,"OFAC: MESRI, Behzad",sanctioned,ofac,high
+1,0xa40cfbfc8534ffc84e20a7d8bbc3729b26a35f6f,"OFAC: MESRI, Behzad",sanctioned,ofac,high
+1,0x7f03679b56d8772530efa516b58bb83d4829e881,"OFAC: MESRI, Behzad",sanctioned,ofac,high
+1,0x8ac5381fcd9e7395d14e02986c344aada84b4bc6,"OFAC: MESRI, Behzad",sanctioned,ofac,high
+0,12aNKp2iDKuhEde2YfPdd4DFGenRUTKupL,"OFAC: MESRI, Behzad",sanctioned,ofac,high
 0,12QtD5BFwRsdNsAZY76UVE1xyCGNTojH9h,"OFAC: YAN, Xiaobing",sanctioned,ofac,high
 0,1Kuf2Rd8mDyAViwBozGTNYnvWL8uYFrkVo,"OFAC: YAN, Xiaobing",sanctioned,ofac,high
 0,13f59kUM5FU8MfTG7DCEugYarDhSD7XCoC,"OFAC: YAN, Xiaobing",sanctioned,ofac,high
@@ -76,7 +83,6 @@ chain,address,entity,category,source,confidence
 0,3Gbs4rjcVUtQd8p3CiFUCxPLZwRqurezRZ,OFAC: SOUTHFRONT,sanctioned,ofac,high
 0,bc1qv7k70u2zynvem59u88ctdlaw7hc735d8xep9rq,OFAC: SOUTHFRONT,sanctioned,ofac,high
 0,bc1qw4cxpe6sxa5dg6sdwxjph959cw6yztrzl4r54s,OFAC: SOUTHFRONT,sanctioned,ofac,high
-0,17a5bpKvEp1j1Trs4qTbcNZrby53JbaS9C,"OFAC: FAYZIMATOV, Farrukh Furkatovitch",sanctioned,ofac,high
 0,1JPfVv5cWRLx1js9NWxg46dG2CGbeRz4th,"OFAC: HEBEI ATUN TRADING CO., LTD.",sanctioned,ofac,high
 0,12HQDsicffSBaYdJ6BhnE22sfjTESmmzKx,"OFAC: SUEX OTC, S.R.O.",sanctioned,ofac,high
 0,1L4ncif9hh9TnUveqWq77HfWWt6CJWtrnb,"OFAC: SUEX OTC, S.R.O.",sanctioned,ofac,high
@@ -305,6 +311,16 @@ chain,address,entity,category,source,confidence
 1,0xcb74874f1e06fcf80a306e06e5379a44b488ba2d,OFAC: AMNOKGANG TECHNOLOGY DEVELOPMENT COMPANY,sanctioned,ofac,high
 1,0x0330070fd38ec3bb94f58fa55d40368271e9e54a,OFAC: AMNOKGANG TECHNOLOGY DEVELOPMENT COMPANY,sanctioned,ofac,high
 1,0x9be599d7867f5e1a2d7ec6db9710df2b98a15573,OFAC: AMNOKGANG TECHNOLOGY DEVELOPMENT COMPANY,sanctioned,ofac,high
+1,0x4060cbf80734193f521a3cc6fd4e985df2825279,"OFAC: BLAGH, Keyvan Fayyaz Gareh",sanctioned,ofac,high
+1,0x56de1527136f76a809e5b14ded6103eecd072ba7,"OFAC: BLAGH, Keyvan Fayyaz Gareh",sanctioned,ofac,high
+0,bc1qf6zxs4lkp9umh6hf087mh70w0ymcyt8cunp58r,"OFAC: BLAGH, Keyvan Fayyaz Gareh",sanctioned,ofac,high
+0,bc1qr2pwmvkpq5tc5um2g9uh34yyu6wepwx89rts70,"OFAC: BLAGH, Keyvan Fayyaz Gareh",sanctioned,ofac,high
+0,bc1q4ktvxxhhvf8qhs9qkdsm9arcxfmmeex6rl7n50,"OFAC: BLAGH, Keyvan Fayyaz Gareh",sanctioned,ofac,high
+1,0x1b8579cf6ab12ea6b74ac5fa41f3829a3cb61e6e,"OFAC: GHAL'EH-KUHI, Mojtaba",sanctioned,ofac,high
+0,1GXeCkFQq7SYo6B7wdLAPkkri6NFTFB7No,"OFAC: GHAL'EH-KUHI, Mojtaba",sanctioned,ofac,high
+1,0xeb507efa9ee692a4c774ad1de9f3cb26fc459da3,"OFAC: KAHZADIAN, Arman",sanctioned,ofac,high
+1,0xef85a6fafa5942a964dc618e94e230881d29ce2a,"OFAC: KAHZADIAN, Arman",sanctioned,ofac,high
+0,1JGPiQGK78xTxAVoxA1MjK3Z15M84Rj6BL,"OFAC: KAHZADIAN, Arman",sanctioned,ofac,high
 1,0x038989cbb1710c72b9920dc4fa529158f463e72c,"OFAC: OJEDA AVILES, Armando de Jesus",sanctioned,ofac,high
 1,0x14779cec0b117d5194c750c55ea1f42086631964,"OFAC: OJEDA AVILES, Armando de Jesus",sanctioned,ofac,high
 1,0x32da24ca413f3e7b53145d4737e172c3bdf81e3e,"OFAC: OJEDA AVILES, Armando de Jesus",sanctioned,ofac,high
